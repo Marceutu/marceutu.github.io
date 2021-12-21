@@ -1,0 +1,26 @@
+.articulo{
+     margin-top: 50px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 900px;
+     text-align: justify
+  }
+  
+  .atr {
+     margin-top: 100px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 900px;
+     text-align: justify
+  }
+  #titulo{
+	  background: #acc217; 
+	  color: #505720; 
+	  font-weight: bold; 
+	  padding: 70px; border: 
+	  7px solid #505720; 
+	  border-radius: 150px;
+	  font-size: 70px;
+      text-align: center;
+	  
+	  }

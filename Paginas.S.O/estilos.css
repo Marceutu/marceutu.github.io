@@ -15,14 +15,15 @@
      text-align: justify
   }
   #titulo{
-	  background: #e6edec; 
-	  color: #041b40; 
+	  background: #d7f7e5; 
+	  color: #1e422e; 
 	  font-weight: bold; 
-	  padding: 70px; border: 
-	  7px solid #041b40; 
+	  padding: 70px; 
+	  border: 
+	  7px solid #1e422e; 
 	  border-radius: 150px;
 	  font-size: 70px;
-      text-align: center;
+      text-align: center
 	  
 	  }
 .contenedor {
@@ -86,7 +87,7 @@
 	  margin:10px;
 	  padding: 0px 35px; 
 	   border: 
-	  1px solid #e6edec;
+	  1px solid #d7f7e5;
 	  border-radius: 55px;
 	  width:200px;
 	  
@@ -98,23 +99,23 @@
 	  color: #101a18; 
  }
 	.btg1{
-	 background: #e6edec; 
-	  color: #041b40; 
+	 background: #d7f7e5; 
+	  color: #101a18; 
 	  display:inline-block;
-	  font-size: 13px; 
+	  font-size: 15px; 
 	  margin:1px;
 	  padding: 0px 8px; 
 	   border: 
-	  1px solid #e6edec;
-	  border-radius: 25px;
-	  width:150px;
+	  1px solid #d7f7e5;
+	  border-radius: 30px;
+	  width:200px;
 	  
       text-align:center;
 	  cursor:pointer;
 	}
  .btg1:hover {
 	 background:#ffffff; 
-	  color: #041b40; 
+	  color: #101a18; 
  }
  .cajas1{
        float: left;
@@ -130,14 +131,14 @@
        
 }
 .btg3{
-	 background: #e6edec; 
-	  color: #041b40; 
+	 background: #d7f7e5; 
+	  color: #101a18; 
 	  display:inline-block;
 	  font-size: 1em; 
 	  margin:1px;
-	  padding: 0px 15px; 
+	  padding: 0px 3px; 
 	   border: 
-	  1px solid #e6edec;
+	  1px solid #d7f7e5;
 	  border-radius: 40px;
 	  width:130px;
 	  
@@ -146,16 +147,10 @@
 	}
  .btg3:hover {
 	 background:#ffffff; 
-	  color: #041b40; 
+	  color: #101a18; 
  }
  .Portada1{
     position: absolute;
     top: 550px;
     left: 1200px;
 }
-.En-ci{
-    position: absolute;
-    top: 350px;
-    left: 850px;
-}
-	

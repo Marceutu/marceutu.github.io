@@ -47,8 +47,8 @@
 }
 .texto-encima{
     position: absolute;
-    top: 200px;
-    left: 450px;
+    top: 300px;
+    left: 550px;
 }
 .centrado{
     position: absolute;
@@ -65,7 +65,7 @@
 	
 .En{
     position: absolute;
-    top: 350px;
+    top: 200px;
     left: 520px;
 }
 	

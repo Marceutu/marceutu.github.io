@@ -77,7 +77,7 @@
 .Portada{
     position: absolute;
     top: 500px;
-    left: 900px;
+    left: 1000px;
 }
 .btg{
 	 background: #d7f7e5; 
@@ -151,6 +151,6 @@
  }
  .Portada1{
     position: absolute;
-    top: 550px;
+    top: 600px;
     left: 1000px;
 }

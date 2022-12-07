@@ -107,7 +107,7 @@
 	   border: 
 	  1px solid #e6edec;
 	  border-radius: 25px;
-	  width:150px;
+	  width:190px;
 	  
       text-align:center;
 	  cursor:pointer;
@@ -118,7 +118,7 @@
  }
  .cajas1{
        float: left;
-       width: 300px;
+       width: 290px;
        height: fit-content;
        margin: 10px;
  }
@@ -139,7 +139,7 @@
 	   border: 
 	  1px solid #e6edec;
 	  border-radius: 40px;
-	  width:130px;
+	  width:200px;
 	  
       text-align:center;
 	  cursor:pointer;
@@ -151,11 +151,16 @@
  .Portada1{
     position: absolute;
     top: 550px;
-    left: 1000px;
+    left: 750px;
 }
 .En-ci{
     position: absolute;
     top: 350px;
-    left: 850px;
+    left: 750px;
+} 
+.Portada_1{
+    position: absolute;
+    top: 550px;
+    left: 750px;
 }
 	

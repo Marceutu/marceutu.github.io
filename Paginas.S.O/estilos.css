@@ -125,7 +125,7 @@
  }
  .cajas2{
        float: left;
-       width: 550px;
+       width: 390px;
        height: fit-content;
        margin: 15px;
        
@@ -139,8 +139,8 @@
 	  padding: 0px 3px; 
 	   border: 
 	  1px solid #d7f7e5;
-	  border-radius: 40px;
-	  width:130px;
+	  border-radius: 50px;
+	  width:190px;
 	  
       text-align:center;
 	  cursor:pointer;
@@ -151,6 +151,6 @@
  }
  .Portada1{
     position: absolute;
-    top: 550px;
-    left: 1000px;
+    top: 570px;
+    left: 790px;
 }

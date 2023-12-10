@@ -1,20 +1,178 @@
-<html>
-	<head>
-	  <link rel="stylesheet" href="Paginas/estilo.css">
-	  <link rel="stylesheet" href="Paginas.S.O/estilos.css">
-	    <meta charset="UTF-8"/>
-		
-</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Programación II</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<body ><img src="Imag.jpg" align="right" width="450px" height="550px">
-	    
-	    
-         <p><img src="logos.png" width="400px" height="500px"></p>
-		
-         <center><div class="En"> <a href="Sistemas.html"style="color:#041b40;"><h1>Sistemas Operativos</h1></div>
-		
-          <div class="texto-encima"> <a href="Metodos.html"style="color:#041b40;"><h1>Métodos Discretos</h1></div>
-		  <div class="mail"><img src="mail.jpg" width="50px" height="50px"></div>
-		 <div class="encima"><a style="color:#041b40"><h2>marcela.docente2022@gmail.com</h2></div></center>
-		  </body>
+        header {
+            background-color: #CDBCDC; /* Cambiado el color de la franja de color */
+            padding: 70px;
+            text-align: center;
+            border-bottom: 2px solid #8E44AD; /* Color del borde inferior */
+            width: 90%; /* Ancho de la franja de color */
+            margin: 0 auto; /* Centra la franja de color en la página */
+            position: relative;
+        }
+
+        .logo-img {
+            margin-right: 20px; /* Ajusta el espacio entre la imagen y el texto */
+            height: 50px; /* Ajusta la altura de la imagen según sea necesario */
+        }
+
+        .header-img {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            height: 150px; /* Ajusta la altura de la imagen según sea necesario */
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px; /* Ajusta la altura para que la franja sea más fina */
+            background: linear-gradient(to right, #8E44AD, #3498db); /* Cambia los colores según tu preferencia */
+            animation: cambiaColor 5s infinite; /* Duración de la animación y repetición infinita */
+        }
+
+        @keyframes cambiaColor {
+            0% {
+                background: linear-gradient(to right, #8E44AD, #3498db);
+            }
+            50% {
+                background: linear-gradient(to right, #3498db, #e74c3c);
+            }
+            100% {
+                background: linear-gradient(to right, #e74c3c, #8E44AD);
+            }
+        }
+
+        .opcion {
+            display: inline-block;
+            margin: 0 8px;
+            cursor: pointer;
+            /* Borde eliminado para Programación II */
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 120%; /* Tamaño de fuente más grande */
+            font-weight: bold; /* Texto en negrita */
+            color: #000000; /* Color del texto negro por defecto */
+        }
+
+        .opcion:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+
+        .opcionSeleccionada {
+            background-color: #F4F4F4;
+            color: #FFFFFF;
+            font-size: 70%; /* Ajusta el tamaño de la opción seleccionada */
+        }
+
+        .opciones {
+            display: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .opciones .opcion {
+            /* Borde eliminado para opciones */
+            border: none;
+            margin: 5px 0; /* Alineación vertical entre opciones */
+            transition: background-color 0.3s;
+        }
+
+        .opciones .opcion:hover {
+            background-color: #C3CFC4;
+            color: #FFFFFF;
+        }
+
+        .opciones .opcionSeleccionada {
+            background-color: #C3CFC4;
+            color: #FFFFFF;
+        }
+
+        .flecha {
+            position: absolute;
+            top: 48%; /* Ajustado para que la flecha esté al final del texto */
+            left: 58%;
+            transform: translateX(-80%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #ffffff; /* Cambia el color de la flecha según tu preferencia */
+        }
+
+        /* Nuevo estilo para la imagen del correo */
+        .correo-img {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            height: 250px; /* Ajusta la altura de la imagen según sea necesario */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Contenido del encabezado -->
+        <img src="imagen3.png" alt="Imagen 3" class="header-img">
+        <div class="opcion" onclick="mostrarOpciones()">PROGRAMACIÓN II<span class="flecha"></span></div>
+        <!-- Imagen para enviar un correo a Marcela -->
+        <div class="correo-img">
+            <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
+                <img src="imagen2.png" alt="Enviar un correo a Marcela">
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <div class="opciones" id="opcionesProgramacion2">
+        <!-- Opciones adicionales -->
+        <p class="opcion" onclick="window.location.href='teorico.html'">Teórico</p>
+        <p class="opcion" onclick="window.location.href='practicos.html'">Prácticos</p>
+        <p class="opcion" onclick="window.location.href='proyectos.html'">Proyectos</p>
+        <p class="opcion" onclick="window.location.href='escritos.html'">Escritos</p>
+    </div>
+</header>
+ <center>
+    <!-- Agrega la imagen fuera de la franja de color -->
+    <img src="construccion.gif" alt="" style="width: 35%; height: auto;"></center>
+
+    <!-- Contenido principal de la página -->
+    <div class="opciones" id="opcionesProgramacion2">
+        <!-- Opciones adicionales -->
+        <!-- ... (código existente) ... -->
+    </div>
+    <script>
+        function mostrarOpciones() {
+            var opciones = document.getElementById("opcionesProgramacion2");
+            opciones.style.display = (opciones.style.display === "none") ? "block" : "none";
+        }
+
+        function seleccionarOpcion(elemento) {
+            // Deseleccionar todas las opciones
+            var opciones = document.querySelectorAll('.opcion');
+            opciones.forEach(function(opcion) {
+                opcion.classList.remove('opcionSeleccionada');
+            });
+
+            // Seleccionar la opción actual
+            elemento.classList.add('opcionSeleccionada');
+        }
+    </script>
+
+</body>
 </html>

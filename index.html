@@ -22,14 +22,12 @@
             position: relative;
         }
 
-        
-
-       .header-img {
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    height: 80%; /* Ajusta el valor según sea necesario para que se vea mejor */
-}
+        .header-img {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            height: 80%;
+        }
 
         header::after {
             content: "";
@@ -78,7 +76,6 @@
         }
 
         .opciones {
-            display: none;
             padding: 5%;
             text-align: center;
         }
@@ -97,18 +94,6 @@
         .opciones .opcionSeleccionada {
             background-color: #C3CFC4;
             color: #FFFFFF;
-        }
-
-        .flecha {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translateX(-80%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #ffffff;
         }
 
         .correo-img {
@@ -145,9 +130,8 @@
 </head>
 <body>
     <header>
-        
         <img src="imagen3.png" alt="Imagen 3" class="header-img">
-        <div class="opcion" onclick="mostrarOpciones()">PROGRAMACIÓN II<span class="flecha"></span></div>
+        <div class="opcion" onclick="mostrarOpciones()">PROGRAMACIÓN II</div>
         <div class="correo-img">
             <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
                 <img src="imagen2.png" alt="Enviar un correo a Marcela">
@@ -165,10 +149,6 @@
     <center>
         <img src="construccion.gif" alt="" style="width: 35%; height: auto;">
     </center>
-
-    <div class="opciones" id="opcionesProgramacion2">
-        <!-- ... (código existente) ... -->
-    </div>
 
     <script>
         function mostrarOpciones() {

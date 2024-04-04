@@ -10,8 +10,6 @@
             padding: 0;
             box-sizing: border-box;
             font-size: 16px; /* Tamaño de fuente base ajustado */
-            background-color: #f8f8f8; /* Color de fondo */
-            text-align: center; /* Centrar texto */
         }
 
         header {
@@ -22,6 +20,13 @@
             width: 100%;
             margin: 0 auto;
             position: relative;
+        }
+
+        .header-img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 80%;
         }
 
         header::after {
@@ -46,30 +51,36 @@
                 background: linear-gradient(to right, #e74c3c, #8E44AD);
             }
         }
-
-        .opcion {
-            display: inline-block;
-            margin: 0 8px;
-            cursor: pointer;
-            padding: 2% 4%;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 120%;
-            font-weight: bold;
-            color: #000000;
+		.correo-img {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            height: 15%;
         }
 
-        .opcion:hover {
-            background-color: #FFFFFF;
-            color: #000000;
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
-        .opcionSeleccionada {
-            background-color: #F4F4F4;
-            color: #FFFFFF;
-            font-size: 70%;
+        /* Media Queries para tamaños de pantalla diferentes */
+        @media screen and (max-width: 600px) {
+            .opcion {
+                font-size: 100%;
+            }
         }
 
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            .opcion {
+                font-size: 110%;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            .opcion {
+                font-size: 120%;
+            }
+        }
         /* Estilos para el botón de volver */
         #volver {
             position: fixed;
@@ -100,11 +111,12 @@
         .columnas {
             display: flex;
             flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
+            justify-content: center; /* Centrar las columnas en pantallas pequeñas */
         }
 
         /* Estilos de las columnas */
         .columna {
-            width: 45%; /* Ancho de la columna */
+            width: 100%; /* Ancho de la columna al 100% para ocupar toda la pantalla */
             margin: 10px; /* Espaciado entre columnas */
         }
 
@@ -112,6 +124,9 @@
         @media screen and (max-width: 600px) {
             .opcion {
                 font-size: 100%;
+            }
+            header {
+                padding: 1% 0;
             }
         }
 
@@ -130,7 +145,13 @@
 </head>
 <body>
     <header>
-        <h1 style="font-size: 220%;">PROYECTOS</h1>
+        <img src="imagen3.png" alt="Imagen 3" class="header-img">
+        <div class="opcion" onclick="mostrarOpciones()"><h3>PROYECTOS<h3></div>
+        <div class="correo-img">
+            <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
+                <img src="imagen2.png" alt="Enviar un correo a Marcela">
+            </a>
+        </div>
     </header>
     
 	

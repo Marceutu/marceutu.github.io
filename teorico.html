@@ -100,11 +100,12 @@
         .columnas {
             display: flex;
             flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
+            justify-content: center; /* Centrar las columnas en pantallas pequeñas */
         }
 
         /* Estilos de las columnas */
         .columna {
-            width: 45%; /* Ancho de la columna */
+            width: 100%; /* Ancho de la columna al 100% para ocupar toda la pantalla */
             margin: 10px; /* Espaciado entre columnas */
         }
 
@@ -135,7 +136,7 @@
 <header style="background-color: #CDBCDC; padding: 1% 0; border-bottom: 2px solid #8E44AD; position: relative;">
     <div style="display: flex; align-items: center; margin: 0 auto; max-width: 600px;">
         <img src="among.gif" alt="Among Us GIF" style="width: 120px; margin-left: -179px;">
-        <h5 style="font-size: 190%; margin-top: 0; text-align: center; flex-grow: 1;">TEÓRICO</h5>
+        <h5 style="font-size: 150%; margin-top: 0; text-align: center; flex-grow: 1;">TEÓRICO</h5>
         <div class="correo-img" style="position: absolute; top: 10px; right: 20px;">
             <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
                 <img src="imagen2.png" alt="Enviar un correo a Marcela">
@@ -149,14 +150,15 @@
                 <b><h3>Primeros conceptos</h3></b>
                 <a href="https://docs.google.com/presentation/d/10R3gT0a0UaAyjo8-drVyTUsXQEjI3cwO/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Definiciones a tener en cuenta</a>
             </div>
+			 <div class="columna">
+                <b><h3>Conceptos Básicos</h3></b>
+                <a href="https://docs.google.com/presentation/d/1T0C9bofk8SstUOWFDjiO1bOQZfq-tZfb/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Primeros pasos</a>
+            </div>
              <div class="columna">
                 <b><h3>Sentencias</h3></b>
                 <a href="https://docs.google.com/presentation/d/1XXUidIMRWYy0EpkHO8xVc6gKfuw4NQZA/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Sentencia if</a>
             </div>
-            <div class="columna">
-                <b><h3>Conceptos Básicos</h3></b>
-                <a href="https://docs.google.com/presentation/d/1T0C9bofk8SstUOWFDjiO1bOQZfq-tZfb/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Primeros pasos</a>
-            </div>
+           
            
         </div>
     </div>

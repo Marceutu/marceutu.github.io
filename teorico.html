@@ -13,14 +13,14 @@
         }
 
         header {
-    background-color: #CDBCDC;
-    padding: 3% 0; /* Ajusta este valor para reducir el espacio */
-    text-align: center;
-    border-bottom: 2px solid #8E44AD;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
+            background-color: #CDBCDC;
+            padding: 3% 0; /* Ajusta este valor para reducir el espacio */
+            text-align: center;
+            border-bottom: 2px solid #8E44AD;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
 
         .header-img {
             position: absolute;
@@ -51,7 +51,8 @@
                 background: linear-gradient(to right, #e74c3c, #8E44AD);
             }
         }
-		.correo-img {
+
+        .correo-img {
             position: absolute;
             top: 10px;
             right: 20px;
@@ -68,6 +69,10 @@
             .opcion {
                 font-size: 100%;
             }
+
+            header {
+                padding: 1% 0;
+            }
         }
 
         @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -81,6 +86,7 @@
                 font-size: 120%;
             }
         }
+
         /* Estilos para el botón de volver */
         #volver {
             position: fixed;
@@ -112,72 +118,55 @@
             display: flex;
             flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
             justify-content: center; /* Centrar las columnas en pantallas pequeñas */
+            max-width: 800px; /* Ancho máximo para las columnas */
+            margin: 0 auto; /* Centrar el contenedor */
         }
 
         /* Estilos de las columnas */
         .columna {
-            width: 100%; /* Ancho de la columna al 100% para ocupar toda la pantalla */
-            margin: 10px; /* Espaciado entre columnas */
-        }
-
-        /* Media Queries para tamaños de pantalla diferentes */
-        @media screen and (max-width: 600px) {
-            .opcion {
-                font-size: 100%;
-            }
-            header {
-                padding: 1% 0;
-            }
-        }
-
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            .opcion {
-                font-size: 110%;
-            }
-        }
-
-        @media screen and (min-width: 1025px) {
-            .opcion {
-                font-size: 120%;
-            }
+            width: 45%; /* Ancho de cada columna */
+            margin: 5px; /* Espaciado entre columnas */
         }
     </style>
 </head>
 <body>
-  <header>
-        <img src="imagen3.png" alt="Imagen 3" class="header-img">
-        <div class="opcion" onclick="mostrarOpciones()"> <h4>TEÓRICO<h4></div>
-        <div class="correo-img">
-            <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
-                <img src="imagen2.png" alt="Enviar un correo a Marcela">
-            </a>
+<header>
+    <img src="imagen3.png" alt="Imagen 3" class="header-img">
+    <div class="opcion" onclick="mostrarOpciones()"> <h4>TEÓRICO<h4></div>
+    <div class="correo-img">
+        <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
+            <img src="imagen2.png" alt="Enviar un correo a Marcela">
+        </a>
+    </div>
+</header>
+<div class="centrado">
+    <div class="columnas">
+        <div class="columna">
+            <b><h3>Primeros conceptos</h3></b>
+            <a href="https://docs.google.com/presentation/d/10R3gT0a0UaAyjo8-drVyTUsXQEjI3cwO/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Definiciones a tener en cuenta</a>
         </div>
-    </header>
-    <div class="centrado">
-        <div class="columnas">
-            <div class="columna">
-                <b><h3>Primeros conceptos</h3></b>
-                <a href="https://docs.google.com/presentation/d/10R3gT0a0UaAyjo8-drVyTUsXQEjI3cwO/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Definiciones a tener en cuenta</a>
-            </div>
-			 <div class="columna">
-                <b><h3>Conceptos Básicos</h3></b>
-                <a href="https://docs.google.com/presentation/d/1hl18msL0nMLHZkFHzhY5QIcwaSY5GK-e/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Primeros pasos</a>
-            </div>
-			<div class="columna">
-                <b><h3>Ventanas de Netbeans</h3></b>
-                <a href="https://docs.google.com/presentation/d/1v17htKO5DdXYgjQu2XUhlvNi7_SCoDUY/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Algunas explicaciones</a>
-            </div>
-             <div class="columna">
-                <b><h3>Sentencias</h3></b>
-                <a href="https://docs.google.com/presentation/d/1XXUidIMRWYy0EpkHO8xVc6gKfuw4NQZA/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Sentencia if</a>
-            </div>
-           
-           
+        <div class="columna">
+            <b><h3>Conceptos Básicos</h3></b>
+            <a href="https://docs.google.com/presentation/d/1hl18msL0nMLHZkFHzhY5QIcwaSY5GK-e/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Primeros pasos</a>
+        </div>
+        <div class="columna">
+            <b><h3>Ventanas de Netbeans</h3></b>
+            <a href="https://docs.google.com/presentation/d/1v17htKO5DdXYgjQu2XUhlvNi7_SCoDUY/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Algunas explicaciones</a>
+        </div>
+        <div class="columna">
+            <b><h3>Creación de proyecto en Eclipse</h3></b>
+            <a href="https://docs.google.com/presentation/d/100ALM8uPFriVsFex-l7EjiebbYEq7u5A/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Paso a paso</a>
+        </div>
+		</div>
+        <div class="columna">
+            <b><h3>Sentencias</h3></b>
+            <a href="https://docs.google.com/presentation/d/1XXUidIMRWYy0EpkHO8xVc6gKfuw4NQZA/edit?usp=sharing&ouid=100789396527694317787&rtpof=true&sd=true" style="color:#0e055e;">Sentencia if</a>
         </div>
     </div>
 
-    <!-- Botón para volver a la página principal -->
-    <button id="volver" onclick="window.location.href='index.html'">Volver</button>
+
+<!-- Botón para volver a la página principal -->
+<button id="volver" onclick="window.location.href='index.html'">Volver</button>
 
 </body>
 </html>

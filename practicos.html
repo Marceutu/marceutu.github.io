@@ -12,17 +12,15 @@
             font-size: 16px; /* Tamaño de fuente base ajustado */
         }
 
-        
-
         header {
-    background-color: #CDBCDC;
-    padding: 3% 0; /* Ajusta este valor para reducir el espacio */
-    text-align: center;
-    border-bottom: 2px solid #8E44AD;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
+            background-color: #CDBCDC;
+            padding: 3% 0; /* Ajusta este valor para reducir el espacio */
+            text-align: center;
+            border-bottom: 2px solid #8E44AD;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
 
         .header-img {
             position: absolute;
@@ -53,7 +51,8 @@
                 background: linear-gradient(to right, #e74c3c, #8E44AD);
             }
         }
-		.correo-img {
+
+        .correo-img {
             position: absolute;
             top: 10px;
             right: 20px;
@@ -83,6 +82,7 @@
                 font-size: 120%;
             }
         }
+
         /* Estilos para el botón de volver */
         #volver {
             position: fixed;
@@ -107,40 +107,31 @@
         .centrado {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
+            padding: 0; /* Eliminar relleno en el contenedor */
         }
 
         /* Contenedor de las columnas */
         .columnas {
             display: flex;
             flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
-            justify-content: center; /* Centrar las columnas en pantallas pequeñas */
+            justify-content: space-between; /* Distribuir columnas equidistantemente */
+            width: 100%; /* Asegurarse de que el contenedor ocupa todo el ancho disponible */
+            gap: 0; /* Eliminar espacio entre columnas */
         }
 
         /* Estilos de las columnas */
         .columna {
-            width: 100%; /* Ancho de la columna al 100% para ocupar toda la pantalla */
-            margin: 10px; /* Espaciado entre columnas */
+            width: 48%; /* Ajusta el ancho de las columnas para pantallas grandes */
+            padding: 0; /* Eliminar relleno en las columnas */
+            box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
         }
 
-        /* Media Queries para tamaños de pantalla diferentes */
+        /* Estilos para columnas en pantallas pequeñas */
         @media screen and (max-width: 600px) {
-            .opcion {
-                font-size: 100%;
-            }
-            header {
-                padding: 1% 0;
-            }
-        }
-
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            .opcion {
-                font-size: 110%;
-            }
-        }
-
-        @media screen and (min-width: 1025px) {
-            .opcion {
-                font-size: 120%;
+            .columna {
+                width: 100%; /* Ancho completo en pantallas pequeñas */
+                padding: 0; /* Eliminar relleno en pantallas pequeñas */
             }
         }
     </style>
@@ -159,6 +150,7 @@
     </header>
     <div class="centrado">
         <div class="columnas">
+            <!-- Primera columna para los primeros tres prácticos -->
             <div class="columna">
                 <b><h4>Primer Práctico</h4></b>
                 <a href="https://drive.google.com/file/d/1yPtILcKYnqSYDJnXELjVRS4Ahxa8RHsZ/view?usp=sharing" style="color:#0e055e;">Práctico I</a>
@@ -167,11 +159,14 @@
                 <b><h4>Tercer Práctico</h4></b>
                 <a href="https://drive.google.com/file/d/124KNS06ww4izjFXUPuCxRkl40X0DdIFL/view?usp=sharing" style="color:#0e055e;">Práctico III</a>
             </div>
+            <!-- Segunda columna para los prácticos a partir del cuarto -->
             <div class="columna">
                 <b><h4>Cuarto Práctico</h4></b>
                 <a href="https://drive.google.com/file/d/1WMumM9TqvMrBFTeZtluJJ6zgj4cLylDo/view?usp=sharing" style="color:#0e055e;">Práctico IV</a>
                 <b><h4>Quinto Práctico</h4></b>
                 <a href="https://drive.google.com/file/d/1TgzA70_rhRuuQvusrQRO8qoTaWd7flLg/view?usp=sharing" style="color:#0e055e;">Práctico V</a>
+                <b><h4>Sexto Práctico</h4></b>
+                <a href="https://drive.google.com/file/d/1jU-lVpYm9EklxWNL-gv66mvzSoVT0vML/view?usp=sharing" style="color:#0e055e;">Práctico VI</a>
             </div>
         </div>
     </div>

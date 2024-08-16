@@ -14,7 +14,7 @@
 
         header {
             background-color: #CDBCDC;
-            padding: 3% 0; /* Ajusta este valor para reducir el espacio */
+            padding: 2% 0; /* Ajusta este valor para reducir el espacio */
             text-align: center;
             border-bottom: 2px solid #8E44AD;
             width: 100%;
@@ -115,15 +115,14 @@
         .columnas {
             display: flex;
             flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
-            justify-content: space-between; /* Distribuir columnas equidistantemente */
-            width: 100%; /* Asegurarse de que el contenedor ocupa todo el ancho disponible */
-            gap: 0; /* Eliminar espacio entre columnas */
+            gap: 20px; /* Espacio reducido entre columnas */
+            width: 50%; /* Asegurarse de que el contenedor ocupa todo el ancho disponible */
         }
 
         /* Estilos de las columnas */
         .columna {
-            width: 48%; /* Ajusta el ancho de las columnas para pantallas grandes */
-            padding: 0; /* Eliminar relleno en las columnas */
+            flex: 1; /* Las columnas ocuparán el mismo ancho disponible */
+            min-width: 100px; /* Ajusta el ancho mínimo de las columnas */
             box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
         }
 

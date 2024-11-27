@@ -3,142 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEÓRICO</title>
+    <title>Programación</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-size: 16px; /* Tamaño de fuente base ajustado */
-        }
+     body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fondo blanco */
+}
 
-        header {
-            background-color: #CDBCDC;
-            padding: 3% 0; /* Ajusta este valor para reducir el espacio */
-            text-align: center;
-            border-bottom: 2px solid #8E44AD;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-        }
+.navbar {
+    background-color: #F0F9E6; /* Fondo blanco del banner */
+    overflow: hidden;
+}
 
-        .header-img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            height: 80%;
-        }
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-        header::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, #8E44AD, #3498db);
-            animation: cambiaColor 5s infinite;
-        }
+.navbar li {
+    margin: 0 15px;
+}
 
-        @keyframes cambiaColor {
-            0% {
-                background: linear-gradient(to right, #8E44AD, #3498db);
-            }
-            50% {
-                background: linear-gradient(to right, #3498db, #e74c3c);
-            }
-            100% {
-                background: linear-gradient(to right, #e74c3c, #8E44AD);
-            }
-        }
+.navbar a {
+    text-decoration: none;
+    color: #000000; /* Palabras en negro */
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
 
-        .correo-img {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            height: 15%;
-        }
+.navbar a:hover {
+    background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
+}
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+.navbar a:active {
+    background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
+}
 
-        /* Media Queries para tamaños de pantalla diferentes */
-        @media screen and (max-width: 600px) {
-            .opcion {
-                font-size: 100%;
-            }
+.centrado {
+    padding: 20px;
+}
 
-            header {
-                padding: 1% 0;
-            }
-        }
+.columnas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
 
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            .opcion {
-                font-size: 110%;
-            }
-        }
+.columna {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        @media screen and (min-width: 1025px) {
-            .opcion {
-                font-size: 120%;
-            }
-        }
+.columna h4 {
+    margin-top: 0;
+    color: #333;
+}
 
-        /* Estilos para el botón de volver */
-        #volver {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: #C3CFC4;
-            color: #FFFFFF;
-            border: none;
-            cursor: pointer;
-            font-size: 16px; /* Tamaño de fuente igual al resto de la página */
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+.columna a {
+    text-decoration: none;
+    color: #0e055e;
+    display: block;
+    margin-top: 10px;
+}
 
-        #volver:hover {
-            background-color: #8E44AD;
-        }
+.columna a:hover {
+    text-decoration: underline;
+}
 
-        /* Contenedor para centrar las columnas */
-        .centrado {
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Contenedor de las columnas */
-        .columnas {
-            display: flex;
-            flex-wrap: wrap; /* Permitir que las columnas se envuelvan en una nueva línea */
-            justify-content: center; /* Centrar las columnas en pantallas pequeñas */
-            max-width: 800px; /* Ancho máximo para las columnas */
-            margin: 0 auto; /* Centrar el contenedor */
-        }
-
-        /* Estilos de las columnas */
-        .columna {
-            width: 45%; /* Ancho de cada columna */
-            margin: 5px; /* Espaciado entre columnas */
-        }
     </style>
 </head>
 <body>
-<header>
-    <img src="imagen3.png" alt="Imagen 3" class="header-img">
-    <div class="opcion" onclick="mostrarOpciones()"> <h4>TEÓRICO<h4></div>
-    <div class="correo-img">
-        <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
-            <img src="imagen2.png" alt="Enviar un correo a Marcela">
-        </a>
-    </div>
-</header>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                 <li><a href="programacion.html">Programación</a></li>
+               
+				
+            </ul>
+        </nav>
+    </header>
 <div class="centrado">
     <div class="columnas">
         <div class="columna">
@@ -177,7 +132,7 @@
 	 </div>
 	 <div class="columna">
         <b><h4>Switch</h4></b>
-        <a href="https://docs.google.com/presentation/d/1HF3Jp5dQmPmCnBphqke-4KjuD2QIKpXd/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Menús</a>
+          <a href="https://docs.google.com/presentation/d/1HF3Jp5dQmPmCnBphqke-4KjuD2QIKpXd/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Menús</a>
    
 	 <div class="columna">
         <b><h4>Conceptos de Java Orientado a Objetos</h4></b>
@@ -186,8 +141,6 @@
     </div>
 </div>
 
-<!-- Botón para volver a la página principal -->
-<button id="volver" onclick="window.location.href='index.html'">Volver</button>
 
 </body>
 </html>

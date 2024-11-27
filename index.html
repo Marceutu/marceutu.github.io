@@ -3,168 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación I</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-size: 16px; /* Tamaño de fuente base ajustado */
-        }
-
-        header {
-            background-color: #CDBCDC;
-            padding: 5% 0;
-            text-align: center;
-            border-bottom: 2px solid #8E44AD;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .header-img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            height: 80%;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, #8E44AD, #3498db);
-            animation: cambiaColor 5s infinite;
-        }
-
-        @keyframes cambiaColor {
-            0% {
-                background: linear-gradient(to right, #8E44AD, #3498db);
-            }
-            50% {
-                background: linear-gradient(to right, #3498db, #e74c3c);
-            }
-            100% {
-                background: linear-gradient(to right, #e74c3c, #8E44AD);
-            }
-        }
-
-        .opcion {
-            display: inline-block;
-            margin: 0 8px;
-            cursor: pointer;
-            padding: 1% 1%;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-size: 120%;
-            font-weight: bold;
-            color: #000000;
-        }
-
-        .opcion:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-        }
-
-        .opcionSeleccionada {
-            background-color: #F4F4F4;
-            color: #FFFFFF;
-            font-size: 50%;
-        }
-
-        .opciones {
-            padding: 3%;
-            text-align: center;
-        }
-
-        .opciones .opcion {
-            border: none;
-            margin: -9% 0;
-            transition: background-color 0.3s;
-        }
-
-        .opciones .opcion:hover {
-            background-color: #C3CFC4;
-            color: #FFFFFF;
-        }
-
-        .opciones .opcionSeleccionada {
-            background-color: #C3CFC4;
-            color: #FFFFFF;
-        }
-
-        .correo-img {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            height: 15%;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Media Queries para tamaños de pantalla diferentes */
-        @media screen and (max-width: 600px) {
-            .opcion {
-                font-size: 100%;
-            }
-        }
-
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            .opcion {
-                font-size: 110%;
-            }
-        }
-
-        @media screen and (min-width: 1025px) {
-            .opcion {
-                font-size: 120%;
-            }
-        }
-    </style>
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="imagen3.png" alt="Imagen 3" class="header-img">
-        <div class="opcion" onclick="mostrarOpciones()">PROGRAMACIÓN I</div>
-        <div class="correo-img">
-            <a href="mailto:marcela.mederos@docente.ceibal.edu.uy">
-                <img src="imagen2.png" alt="Enviar un correo a Marcela">
-            </a>
-        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Materias</a>
+                    <div class="dropdown-content">
+                        <a href="programacion.html">Programación I</a>
+                        <a href="prog.html">Programación II</a>
+                        <a href="metodo.html">Métodos-Lógica</a>
+                    </div>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="opciones" id="opcionesProgramacion2">
-        <p class="opcion" onclick="window.location.href='teorico.html'">Teórico</p>
-        <p class="opcion" onclick="window.location.href='practicos.html'">Prácticos</p>
-		 <p class="opcion" onclick="window.location.href='Ejercicios.html'">Ejercicios</p>
-        <p class="opcion" onclick="window.location.href='proyectos.html'">Proyectos</p>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="text-content">
+                <h1>Bienvenidos a mi espacio educativo</h1>
+                <p>Hola, mi nombre es Marcela Mederos y soy docente del Bachillerato de Informática en la UTU.</p>
+                <p>Esta página está diseñada para ser un espacio de apoyo para estudiantes interesados en 
+				 <p>aprender y reforzar los contenidos de las diferentes materias que forman parte del bachillerato.</p>
+                <p>Aquí encontrarás recursos, materiales y actividades que te ayudarán a comprender mejor los conceptos 
+				 <p>vistos en clase, desde temas básicos de programación hasta proyectos más avanzados.</p>
+                <p>Mi objetivo es facilitar el aprendizaje de una manera dinámica y práctica, fomentando el desarrollo 
+				 <p>de habilidades clave como el pensamiento lógico, el trabajo colaborativo y la resolución de problemas.</p>
+                <p>Te invitamos a explorar los materiales disponibles y usar este espacio como una herramienta 
+				<p> para potenciar tu aprendizaje. </p>
+            </div>
+			 </div>
+            <div class="image-content">
+                <img src="c6.gif" alt="Imagen educativa">
+            </div>
        
-    </div>
+    </section>
 
-    <center>
-        <img src="amo.gif" alt="" style="width: 25%; height: auto;">
-    </center>
-
-    <script>
-        function mostrarOpciones() {
-            var opciones = document.getElementById("opcionesProgramacion2");
-            opciones.style.display = (opciones.style.display === "none") ? "block" : "none";
-        }
-
-        function seleccionarOpcion(elemento) {
-            var opciones = document.querySelectorAll('.opcion');
-            opciones.forEach(function(opcion) {
-                opcion.classList.remove('opcionSeleccionada');
-            });
-
-            elemento.classList.add('opcionSeleccionada');
-        }
-    </script>
+    <footer>
+        <center><p>© 2024 Todos los derechos reservados</p></center>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #f8f8f8;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2em;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Contenido del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #FFD1DC; /* Fondo pastel claro */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover en opciones del menú desplegable */
+.dropdown-content a:hover {
+    background-color: #c4f0c5; /* Verde pastel suave */
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+
+/* Mostrar el menú cuando se pasa el ratón por encima */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sección principal con texto a la izquierda y la imagen a la derecha */
+.hero {
+    display: flex;
+    justify-content: space-between; /* Alinea el texto y la imagen al mismo nivel en el contenedor */
+    align-items: center;
+    background-color: #fafafa;
+    padding: 1em 1em;
+}
+
+.hero .text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.hero .image-content {
+    flex: 7; /* La imagen ocupará el 50% del espacio disponible */
+    display: flex;
+    justify-content: flex-end; /* Asegura que la imagen esté a la derecha */
+}
+
+.hero .image-content img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 15em; /* Espacio entre el texto y la imagen */
+}
+
+.material, .contacto {
+    padding: 2em 1em;
+    background-color: #f4f4f4;
+    margin: 1em 0;
+}
+
+.material h2, .contacto h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.material ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.material ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Estilo específico para el texto de contacto más pequeño */
+.contacto p.small-text {
+    font-size: 0.2em;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+}
+
+

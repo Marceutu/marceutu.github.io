@@ -90,35 +90,38 @@ html, body {
     display: block; /* Muestra el menú al pasar el ratón */
 }
 
-/* Sección principal con texto a la izquierda y la imagen a la derecha */
+/* Sección principal con texto arriba y la imagen debajo */
 .hero {
     display: flex;
-    justify-content: space-between; /* Alinea el texto y la imagen al mismo nivel en el contenedor */
-    align-items: center;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra ambos elementos horizontalmente */
     background-color: #fafafa;
-    padding: 1em 1em;
+    padding: 2em 1em; /* Espaciado alrededor del contenido */
     width: 100%; /* Ajuste para que ocupe todo el ancho de la pantalla */
     box-sizing: border-box; /* Incluye el padding dentro del ancho total */
     flex-grow: 1; /* Asegura que la sección hero ocupe el espacio disponible */
 }
 
 .hero .text-content {
-    flex: 1;
-    text-align: left;
-    max-width: 100%; /* Evita que el texto se desborde */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 2em; /* Espacio entre el texto y la imagen */
 }
 
 .hero .image-content {
-    flex: 1; /* Asegura que la imagen ocupe el mismo espacio que el texto */
     display: flex;
-    justify-content: flex-end; /* Alinea la imagen a la derecha */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    text-align: center; /* Alinea el contenido dentro del contenedor */
 }
 
 .hero .image-content img {
-    max-width: 100%;
-    height: auto;
-    margin-left: 2em; /* Ajusta el espacio entre el texto y la imagen */
+    max-width: 30px; 
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    display: block; /* Elimina el espacio extra si está en línea */
+     margin: 0 auto;
 }
+
 
 /* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -140,7 +143,7 @@ html, body {
     }
 
     .hero .image-content {
-        margin-top: 1em; /* Da un poco de espacio encima de la imagen */
+        margin-top: 10em; /* Da un poco de espacio encima de la imagen */
     }
 
     .hero .text-content {

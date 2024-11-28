@@ -143,5 +143,48 @@ footer {
     background-color: #f8f8f8;
     border-top: 1px solid #ddd;
 }
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajusta la barra de navegación */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    /* Ajusta la sección principal */
+    .hero {
+        flex-direction: column; /* Cambia a diseño vertical */
+        text-align: center;
+    }
+
+    .hero .text-content {
+        margin-bottom: 1em; /* Agrega espacio entre el texto y la imagen */
+    }
+
+    .hero .image-content {
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+
+    /* Ajusta las listas de la sección material */
+    .material ul {
+        gap: 0.8em;
+    }
+
+    /* Ajusta el tamaño del texto en contacto */
+    .contacto p.small-text {
+        font-size: 0.8em; /* Aumenta el tamaño del texto */
+    }
+
+    /* Ajusta los encabezados */
+    .hero h1 {
+        font-size: 1.5em; /* Reduce el tamaño del encabezado */
+    }
+}
 
 

@@ -116,7 +116,7 @@ html, body {
 
 .hero .image-content img {
     max-width: 30px; 
-    max-width: 100%; /* Hace que la imagen sea responsiva */
+    max-width: 90%; /* Hace que la imagen sea responsiva */
     height: auto; /* Mantiene las proporciones de la imagen */
     display: block; /* Elimina el espacio extra si está en línea */
      margin: 0 auto;
@@ -143,7 +143,7 @@ html, body {
     }
 
     .hero .image-content {
-        margin-top: 10em; /* Da un poco de espacio encima de la imagen */
+        margin-top: 5em; /* Da un poco de espacio encima de la imagen */
     }
 
     .hero .text-content {

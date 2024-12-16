@@ -1,0 +1,5 @@
+Python:
+print(18.0 // 4) sale en pantalla 4.0,porque hace una division trucada.
+para hacer un numero elevado en python es asi:
+
+print(4 **2) esto imprime 16.

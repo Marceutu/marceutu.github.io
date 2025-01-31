@@ -14,9 +14,9 @@ html, body {
     width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
     max-width: 100%; /* Evita que el contenedor se expanda más allá del ancho de la pantalla */
     margin: 0 auto; /* Centra el contenido */
-    padding: 0 1em; /* Relleno de los lados */
+    padding: 1 1em; /* Relleno de los lados */
     box-sizing: border-box; /* Incluye el relleno en el cálculo del ancho */
-    min-height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    min-height: 50%; /* Asegura que el contenedor ocupe toda la altura disponible */
     display: flex;
     flex-direction: column; /* Alinea los elementos verticalmente */
 }

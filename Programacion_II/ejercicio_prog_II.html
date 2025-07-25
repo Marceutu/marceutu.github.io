@@ -1,148 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
 
-        .navbar {
-            background-color: #F0F9E6; /* Fondo blanco del banner */
-            overflow: hidden;
-        }
+    .navbar {
+      background-color: #F0F9E6;
+      overflow: hidden;
+    }
 
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
 
-        .navbar li {
-            margin: 0 15px;
-        }
+    .navbar li {
+      margin: 0 15px;
+    }
 
-        .navbar a {
-            text-decoration: none;
-            color: #000000; /* Palabras en negro */
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease; /* Transición suave */
-        }
+    .navbar a {
+      text-decoration: none;
+      color: #000000;
+      padding: 14px 20px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
 
-        .navbar a:hover {
-            background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
-        }
+    .navbar a:hover {
+      background-color: #fcf5c7;
+    }
 
-        .navbar a:active {
-            background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-        }
+    .navbar a:active {
+      background-color: #b2ebf2;
+    }
 
-        .centrado {
-            padding: 20px;
-        }
+    .centrado {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
 
-        .columnas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
+    .columnas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1100px;
+      width: 100%;
+      justify-content: center;
+    }
 
-        .columna {
-            flex: 1 1 calc(66.666% - 30px); /* Ajusta el ancho para que el texto ocupe más espacio */
-            background-color: #ffffff;
-            border: 5px solid #ddd;
-            border-radius: 3px;
-            padding: 45px;
-            box-shadow: 1 2px 7px rgba(0, 0, 0, 0.1);
-        }
+    .columna {
+      flex: 0 0 48%;
+      background-color: #ffffff;
+      border: 3px solid #ddd;
+      border-radius: 4px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        .columna h4 {
-            margin-top: 0;
-            color: #333;
-        }
+    .columna h4 {
+      margin-top: 0;
+      color: #333;
+    }
 
-        .columna a {
-            text-decoration: none;
-            color: #0e055e;
-            display: block;
-            margin-top: 10px;
-        }
+    .columna a {
+      text-decoration: none;
+      color: #0e055e;
+      display: block;
+      margin-top: 10px;
+    }
 
-        .columna a:hover {
-            text-decoration: underline;
-        }
+    .columna a:hover {
+      text-decoration: underline;
+    }
 
-        /* Alineación del texto y la imagen */
-        .content {
-            display: flex; /* Utiliza flexbox para alinear el texto y la imagen horizontalmente */
-            justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
-            align-items: center; /* Alinea verticalmente al centro */
-        }
-
-        .content .text {
-            flex: 1; /* El texto ocupará el 75% del espacio */
-        }
-
-        .content .image-content {
-            margin-left: 20px; /* Margen de separación entre el texto y la imagen */
-            flex: 0 1 30%; /* La imagen ocupará el 30% del espacio disponible */
-        }
-
-        .content img {
-            max-width: 100%; /* Ajusta el tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-        }
-
-    </style>
+    @media (max-width: 768px) {
+      .columna {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="prog_II.html">Programación Avanzada</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="prog_II.html">Programación Avanzada</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="centrado">
-        <div class="columnas">
-            <!-- Primera columna para los primeros tres prácticos -->
-            <div class="columna">
-                <div class="content">
-                    <div class="text">
-                        <center><b><h4>Ejercicio</h4></b>
-                        <p><a href="https://drive.google.com/file/d/1r5wP8J09djNlBF9UHbhdybLKe1DGLhKv/view?usp=sharing" style="color:#0e055e;">Ejercicio Repaso</a></p>
-						 <center><b><h4>Ejercicio clase 20-03</h4></b>
-                        <p><a href="https://drive.google.com/file/d/18Pie63p4uHL0-8nDr1L5SQfnKq-eWZcw/view?usp=sharing" style="color:#0e055e;">Clase Persona</a></p>
-						<center><b><h4>Ejercicio de dos capas</h4></b>
-                        <p><a href="https://drive.google.com/file/d/1LSrfn5W9Dzv-ApzId8WQ97U7NpFnveUi/view?usp=sharing" style="color:#0e055e;">Capa lógica  y Capa presentación</a></p>       
-                         <p><a href="https://drive.google.com/file/d/1l671oQXVvxNWJ4KG6PJwCEWQozF4fmJl/view?usp=sharing" style="color:#0e055e;">Pasaje de información entre ventanas</a></p>   
-				 </div>
-				  </div>
-				 </div>
-			     <div class="columna">
-				 <div class="content">
-				 <div class="text">
-						<center><b><h4>Ejercicios UML</h4></b>
-                        <p><a href="https://drive.google.com/file/d/18D0gZfpTrCLYJFNYpskYnh6F9cp5e1zf/view?usp=sharing" style="color:#0e055e;"> UML </a></p>
-						 <p><a href="https://drive.google.com/file/d/1LnBNZ71R_020RYD8diz5ZrFCdGrzjybw/view?usp=sharing" style="color:#0e055e;">Ejemplo de proyecto</a></p>
-						 <p><a href="https://drive.google.com/file/d/1vHAdbi9S_KRIIj9PWpOWnaqG_GASrGZ_/view?usp=sharing" style="color:#0e055e;"> Proyecto Pokémon </a></p>
-				         <p><a href="https://drive.google.com/file/d/1rAudh1RWrn8Q350ND8C7v82hTrUYLSzB/view?usp=sharing" style="color:#0e055e;"> Ejercicio Productos </a></p>
-                       
-                </div>
-            </div>
-        </div>
-		
+  <div class="centrado">
+    <div class="columnas">
+      <!-- Columna 1 -->
+      <div class="columna">
+        <h4><strong>Ejercicio</strong></h4>
+        <p><a href="https://drive.google.com/file/d/1r5wP8J09djNlBF9UHbhdybLKe1DGLhKv/view?usp=sharing">Ejercicio Repaso</a></p>
+
+        <h4><strong>Ejercicio clase 20-03</strong></h4>
+        <p><a href="https://drive.google.com/file/d/18Pie63p4uHL0-8nDr1L5SQfnKq-eWZcw/view?usp=sharing">Clase Persona</a></p>
+
+        <h4><strong>Ejercicio de dos capas</strong></h4>
+        <p><a href="https://drive.google.com/file/d/1LSrfn5W9Dzv-ApzId8WQ97U7NpFnveUi/view?usp=sharing">Capa lógica y Capa presentación</a></p>
+        <p><a href="https://drive.google.com/file/d/1l671oQXVvxNWJ4KG6PJwCEWQozF4fmJl/view?usp=sharing">Pasaje de información entre ventanas</a></p>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="columna">
+        <h4><strong>Ejercicios UML</strong></h4>
+        <p><a href="https://drive.google.com/file/d/18D0gZfpTrCLYJFNYpskYnh6F9cp5e1zf/view?usp=sharing">UML</a></p>
+        <p><a href="https://drive.google.com/file/d/1LnBNZ71R_020RYD8diz5ZrFCdGrzjybw/view?usp=sharing">Ejemplo de proyecto</a></p>
+        <p><a href="https://drive.google.com/file/d/1vHAdbi9S_KRIIj9PWpOWnaqG_GASrGZ_/view?usp=sharing">Proyecto Pokémon</a></p>
+        <p><a href="https://drive.google.com/file/d/1rAudh1RWrn8Q350ND8C7v82hTrUYLSzB/view?usp=sharing">Ejercicio Productos</a></p>
+      </div>
     </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTU Code Challenge - Bachillerato en Informática</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .game-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '🚀';
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            font-size: 24px;
+        }
+        
+        .header::after {
+            content: '💻';
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            font-size: 24px;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3436;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #636e72;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .level-bar {
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        
+        .level-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00b894, #00cec9);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .question-container {
+            padding: 30px;
+        }
+        
+        .company-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .question-type {
+            background: #74b9ff;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 4px solid #4299e1;
+        }
+        
+        .options {
+            display: grid;
+            gap: 12px;
+            margin: 25px 0;
+        }
+        
+        .option {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 15px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 15px;
+            position: relative;
+        }
+        
+        .option:hover {
+            border-color: #6c5ce7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.15);
+        }
+        
+        .option.correct {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            border-color: #00b894;
+        }
+        
+        .option.incorrect {
+            background: linear-gradient(135deg, #e17055, #d63031);
+            color: white;
+            border-color: #d63031;
+        }
+        
+        .option.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .feedback {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-left: 5px solid #28a745;
+        }
+        
+        .feedback.incorrect {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-left: 5px solid #dc3545;
+        }
+        
+        .feedback-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .feedback-text {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .real-world {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .real-world-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .real-world-text {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .next-btn {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.3);
+        }
+        
+        .achievement {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+        }
+        
+        .achievement.show {
+            transform: translateX(0);
+        }
+        
+        .final-screen {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .final-screen.active {
+            display: block;
+        }
+        
+        .final-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+        
+        .final-score {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .career-paths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .career-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #6c5ce7;
+        }
+        
+        .career-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+        
+        .career-description {
+            color: #636e72;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .game-container {
+                margin: 10px;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .question-container {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="title">UTU Code Challenge</h1>
+            <p class="subtitle">Bachillerato en Informática - ¡Demuestra tu potencial!</p>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Puntos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="level">1</div>
+                <div class="stat-label">Nivel</div>
+                <div class="level-bar">
+                    <div class="level-progress" id="level-progress"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">Racha</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="question-counter">1/15</div>
+                <div class="stat-label">Pregunta</div>
+            </div>
+        </div>
+        
+        <div class="question-container" id="question-container">
+            <!-- Las preguntas se cargarán aquí -->
+        </div>
+        
+        <div class="final-screen" id="final-screen">
+            <div class="final-title">🎉 ¡Felicitaciones!</div>
+            <div class="final-score" id="final-score">0</div>
+            <p>Has completado el UTU Code Challenge. Tu futuro en la informática se ve brillante.</p>
+            
+            <div class="career-paths">
+                <div class="career-card">
+                    <div class="career-title">🚀 Desarrollador Full Stack</div>
+                    <div class="career-description">Crea aplicaciones completas desde el frontend hasta el backend. Empresas como MercadoLibre y Globant buscan estos perfiles.</div>
+                </div>
+                <div class="career-card">
+                    <div class="career-title">🤖 Ingeniero de Software</div>
+                    <div class="career-description">Diseña sistemas complejos y escalables. Pedidos Ya y dLocal necesitan estos especialistas.</div>
+                </div>
+                <div class="career-card">
+                    <div class="career-title">📊 Analista de Datos</div>
+                    <div class="career-description">Convierte datos en decisiones inteligentes. Bancos como Santander y BROU valoran estas habilidades.</div>
+                </div>
+            </div>
+            
+            <button class="next-btn" onclick="restartGame()" style="display: inline-block; margin-top: 30px;">Jugar Nuevamente</button>
+        </div>
+    </div>
+    
+    <div class="achievement" id="achievement">
+        <div style="font-weight: 700; margin-bottom: 5px;">🏆 ¡Logro Desbloqueado!</div>
+        <div id="achievement-text"></div>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        let level = 1;
+        let streak = 0;
+        let answeredQuestions = [];
+        
+        const questions = [
+            {
+                type: "POO",
+                company: "MercadoLibre",
+                question: "En MercadoLibre, cada producto tiene propiedades como precio, nombre y stock. ¿Cuál es la mejor forma de representar esto en POO?",
+                code: `class Producto {
+    constructor(nombre, precio, stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+}`,
+                options: [
+                    "Crear una clase Producto con propiedades encapsuladas",
+                    "Usar variables globales para cada producto",
+                    "Crear funciones separadas para cada propiedad",
+                    "Usar arrays para almacenar toda la información"
+                ],
+                correct: 0,
+                explanation: "¡Correcto! Una clase permite encapsular las propiedades y comportamientos de un producto, facilitando el mantenimiento y la escalabilidad del código.",
+                realWorld: "En MercadoLibre manejan millones de productos. Usar POO les permite crear, modificar y gestionar productos de forma eficiente y organizada."
+            },
+            {
+                type: "Lógica",
+                company: "Pedidos Ya",
+                question: "Un repartidor de Pedidos Ya debe entregar 5 pedidos. Si tarda 15 minutos por pedido y tiene 2 horas disponibles, ¿puede completar todas las entregas?",
+                options: [
+                    "Sí, le sobran 45 minutos",
+                    "No, le faltan 15 minutos",
+                    "Sí, justo en 2 horas",
+                    "No, le faltan 30 minutos"
+                ],
+                correct: 1,
+                explanation: "¡Correcto! 5 pedidos × 15 minutos = 75 minutos. Como tiene 120 minutos (2 horas), le faltan 15 minutos para completar todo.",
+                realWorld: "Los algoritmos de optimización de rutas en Pedidos Ya calculan tiempos reales considerando tráfico, distancias y capacidad de los repartidores."
+            },
+            {
+                type: "POO",
+                company: "Globant",
+                question: "En Globant desarrollan un sistema bancario. ¿Cuál es el principio de POO que mejor protege los datos sensibles de una cuenta?",
+                code: `class CuentaBancaria {
+    #saldo;  // Propiedad privada
+    
+    constructor(saldoInicial) {
+        this.#saldo = saldoInicial;
+    }
+    
+    getSaldo() {
+        return this.#saldo;
+    }
+}`,
+                options: [
+                    "Herencia",
+                    "Polimorfismo",
+                    "Encapsulamiento",
+                    "Abstracción"
+                ],
+                correct: 2,
+                explanation: "¡Excelente! El encapsulamiento protege los datos sensibles haciéndolos privados y controlando el acceso a través de métodos públicos.",
+                realWorld: "En sistemas bancarios reales, el encapsulamiento es crucial para la seguridad. Protege información como saldos, números de cuenta y datos personales."
+            },
+            {
+                type: "Matemáticas",
+                company: "dLocal",
+                question: "dLocal procesa pagos internacionales. Si una transacción de $100 USD tiene una comisión del 3.5%, ¿cuál es el monto final que recibe el comercio?",
+                options: [
+                    "$96.50",
+                    "$103.50",
+                    "$95.50",
+                    "$97.50"
+                ],
+                correct: 0,
+                explanation: "¡Perfecto! $100 - ($100 × 0.035) = $100 - $3.50 = $96.50",
+                realWorld: "dLocal maneja millones de transacciones diarias. Los cálculos precisos de comisiones y conversiones de moneda son fundamentales para su negocio."
+            },
+            {
+                type: "POO",
+                company: "Tata Consultancy Services",
+                question: "TCS desarrolla un sistema de empleados. ¿Qué concepto de POO permite que Desarrollador y Diseñador hereden de Empleado?",
+                code: `class Empleado {
+    constructor(nombre, salario) {
+        this.nombre = nombre;
+        this.salario = salario;
+    }
+}
+
+class Desarrollador extends Empleado {
+    constructor(nombre, salario, lenguajes) {
+        super(nombre, salario);
+        this.lenguajes = lenguajes;
+    }
+}`,
+                options: [
+                    "Encapsulamiento",
+                    "Herencia",
+                    "Polimorfismo",
+                    "Composición"
+                ],
+                correct: 1,
+                explanation: "¡Correcto! La herencia permite que las clases hijas (Desarrollador, Diseñador) reutilicen código de la clase padre (Empleado).",
+                realWorld: "En TCS gestionan miles de empleados con diferentes roles. La herencia les permite mantener código organizado y reutilizable."
+            },
+            {
+                type: "Lógica",
+                company: "Banco Santander",
+                question: "Un cliente del Santander quiere un préstamo. Si gana $50,000 al mes y puede comprometer máximo el 30% de sus ingresos, ¿cuál es la cuota máxima mensual?",
+                options: [
+                    "$15,000",
+                    "$12,000",
+                    "$18,000",
+                    "$20,000"
+                ],
+                correct: 0,
+                explanation: "¡Excelente! $50,000 × 0.30 = $15,000 es la cuota máxima mensual que puede pagar.",
+                realWorld: "Los bancos usan algoritmos complejos para evaluar la capacidad de pago, considerando ingresos, gastos, historial crediticio y riesgo."
+            },
+            {
+                type: "POO",
+                company: "Antel",
+                question: "Antel gestiona diferentes tipos de planes (Móvil, Fibra, TV). ¿Qué permite que el método calcularCosto() funcione diferente para cada plan?",
+                code: `class Plan {
+    calcularCosto() {
+        // Método base
+    }
+}
+
+class PlanMovil extends Plan {
+    calcularCosto() {
+        return this.minutos * 0.5;
+    }
+}
+
+class PlanFibra extends Plan {
+    calcularCosto() {
+        return this.velocidad * 10;
+    }
+}`,
+                options: [
+                    "Herencia",
+                    "Encapsulamiento",
+                    "Polimorfismo",
+                    "Abstracción"
+                ],
+                correct: 2,
+                explanation: "¡Perfecto! El polimorfismo permite que el mismo método (calcularCosto) se comporte diferente según el tipo de objeto.",
+                realWorld: "Antel maneja múltiples servicios con diferentes formas de facturación. El polimorfismo simplifica el código y facilita agregar nuevos planes."
+            },
+            {
+                type: "Matemáticas",
+                company: "UTE",
+                question: "UTE cobra la energía por escalones. Los primeros 150 kWh cuestan $3 c/u, el resto $5 c/u. Si consumes 200 kWh, ¿cuánto pagas?",
+                options: [
+                    "$700",
+                    "$800",
+                    "$900",
+                    "$1000"
+                ],
+                correct: 1,
+                explanation: "¡Correcto! Primeros 150 kWh: 150 × $3 = $450. Siguientes 50 kWh: 50 × $5 = $250. Total: $450 + $250 = $700",
+                realWorld: "Los sistemas de facturación por escalones requieren algoritmos que calculen automáticamente los costos según el consumo de cada cliente."
+            },
+            {
+                type: "Lógica",
+                company: "OSE",
+                question: "OSE detecta una fuga que pierde 50 litros por hora. Si el tanque tiene 10,000 litros, ¿en cuántas horas se vacía completamente?",
+                options: [
+                    "150 horas",
+                    "200 horas",
+                    "250 horas",
+                    "300 horas"
+                ],
+                correct: 1,
+                explanation: "¡Excelente! 10,000 litros ÷ 50 litros/hora = 200 horas para vaciarse completamente.",
+                realWorld: "OSE usa sensores IoT y algoritmos para detectar fugas automáticamente, calculando pérdidas y priorizando reparaciones según el impacto."
+            },
+            {
+                type: "POO",
+                company: "Banco República",
+                question: "BROU implementa un sistema de tarjetas. ¿Cuál es la ventaja de usar una interfaz común para diferentes tipos de tarjetas?",
+                code: `interface Tarjeta {
+    procesarPago(monto);
+    verificarFondos();
+}
+
+class TarjetaDebito implements Tarjeta {
+    procesarPago(monto) {
+        // Descuenta de cuenta corriente
+    }
+}
+
+class TarjetaCredito implements Tarjeta {
+    procesarPago(monto) {
+        // Usa línea de crédito
+    }
+}`,
+                options: [
+                    "Permite tratar todas las tarjetas de forma uniforme",
+                    "Reduce el uso de memoria",
+                    "Acelera el procesamiento",
+                    "Simplifica la base de datos"
+                ],
+                correct: 0,
+                explanation: "¡Correcto! Las interfaces permiten que diferentes tipos de tarjetas se usen de manera uniforme, sin importar su implementación interna.",
+                realWorld: "BROU procesa miles de transacciones diarias con diferentes tipos de tarjetas. Las interfaces facilitan el mantenimiento y la adición de nuevos tipos."
+            },
+            {
+                type: "Matemáticas",
+                company: "Abitab",
+                question: "Abitab cobra $50 de comisión por transferencias hasta $5,000 y $100 por montos mayores. ¿Cuánto cobra por una transferencia de $7,500?",
+                options: [
+                    "$50",
+                    "$75",
+                    "$100",
+                    "$150"
+                ],
+                correct: 2,
+                explanation: "¡Perfecto! Como $7,500 > $5,000, se aplica la comisión de $100 para montos mayores.",
+                realWorld: "Los sistemas de comisiones variables requieren lógica condicional para aplicar las tarifas correctas según el monto de cada transacción."
+            },
+            {
+                type: "Lógica",
+                company: "Redpagos",
+                question: "Redpagos procesa 1,000 transacciones por minuto en hora pico. Si cada transacción toma 0.5 segundos, ¿cuántos servidores necesitan mínimo?",
+                options: [
+                    "8 servidores",
+                    "9 servidores",
+                    "10 servidores",
+                    "12 servidores"
+                ],
+                correct: 1,
+                explanation: "¡Excelente! 1,000 transacciones × 0.5 segundos = 500 segundos de procesamiento por minuto. 500 ÷ 60 = 8.33, por lo que necesitan mínimo 9 servidores.",
+                realWorld: "El dimensionamiento de infraestructura es crucial en fintech. Los algoritmos de balanceamiento distribuyen la carga entre servidores para mantener el rendimiento."
+            },
+            {
+                type: "POO",
+                company: "Zonamerica",
+                question: "En Zonamerica desarrollan un sistema de acceso. ¿Qué patrón de diseño es mejor para crear diferentes tipos de tarjetas de acceso?",
+                code: `class FabricaTarjetas {
+    static crearTarjeta(tipo) {
+        switch(tipo) {
+            case 'empleado':
+                return new TarjetaEmpleado();
+            case 'visitante':
+                return new TarjetaVisitante();
+            case 'contratista':
+                return new TarjetaContratista();
+        }
+    }
+}`,
+                options: [
+                    "Singleton",
+                    "Observer",
+                    "Factory",
+                    "Strategy"
+                ],
+                correct: 2,
+                explanation: "¡Correcto! El patrón Factory permite crear diferentes tipos de objetos sin especificar sus clases exactas, ideal para tarjetas de acceso.",
+                realWorld: "En complejos empresariales como Zonamerica, el patrón Factory facilita la gestión de diferentes tipos de accesos y permisos de seguridad."
+            },
+            {
+                type: "Matemáticas",
+                company: "Plan Ceibal",
+                question: "Plan Ceibal distribuye tablets. Si tienen 50,000 tablets y deben cubrir 1,250 escuelas equitativamente, ¿cuántas tablets por escuela?",
+                options: [
+                    "35 tablets",
+                    "40 tablets",
+                    "45 tablets",
+                    "50 tablets"
+                ],
+                correct: 1,
+                explanation: "¡Perfecto! 50,000 tablets ÷ 1,250 escuelas = 40 tablets por escuela.",
+                realWorld: "Plan Ceibal usa algoritmos de optimización para distribuir recursos educativos de manera equitativa, considerando matrícula y necesidades específicas."
+            },
+            {
+                type: "Lógica",
+                company: "Ministerio de Salud",
+                question: "El sistema de vacunación debe procesar 10,000 turnos diarios. Si cada turno toma 3 minutos y trabajan 8 horas, ¿cuántos vacunatorios necesitan mínimo?",
+                options: [
+                    "60 vacunatorios",
+                    "63 vacunatorios",
+                    "65 vacunatorios",
+                    "70 vacunatorios"
+                ],
+                correct: 1,
+                explanation: "¡Excelente! 10,000 turnos × 3 minutos = 30,000 minutos. 8 horas = 480 minutos por vacunatorio. 30,000 ÷ 480 = 62.5, necesitan mínimo 63 vacunatorios.",
+                realWorld: "Durante la pandemia, los sistemas de gestión de turnos fueron cruciales para optimizar recursos y garantizar una vacunación eficiente a nivel nacional."
+            }
+        ];
+        
+        const achievements = [
+            { score: 100, text: "¡Primera sangre! 🎯" },
+            { score: 300, text: "¡Racha de fuego! 🔥" },
+            { score: 500, text: "¡Genio de la lógica! 🧠" },
+            { score: 800, text: "¡Maestro POO! 👑" },
+            { score: 1200, text: "¡Futuro ingeniero! 🚀" }
+        ];
+        
+        function loadQuestion() {
+            if (currentQuestion >= questions.length) {
+                showFinalScreen();
+                return;
+            }
+            
+            const question = questions[currentQuestion];
+            const container = document.getElementById('question-container');
+            
+            container.innerHTML = `
+                <div class="company-badge">💼 ${question.company}</div>
+                <div class="question-type">${question.type}</div>
+                <div class="question-text">${question.question}</div>
+                ${question.code ? `<div class="code-block">${question.code}</div>` : ''}
+                <div class="options" id="options">
+                    ${question.options.map((option, index) => 
+                        `<div class="option" onclick="selectOption(${index})">${option}</div>`
+                    ).join('')}
+                </div>
+                <div class="feedback" id="feedback"></div>
+                <button class="next-btn" id="next-btn" onclick="nextQuestion()">Siguiente Pregunta</button>
+            `;
+            
+            updateStats();
+        }
+        
+        function selectOption(selectedIndex) {
+            const question = questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+            const feedback = document.getElementById('feedback');
+            const nextBtn = document.getElementById('next-btn');
+            
+            options.forEach(option => option.classList.add('disabled'));
+            
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                score += 100;
+                streak++;
+                
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `
+                    <div class="feedback-title">🎉 ¡Correcto!</div>
+                    <div class="feedback-text">${question.explanation}</div>
+                    <div class="real-world">
+                        <div class="real-world-title">🌍 En el mundo real:</div>
+                        <div class="real-world-text">${question.realWorld}</div>
+                    </div>
+                `;
+                
+                checkAchievements();
+            } else {
+                options[selectedIndex].classList.add('incorrect');
+                options[question.correct].classList.add('correct');
+                streak = 0;
+                
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `
+                    <div class="feedback-title">❌ Incorrecto</div>
+                    <div class="feedback-text">${question.explanation}</div>
+                    <div class="real-world">
+                        <div class="real-world-title">🌍 En el mundo real:</div>
+                        <div class="real-world-text">${question.realWorld}</div>
+                    </div>
+                `;
+            }
+            
+            feedback.style.display = 'block';
+            nextBtn.style.display = 'inline-block';
+            updateStats();
+        }
+        
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+        
+        function updateStats() {
+            document.getElementById('score').textContent = score;
+            document.getElementById('level').textContent = Math.floor(score / 300) + 1;
+            document.getElementById('streak').textContent = streak;
+            document.getElementById('question-counter').textContent = `${currentQuestion + 1}/${questions.length}`;
+            
+            const progress = ((score % 300) / 300) * 100;
+            document.getElementById('level-progress').style.width = progress + '%';
+        }
+        
+        function checkAchievements() {
+            achievements.forEach(achievement => {
+                if (score >= achievement.score && !answeredQuestions.includes(achievement.score)) {
+                    showAchievement(achievement.text);
+                    answeredQuestions.push(achievement.score);
+                }
+            });
+        }
+        
+        function showAchievement(text) {
+            const achievement = document.getElementById('achievement');
+            document.getElementById('achievement-text').textContent = text;
+            achievement.classList.add('show');
+            
+            setTimeout(() => {
+                achievement.classList.remove('show');
+            }, 3000);
+        }
+        
+        function showFinalScreen() {
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('final-screen').classList.add('active');
+            document.getElementById('final-score').textContent = score + ' puntos';
+        }
+        
+        function restartGame() {
+            currentQuestion = 0;
+            score = 0;
+            streak = 0;
+            answeredQuestions = [];
+            
+            document.getElementById('question-container').style.display = 'block';
+            document.getElementById('final-screen').classList.remove('active');
+            
+            loadQuestion();
+        }
+        
+        // Inicializar el juego
+        loadQuestion();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96fb4e9a55c090c1',t:'MTc1NTI4ODMyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

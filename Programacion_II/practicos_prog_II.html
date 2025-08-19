@@ -9,11 +9,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
+            background-color: #ffffff;
         }
 
         .navbar {
-            background-color: #F0F9E6; /* Fondo blanco del banner */
+            background-color: #F0F9E6;
             overflow: hidden;
         }
 
@@ -31,18 +31,18 @@
 
         .navbar a {
             text-decoration: none;
-            color: #000000; /* Palabras en negro */
+            color: #000000;
             padding: 14px 20px;
             display: block;
-            transition: background-color 0.3s ease; /* Transición suave */
+            transition: background-color 0.3s ease;
         }
 
         .navbar a:hover {
-            background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
+            background-color: #fcf5c7;
         }
 
         .navbar a:active {
-            background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
+            background-color: #b2ebf2;
         }
 
         .centrado {
@@ -51,56 +51,37 @@
 
         .columnas {
             display: flex;
-            flex-wrap: wrap;
             gap: 20px;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .columna {
-            flex: 1 1 calc(66.666% - 30px); /* Ajusta el ancho para que el texto ocupe más espacio */
+            flex: 1;
             background-color: #ffffff;
-            border: 5px solid #ddd;
+            border: 2px solid #ddd;
             border-radius: 3px;
-            padding: 45px;
-            box-shadow: 1 2px 7px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centrar títulos y links */
         }
 
         .columna h4 {
             margin-top: 0;
+            margin-bottom: 10px;
             color: #333;
         }
 
         .columna a {
             text-decoration: none;
             color: #0e055e;
-            display: block;
-            margin-top: 10px;
+            display: block; /* Asegura que quede debajo */
+            margin-bottom: 20px;
         }
 
         .columna a:hover {
             text-decoration: underline;
         }
-
-        /* Alineación del texto y la imagen */
-        .content {
-            display: flex; /* Utiliza flexbox para alinear el texto y la imagen horizontalmente */
-            justify-content: flex-start; /* Alinea al principio */
-            align-items: flex-start; /* Alinea verticalmente al principio */
-        }
-
-        .content .text {
-            flex: 1; /* El texto ocupará el 50% del espacio */
-        }
-
-        .content .image-content {
-            margin-left: 2px; /* Margen de separación entre el texto y la imagen */
-        }
-
-        .content img {
-            max-width: 100%; /* Ajusta el tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-        }
-
     </style>
 </head>
 <body>
@@ -115,32 +96,23 @@
 
     <div class="centrado">
         <div class="columnas">
+            <!-- Columna izquierda (Prácticos) -->
             <div class="columna">
-                <!-- Contenido de los prácticos -->
-                <div class="content">
-                    <div class="text">
-                        <center><b><h4>Primer Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/1vKUt97ESU45ovIRj5P5EZTP-oql5MZOC/view?usp=sharing" style="color:#0e055e;">Práctico I</a>    
-                </div>
-				  <div class="text">
-                        <center><b><h4>Práctico Herencia</h4></b>
-                       
-						<a href="https://drive.google.com/file/d/1Xf-EJ6S0dMr_YHydxF67sceMI0UymKBp/view?usp=sharing" style="color:#0e055e;">Práctico Herencia</a>
-						<a href="https://drive.google.com/file/d/1kheuowzD4qFRGzIx4ha2Yn2nXrpFt5w6/view?usp=sharing" style="color:#0e055e;">Ejercicio Herencia</a>
-						<a href="https://drive.google.com/file/d/1adqyk6Rb9RfgARLUT7zrL75vn1xKiGf0/view?usp=sharing" style="color:#0e055e;">Ejercicio</a>
-                </div>
-				
-			<center><b><h4>Juego de preguntas</h4></b>
+                <h4>Primer Práctico</h4>
+                <a href="https://drive.google.com/file/d/1vKUt97ESU45ovIRj5P5EZTP-oql5MZOC/view?usp=sharing" target="_blank">Práctico I</a>    
 
-                       <p><a href="Juego_prog_II.html" target="_blank" style="color:#0e055e;">Programación</a></p>
-	
-						
-                       
-                   
-                </div>
+                <h4>Práctico Herencia</h4>
+                <a href="https://drive.google.com/file/d/1Xf-EJ6S0dMr_YHydxF67sceMI0UymKBp/view?usp=sharing" target="_blank">Práctico Herencia</a>
+            </div>
+
+            <!-- Columna derecha (Juego de preguntas) -->
+            <div class="columna">
+                <h4>Juego de preguntas</h4>
+                <a href="Juego_prog_II.html" target="_blank">Programación</a>
             </div>
         </div>
     </div>
-
 </body>
 </html>
+
+

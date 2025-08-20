@@ -1,133 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
 
-        .navbar {
-            background-color: #F0F9E6; /* Fondo blanco del banner */
-            overflow: hidden;
-        }
+    .navbar {
+      background-color: #F0F9E6;
+      overflow: hidden;
+    }
 
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
 
-        .navbar li {
-            margin: 0 15px;
-        }
+    .navbar li {
+      margin: 0 15px;
+    }
 
-        .navbar a {
-            text-decoration: none;
-            color: #000000; /* Palabras en negro */
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease; /* Transición suave */
-        }
+    .navbar a {
+      text-decoration: none;
+      color: #000000;
+      padding: 14px 20px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
 
-        .navbar a:hover {
-            background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
-        }
+    .navbar a:hover {
+      background-color: #fcf5c7;
+    }
 
-        .navbar a:active {
-            background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-        }
+    .navbar a:active {
+      background-color: #b2ebf2;
+    }
 
-        .centrado {
-            padding: 20px;
-        }
+    .centrado {
+      padding: 20px;
+    }
 
-        .columnas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
+    .columnas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: stretch;
+    }
 
-        .columna {
-            flex: 1 1 calc(66.666% - 30px); /* Ajusta el ancho para que el texto ocupe más espacio */
-            background-color: #ffffff;
-            border: 5px solid #ddd;
-            border-radius: 3px;
-            padding: 45px;
-            box-shadow: 1 2px 7px rgba(0, 0, 0, 0.1);
-        }
+    .columna {
+      flex: 1 1 calc(50% - 20px);
+      background-color: #ffffff;
+      border: 3px solid #ddd;
+      border-radius: 4px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center; /* 👈 centra títulos y links */
+    }
 
-        .columna h4 {
-            margin-top: 0;
-            color: #333;
-        }
+    .columna h4 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      color: #333;
+      font-size: 14px; /* más chico que los links */
+      line-height: 1.2;
+    }
 
-        .columna a {
-            text-decoration: none;
-            color: #0e055e;
-            display: block;
-            margin-top: 10px;
-        }
+    .columna a {
+      text-decoration: none;
+      color: #0e055e;
+      display: block;
+      margin-bottom: 12px;
+      font-size: 15px; /* un poquito más grande que los títulos */
+    }
 
-        .columna a:hover {
-            text-decoration: underline;
-        }
+    .columna a:hover {
+      text-decoration: underline;
+    }
 
-        /* Alineación del texto y la imagen */
-        .content {
-            display: flex; /* Utiliza flexbox para alinear el texto y la imagen horizontalmente */
-            justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
-            align-items: center; /* Alinea verticalmente al centro */
-        }
-
-        .content .text {
-            flex: 1; /* El texto ocupará el 75% del espacio */
-        }
-
-        .content .image-content {
-            margin-left: 20px; /* Margen de separación entre el texto y la imagen */
-            flex: 0 1 30%; /* La imagen ocupará el 30% del espacio disponible */
-        }
-
-        .content img {
-            max-width: 100%; /* Ajusta el tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-        }
-
-    </style>
+    @media (max-width: 768px) {
+      .columna {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="Tutoria_Proyecto.html">Tutoría de Proyecto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="Tutoria_Proyecto.html">Tutoría de Proyecto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="centrado">
-        <div class="columnas">
-            <!-- Primera columna para los primeros tres prácticos -->
-            <div class="columna">
-                <div class="content">
-                    <div class="text">
-                        <center><b><h4>Ejercicios</h4></b>
-                        <p><a href="https://drive.google.com/file/d/1llFhJoziKyhuYhjoc6Zijy4nb5Pa-hRS/view?usp=sharing" style="color:#0e055e;">Ejercicio Equipos</a></p>
-						<p><a href="https://drive.google.com/file/d/18OGKb4AQ0AczTLocFYQiEIQlDYMVgvM6/view?usp=sharing" style="color:#0e055e;">Ejercicio para definir roles</a></p>
-						<p><a href="https://drive.google.com/file/d/1Hgd0vHNpxDI6cWyiGS3YbOqRswxzgPW9/view?usp=sharing" style="color:#0e055e;">Ejercicios ISO-9001</a></p>
-                       <p><a href="https://drive.google.com/file/d/1FKhFP98CGYXAhYr0EMazsYjnAjGM8teq/view?usp=sharing" style="color:#0e055e;">Ejercicio sobre todo lo trabajado</a></p>
-                </div>
-            </div>
-        </div>
+  <div class="centrado">
+    <div class="columnas">
+      <!-- Columna izquierda: Ejercicios -->
+      <div class="columna">
+        <h4><strong>Ejercicio Equipos</strong></h4>
+         <p><a href="https://drive.google.com/file/d/1llFhJoziKyhuYhjoc6Zijy4nb5Pa-hRS/view?usp=sharing">Ejercicio Equipos</a></p>
+
+        <h4><strong>Ejercicio para definir roles</strong></h4>
+        <p><a href="https://drive.google.com/file/d/18OGKb4AQ0AczTLocFYQiEIQlDYMVgvM6/view?usp=sharing">Ejercicio para definir roles</a></p>
+
+        <h4><strong>Ejercicios ISO-9001</strong></h4>
+        <p><a href="https://drive.google.com/file/d/1Hgd0vHNpxDI6cWyiGS3YbOqRswxzgPW9/view?usp=sharing">Ejercicios ISO-9001</a></p>
+
+        <h4><strong>Ejercicio sobre todo lo trabajado</strong></h4>
+        <p><a href="https://drive.google.com/file/d/1FKhFP98CGYXAhYr0EMazsYjnAjGM8teq/view?usp=sharing">Ejercicio sobre todo lo trabajado</a></p>
+      </div>
+
+      <!-- Columna derecha: Juego de preguntas -->
+      <div class="columna">
+        <h4><strong>Juego de preguntas</strong></h4>
+        <p><a href="https://marceutu.my.canva.site/juego-de-tarjetas-sobre-desarrollo-de-software-sostenible" target="_blank" rel="noopener">
+          Juego de desarrollo de software sostenible
+        </a></p>
+      </div>
     </div>
+  </div>
 </body>
 </html>
+

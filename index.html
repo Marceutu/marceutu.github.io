@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
+    <title>Espacio Educativo – Marcela Mederos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
+    <!-- NAVBAR -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">Marcela Mederos</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
+                
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Materias</a>
+                    <a class="dropbtn">Materias</a>
                     <div class="dropdown-content">
                         <a href="Programacion_I/programacion.html">Programación I</a>
-                        <a href="Programacion_Avanzada/prog_II.html"><center>Programación Avanzada</center></a>
-						 <a href="Video_Juegos/Video_Juegos.html"><center>Videojuegos</center></a>
-                        <a href="Teoría_Proyecto/Tutoria_Proyecto.html"><center>Tutorías de Proyecto</center></a>
-						
+                        <a href="Programacion_Avanzada/prog_II.html">Programación Avanzada</a>
+                        <a href="Video_Juegos/Video_Juegos.html">Videojuegos</a>
+                        <a href="Teoría_Proyecto/Tutoria_Proyecto.html">Tutorías de Proyecto</a>
                     </div>
                 </li>
+
                 <li><a href="contacto.html">Contactos</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <section id="inicio" class="hero">
-            <div class="text-content">
-                <h3>Bienvenidos a mi espacio educativo</h3>
-               <p>Hola, soy Marcela Mederos, docente en la UTU. Esta página brinda recursos y actividades para estudiantes de Bachillerato de Informática,</p>
+    <!-- HERO PRINCIPAL -->
+    <section class="hero container">
+        <div class="hero-text">
+            <h1>Bienvenidos a mi espacio educativo</h1>
+            <p>
+                Soy Marcela Mederos, docente en UTU. Este sitio reúne recursos, 
+                actividades y materiales para estudiantes de Bachillerato de Informática, 
+                fomentando el aprendizaje dinámico, la creatividad y la resolución de problemas.
+            </p>
+        </div>
 
-                <p>fomentando el aprendizaje dinámico, el trabajo colaborativo y la resolución de problemas.</p> 
-            </div>
-			
-            <div class="image-content">
-                <img src="c6.gif" alt="Imagen educativa">
-            </div>
-			 
-        </section>
-		<footer>
-        <p><center>© 2024 Todos los derechos reservados</center></p>
-    </footer> 
-    </div>
+        <div class="hero-img">
+            <img src="c6.gif" alt="Imagen educativa">
+        </div>
+    </section>
 
-   
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2024 – Todos los derechos reservados</p>
+    </footer>
+
 </body>
 </html>

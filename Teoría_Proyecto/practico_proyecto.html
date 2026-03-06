@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    .navbar {
+      background-color: #F0F9E6;
+      overflow: hidden;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar li {
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000000;
+      padding: 14px 20px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #fcf5c7;
+    }
+
+    .navbar a:active {
+      background-color: #b2ebf2;
+    }
+
+    .centrado {
+      padding: 20px;
+    }
+
+    .columnas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .columna {
+      flex: 1 1 calc(50% - 20px);
+      background-color: #ffffff;
+      border: 3px solid #ddd;
+      border-radius: 4px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center; /* 👈 centra títulos y links */
+    }
+
+    .columna h4 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      color: #333;
+      font-size: 14px; /* más chico que los links */
+      line-height: 1.2;
+    }
+
+    .columna a {
+      text-decoration: none;
+      color: #0e055e;
+      display: block;
+      margin-bottom: 12px;
+      font-size: 15px; /* un poquito más grande que los títulos */
+    }
+
+    .columna a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .columna {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="Tutoria_Proyecto.html">Tutoría de Proyecto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="centrado">
+    <div class="columnas">
+      <!-- Columna izquierda: Ejercicios -->
+      <div class="columna">
+        <h4>Juego</h4>
+         <p><a href="https://es.educaplay.com/recursos-educativos/28132508-ingenieria_de_software_terminos_clave.html">Crucigrama de conceptos</a></p>
+
+      </div>
+
+     
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

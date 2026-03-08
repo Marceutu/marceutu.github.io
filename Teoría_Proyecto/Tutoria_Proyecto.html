@@ -23,20 +23,26 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR CONSISTENTE */
-        .navbar {
+        body {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: column;
+        }
+
+        /* NAVBAR RESPONSIVA */
+        .navbar {
             background: #ffffff;
-            padding: 20px 50px;
+            padding: 15px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             border-bottom: 3px solid var(--azul-institucional);
+            width: 100%;
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            flex-direction: column; /* Una debajo de otra en móvil */
+            align-items: center;    /* Centrado */
+            gap: 12px;
             margin: 0;
             padding: 0;
         }
@@ -44,36 +50,31 @@
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
-            transition: color 0.3s ease;
+            padding: 5px 0;
         }
 
-        .navbar a:hover {
-            color: var(--azul-institucional);
-        }
-
-        /* SECCIÓN HERO (ESTILO LIMPIO) */
+        /* HERO SECCIÓN */
         .hero {
+            flex: 1; /* Esto empuja el footer al fondo */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 20px;
-            min-height: 60vh;
+            padding: 60px 20px;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: clamp(30px, 8vw, 48px);
             color: var(--azul-institucional);
             margin-bottom: 20px;
         }
 
-        /* Línea decorativa académica */
         .hero h1::after {
             content: '';
             display: block;
@@ -85,32 +86,26 @@
 
         .hero p {
             max-width: 700px;
-            font-size: 20px;
+            font-size: clamp(16px, 4vw, 20px);
             color: var(--gris-oxford);
         }
 
-        /* FOOTER */
+        /* FOOTER CORREGIDO */
         .footer {
             text-align: center;
             padding: 25px;
             background: var(--azul-institucional);
             color: #ffffff;
             font-size: 14px;
-            position: fixed;
-            bottom: 0;
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                justify-content: center;
-            }
+        /* CAMBIO A PC (PANTALLA GRANDE) */
+        @media (min-width: 768px) {
             .navbar ul {
-                gap: 15px;
-            }
-            .hero h1 {
-                font-size: 32px;
+                flex-direction: row; /* Horizontal en computadoras */
+                justify-content: center;
+                gap: 40px;
             }
         }
     </style>

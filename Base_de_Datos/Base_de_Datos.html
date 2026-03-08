@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base de Datos – Marcela Mederos</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,29 +14,40 @@
             --blanco-fondo: #F7FAFC;
         }
 
+        /* CONFIGURACIÓN BASE */
         html, body {
             height: 100%;
             margin: 0;
             background-color: var(--blanco-fondo);
-            color: #2D3748;
+        }
+
+        body {
             font-family: 'Montserrat', sans-serif;
+            color: #2D3748;
+            display: flex;
+            flex-direction: column;
             line-height: 1.6;
         }
 
-        /* NAVBAR CONSISTENTE */
+        .main-content {
+            flex: 1;
+        }
+
+        /* NAVBAR RESPONSIVA (MÓVIL PRIMERO) */
         .navbar {
-            display: flex;
-            justify-content: flex-end;
             background: #ffffff;
-            padding: 20px 50px;
+            padding: 15px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             border-bottom: 3px solid var(--azul-institucional);
+            width: 100%;
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            flex-direction: column; /* Apilado vertical para móvil */
+            align-items: center;    /* Centrado horizontal */
+            gap: 12px;
             margin: 0;
             padding: 0;
         }
@@ -44,36 +55,31 @@
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
-            transition: color 0.3s ease;
+            padding: 5px 0;
+            display: block;
         }
 
-        .navbar a:hover {
-            color: var(--azul-institucional);
-        }
-
-        /* SECCIÓN HERO (ESTILO LIMPIO) */
+        /* SECCIÓN HERO ADAPTABLE */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 20px;
-            min-height: 60vh;
+            padding: 60px 20px;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: clamp(32px, 8vw, 48px);
             color: var(--azul-institucional);
             margin-bottom: 20px;
         }
 
-        /* Línea decorativa académica */
         .hero h1::after {
             content: '';
             display: block;
@@ -85,60 +91,59 @@
 
         .hero p {
             max-width: 700px;
-            font-size: 20px;
+            font-size: clamp(16px, 4vw, 18px);
             color: var(--gris-oxford);
+            margin: 0 auto;
         }
 
         /* FOOTER */
-        .footer {
+        footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             background: var(--azul-institucional);
             color: #ffffff;
-            font-size: 14px;
-            position: fixed;
-            bottom: 0;
             width: 100%;
         }
 
-        @media (max-width: 768px) {
+        /* AJUSTES PARA COMPUTADORA (PANTALLA GRANDE) */
+        @media (min-width: 768px) {
             .navbar {
-                padding: 15px 20px;
-                justify-content: center;
+                padding: 20px 50px;
             }
             .navbar ul {
-                gap: 15px;
-            }
-            .hero h1 {
-                font-size: 32px;
+                flex-direction: row; /* Vuelve a horizontal en PC */
+                justify-content: center;
+                gap: 30px;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="teorico_base_datos.html">Teórico</a></li>
-                <li><a href="practico_base_datos.html">Prácticos</a></li>
-                <li><a href="ejercicio_base_datos.html">Ejercicios</a></li>
-                <li><a href="#">Proyecto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="teorico_base_datos.html">Teórico</a></li>
+                    <li><a href="practico_base_datos.html">Prácticos</a></li>
+                    <li><a href="ejercicio_base_datos.html">Ejercicios</a></li>
+                    <li><a href="">Proyecto</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main class="hero">
-        <h1>Base de Datos</h1>
-        <p>
-            Espacio de acompañamiento técnico para el desarrollo, documentación y 
-            gestión de proyectos finales en Informática.
-        </p>
-    </main>
+        <main class="hero">
+            <h1>Base de Datos</h1>
+            <p>
+                Repositorio central de materiales técnicos, guías prácticas 
+                y recursos para el seguimiento de proyectos del curso.
+            </p>
+        </main>
+    </div>
 
-    <footer class="footer">
-        <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
     </footer>
 
 </body>

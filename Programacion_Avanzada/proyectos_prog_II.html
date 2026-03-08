@@ -3,203 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Final – Programación Avanzada</title>
+    <title>Proyecto Programación Avanzada – Marcela Mederos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --azul-institucional: #1A365D;
+            --azul-hover: #2a4d7d;
             --gris-oxford: #4A5568;
             --blanco-fondo: #F7FAFC;
-            --github-color: #24292e;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: var(--blanco-fondo);
-            color: #2D3748;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* NAVBAR PROFESIONAL */
+        /* NAVBAR RESPONSIVA */
         .navbar {
-            background-color: #ffffff;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: flex-end;
+            background: #ffffff;
+            padding: 15px 0;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .navbar ul {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
             margin: 0;
             padding: 0;
-            display: flex;
-            gap: 25px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover {
-            color: var(--azul-institucional);
         }
 
         /* CONTENEDOR PRINCIPAL */
-        .centrado {
-            max-width: 900px;
+        .container {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 60px 20px;
         }
 
-        h2 {
+        h1 {
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
-            margin-bottom: 40px;
+            font-size: clamp(28px, 8vw, 42px);
         }
 
-        /* ESTRUCTURA DE ETAPAS */
-        .etapas-container {
+        /* TARJETAS ARREGLADAS (FLEXBOX) */
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Botón abajo en móvil */
             gap: 20px;
         }
 
-        .etapa-card {
-            background: white;
-            padding: 25px 35px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-left: 6px solid var(--azul-institucional);
-            transition: transform 0.2s;
+        .card-text {
+            flex: 1;
         }
 
-        .etapa-card:hover {
-            transform: translateX(10px);
-        }
-
-        .etapa-info h4 {
-            margin: 0;
-            color: var(--azul-institucional);
+        .card h2 {
+            margin: 0 0 10px 0;
             font-size: 18px;
+            color: var(--azul-institucional);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .etapa-info p {
-            margin: 5px 0 0 0;
+        .card p {
+            margin: 0;
             color: var(--gris-oxford);
-            font-size: 14px;
+            font-size: 15px;
         }
 
-        /* BOTONES DE DESCARGA / ACCESO */
-        .btn-accion {
-            text-decoration: none;
-            background-color: var(--azul-institucional);
+        /* BOTONES QUE NO SE SALEN */
+        .btn {
+            display: inline-block;
+            background: var(--azul-institucional);
             color: white;
-            padding: 12px 25px;
-            border-radius: 4px;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 14px;
             font-weight: 500;
-            font-size: 13px;
-            transition: background 0.3s;
             text-align: center;
-            min-width: 140px;
+            transition: background 0.3s;
+            white-space: nowrap; /* Evita que el texto del botón se parta */
+            align-self: center;  /* Centrado en móvil */
+            width: 100%;        /* Ancho total en móvil para fácil clic */
+            max-width: 200px;    /* Pero no demasiado gigante */
         }
 
-        .btn-accion:hover {
-            background-color: #2c5282;
-        }
-
-        /* Estilo especial para GitHub */
-        .github-card {
-            border-left-color: var(--github-color);
-            background-color: #f6f8fa;
-        }
-
-        .btn-github {
-            background-color: var(--github-color);
-        }
-
-        .btn-github:hover {
-            background-color: #000000;
+        .btn:hover {
+            background: var(--azul-hover);
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
             background: var(--azul-institucional);
             color: white;
-            margin-top: 60px;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* AJUSTES PARA COMPUTADORA */
+        @media (min-width: 768px) {
+            .navbar ul { flex-direction: row; justify-content: center; gap: 30px; }
+            
+            .card { 
+                flex-direction: row; /* Texto izquierda, botón derecha en PC */
+                align-items: center; 
+            }
+            
+            .btn { width: auto; align-self: auto; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="prog_II.html">Volver a Prog Avanzada</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="programacion_avanzada.html">Volver a Prog. Avanzada</a></li>
+        </ul>
+    </nav>
 
-    <div class="centrado">
-        <h2>Gestión del proyecto anual</h2>
-        
-        <div class="etapas-container">
-            
-            <div class="etapa-card">
-                <div class="etapa-info">
-                    <h4>Documentación Técnica</h4>
-                    <p>Pautas para la redacción de la memoria y diagramación.</p>
-                </div>
-                <a href="https://drive.google.com/file/d/1z8koBNVAEAVbvw8Dn9-Cr6qjl0_5xSiH/view?usp=sharing" target="_blank" class="btn-accion">Ver Guía</a>
+    <div class="container">
+        <h1>Gestión del proyecto anual</h1>
+
+        <div class="card">
+            <div class="card-text">
+                <h2>Documentación Técnica</h2>
+                <p>Pautas para la redacción de la memoria y diagramación.</p>
             </div>
+            <a href="#" class="btn">Ver Guía</a>
+        </div>
 
-            <div class="etapa-card">
-                <div class="etapa-info">
-                    <h4>Propuesta 2025</h4>
-                    <p>Enunciado oficial y requerimientos del sistema.</p>
-                </div>
-                <a href="https://drive.google.com/file/d/1fo5L3bWK0B__6_8OxymOuyN2_3LYlOPG/view?usp=sharing" target="_blank" class="btn-accion">Descargar PDF</a>
+        <div class="card">
+            <div class="card-text">
+                <h2>Propuesta 2025</h2>
+                <p>Enunciado oficial y requerimientos del sistema.</p>
             </div>
+            <a href="#" class="btn">Descargar PDF</a>
+        </div>
 
-            <div class="etapa-card">
-                <div class="etapa-info">
-                    <h4>Segunda Entrega</h4>
-                    <p>Detalles sobre la capa de persistencia y testing.</p>
-                </div>
-                <a href="https://drive.google.com/file/d/1qZNmuClGIsyH4rR34jzEnTcr6De7Z0FA/view?usp=sharing" target="_blank" class="btn-accion">Ver Requisitos</a>
+        <div class="card">
+            <div class="card-text">
+                <h2>Segunda Entrega</h2>
+                <p>Detalles sobre la capa de persistencia y testing.</p>
             </div>
-
-            <div class="etapa-card github-card">
-                <div class="etapa-info">
-                    <h4>Control de Versiones</h4>
-                    <p>Acceso al repositorio y guía de uso de GitHub.</p>
-                </div>
-                <a href="https://drive.google.com/file/d/1jNECCYr3mZ98QCVuHcUK6lgMhB5PQGlu/view?usp=sharing" target="_blank" class="btn-accion btn-github">Guía GitHub</a>
-            </div>
-
+            <a href="#" class="btn">Ver Requisitos</a>
         </div>
     </div>
 
     <footer>
-        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+        <p>© 2024 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
     </footer>
 
 </body>

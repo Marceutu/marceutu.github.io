@@ -7,6 +7,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="estilos.css?v=1.1">
+
     <style>
         /* CONFIGURACIÓN BASE */
         :root {
@@ -29,7 +31,7 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR RESPONSIVA */
+        /* NAVBAR RESPONSIVA - FORZADO PARA MÓVIL */
         .navbar {
             background: #ffffff;
             padding: 10px 20px;
@@ -40,11 +42,11 @@
         .nav-links {
             list-style: none;
             display: flex;
-            flex-wrap: wrap; /* Permite que el menú baje en móviles */
-            justify-content: center;
-            gap: 15px;
+            flex-direction: column !important; /* Fuerza lista vertical en móvil */
+            align-items: center !important;    /* Centra todo */
+            gap: 10px;
             margin: 0;
-            padding: 0;
+            padding: 10px 0;
         }
 
         .nav-links a {
@@ -52,44 +54,41 @@
             color: var(--gris);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 14px;
             letter-spacing: 1px;
-            padding: 10px;
-            display: inline-block;
+            padding: 8px;
+            display: block;
         }
 
-        /* DROPDOWN (MATERIAS) MEJORADO PARA MÓVIL */
+        /* DROPDOWN (MATERIAS) PARA MÓVIL */
         .dropdown {
             position: relative;
+            width: 100%;
+            text-align: center;
         }
 
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background: white;
-            min-width: 250px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            border-top: 2px solid var(--azul);
-            z-index: 100;
-            left: 50%;
-            transform: translateX(-50%); /* Centra el desplegable */
+            display: none; /* Se abre al tocar */
+            background: #f8fafc;
+            width: 100%;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        /* En móvil se despliega al hacer clic/foco */
+        .dropdown:focus-within .dropdown-content, .dropdown:hover .dropdown-content {
+            display: block !important;
         }
 
         .dropdown-content a {
             display: block;
-            padding: 12px 20px;
+            padding: 12px;
             text-align: center;
-            text-transform: none;
             border-bottom: 1px solid #edf2f7;
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        /* En PC abre al pasar el mouse, en móvil se activa al tocar */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* SECCIÓN HERO ADAPTABLE */
+        /* SECCIÓN HERO */
         .hero {
             flex: 1;
             display: flex;
@@ -101,7 +100,7 @@
 
         .hero-text h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 8vw, 48px); /* Tamaño fluido según pantalla */
+            font-size: clamp(30px, 7vw, 48px);
             color: var(--azul);
             margin-bottom: 20px;
         }
@@ -116,11 +115,11 @@
         }
 
         .hero-text p {
-            font-size: clamp(16px, 4vw, 20px);
+            font-size: clamp(16px, 4vw, 19px);
             color: var(--gris);
         }
 
-        /* FOOTER FIJO ABAJO */
+        /* FOOTER */
         .footer {
             text-align: center;
             padding: 20px;
@@ -129,24 +128,21 @@
             font-size: 13px;
         }
 
-        /* AJUSTES ESPECÍFICOS PARA MÓVIL (PANTALLAS CHICAS) */
-        @media (max-width: 600px) {
+        /* AJUSTES PARA COMPUTADORA (PANTALLA GRANDE) */
+        @media (min-width: 768px) {
             .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 5px;
+                flex-direction: row !important; /* Horizontal en PC */
+                justify-content: center;
+                gap: 40px;
             }
-
+            .dropdown { width: auto; }
             .dropdown-content {
-                position: static; /* En móvil el menú se expande hacia abajo */
-                transform: none;
-                width: 100%;
-                box-shadow: none;
-                background: #f8fafc;
-            }
-            
-            .dropdown:focus-within .dropdown-content {
-                display: block;
+                position: absolute;
+                background: white;
+                min-width: 250px;
+                box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -158,7 +154,8 @@
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
 
-                <li class="dropdown" tabindex="0"> <a href="#" class="dropbtn">Materias ▾</a>
+                <li class="dropdown" tabindex="0"> 
+                    <a href="#" class="dropbtn">Materias ▾</a>
                     <div class="dropdown-content">
                         <a href="Programacion_I/programacion.html">Programación I</a>
                         <a href="Programacion_Avanzada/prog_II.html">Programación Avanzada</a>

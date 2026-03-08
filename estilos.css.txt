@@ -1,0 +1,96 @@
+/* VARIABLES GLOBALES */
+:root {
+    --azul-institucional: #1A365D;
+    --gris-oxford: #4A5568;
+    --blanco-fondo: #F7FAFC;
+}
+
+/* ESTRUCTURA BASE RESPONSIVA */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--blanco-fondo);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* NAVBAR ADAPTABLE */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 3px solid var(--azul-institucional);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Permite que el menú baje si no hay espacio */
+    justify-content: center;
+}
+
+/* TARJETAS Y GRILLAS RESPONSIVAS */
+.centrado {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.columnas {
+    display: grid;
+    /* Por defecto: 1 columna (móvil) */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+/* Cuando la pantalla es mayor a 768px (Tablet/PC), usa 2 o 3 columnas */
+@media (min-width: 768px) {
+    .columnas {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.columna {
+    background: white;
+    padding: 25px;
+    border-top: 5px solid var(--azul-institucional);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* BOTONES ADAPTABLES */
+.btn-link, .btn-ejercicio, .btn-proyecto {
+    display: block;
+    width: 100%; /* Ocupa todo el ancho en móvil para tocar fácil con el dedo */
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background: #f1f5f9;
+    color: var(--azul-institucional);
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+    background: var(--azul-institucional);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}

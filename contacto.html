@@ -4,149 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto – Marcela Mederos</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* Paleta de Colores Institucional */
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
+
+        /* ESTRUCTURA PARA FOOTER SIEMPRE ABAJO */
         html, body {
             height: 100%;
             margin: 0;
-            background-color: #F7FAFC;
-            color: #2D3748;
         }
 
         body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
             display: flex;
             flex-direction: column;
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
         }
 
-        /* NAVBAR (Consistente con Inicio) */
+        .main-content {
+            flex: 1;
+        }
+
+        /* NAVBAR CENTRADA (CONSISTENTE) */
         .navbar {
+            background-color: #ffffff;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
-            background: #ffffff;
-            padding: 20px 50px;
+            justify-content: center;
+            border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-bottom: 3px solid #1A365D;
+            width: 100%;
         }
 
-        .nav-links {
+        .navbar ul {
             list-style: none;
-            display: flex;
-            gap: 40px;
             margin: 0;
             padding: 0;
+            display: flex;
+            gap: 40px;
         }
 
-        .nav-links a {
+        .navbar a {
             text-decoration: none;
-            color: #4A5568;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--gris-oxford);
+            font-weight: 600;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #1A365D;
+        .navbar a:hover {
+            color: var(--azul-institucional);
         }
 
         /* SECCIÓN DE CONTACTO */
         .container {
-            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         .contact-card {
             background: white;
-            padding: 50px;
+            padding: 60px 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            max-width: 600px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+            max-width: 650px;
+            width: 100%;
             text-align: center;
-            border-top: 5px solid #1A365D;
+            border-top: 6px solid var(--azul-institucional);
         }
 
         .contact-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            color: #1A365D;
-            margin-top: 0;
+            font-size: clamp(28px, 5vw, 38px);
+            color: var(--azul-institucional);
+            margin: 0 0 20px 0;
         }
 
         .contact-card p {
-            color: #4A5568;
-            font-size: 18px;
-            margin-bottom: 30px;
+            color: var(--gris-oxford);
+            font-size: 17px;
+            margin-bottom: 35px;
+            line-height: 1.8;
         }
 
-        /* Estilo para el email */
+        /* ESTILO PARA EL EMAIL */
         .email-box {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 5px;
-            display: inline-block;
-            font-weight: 500;
-            color: #1A365D;
-            border-left: 4px solid #1A365D;
+            background: #f8fafc;
+            padding: 20px 30px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--azul-institucional);
+            border: 1px solid #e2e8f0;
             font-size: 18px;
+            transition: all 0.3s ease;
         }
 
         .email-box a {
-            color: #1A365D;
+            color: var(--azul-institucional);
             text-decoration: none;
         }
 
-        .email-box a:hover {
-            text-decoration: underline;
+        .email-box:hover {
+            background: #edf2f7;
+            transform: translateY(-2px);
+            border-color: var(--azul-institucional);
         }
 
         /* FOOTER */
-        .footer {
+        footer {
             text-align: center;
-            padding: 25px;
-            background: #1A365D;
-            color: #ffffff;
-            font-size: 14px;
-            letter-spacing: 1px;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 11px; }
+            .contact-card { padding: 40px 20px; }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contacto.html">Contactos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="container">
-        <section class="contact-card">
-            <h3>Canal de comunicación</h3>
-            <p>
-                Para consultas académicas o información adicional sobre los cursos, 
-                por favor remita un mensaje a la siguiente dirección de correo:
-            </p>
-            
-            <div class="email-box">
-                ✉️ <a href="mailto:docente.bt.2026@gmail.com">docente.bt.2026@gmail.com</a>
-            </div>
-        </section>
+        <div class="container">
+            <section class="contact-card">
+                <h3>Canal de comunicación</h3>
+                <p>
+                    Para consultas académicas, tutorías o información adicional sobre los cursos de informática, 
+                    por favor remita un mensaje a la siguiente dirección oficial:
+                </p>
+                
+                <div class="email-box">
+                    <span>✉️</span>
+                    <a href="mailto:docente.bt.2026@gmail.com">docente.bt.2026@gmail.com</a>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <footer class="footer">
-        <p>© 2024 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA UTU</p>
     </footer>
 
 </body>

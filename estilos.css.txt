@@ -1,15 +1,16 @@
-/* VARIABLES GLOBALES */
+/* VARIABLES */
 :root {
     --azul-institucional: #1A365D;
     --gris-oxford: #4A5568;
     --blanco-fondo: #F7FAFC;
 }
 
-/* ESTRUCTURA BASE RESPONSIVA */
+/* 1. RESET Y ESTRUCTURA BASE */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Evita que la página se mueva hacia los lados */
 }
 
 body {
@@ -23,101 +24,108 @@ body {
     flex: 1;
 }
 
-/* NAVBAR CORREGIDA (PARA MÓVIL) */
+/* 2. NAVBAR RESPONSIVA (MENÚ) */
 .navbar {
     background-color: #ffffff;
-    padding: 10px 20px; /* Reducido para móviles */
-    display: flex;
-    justify-content: center; /* Centrado en móvil */
     border-bottom: 3px solid var(--azul-institucional);
+    padding: 10px 0;
+    width: 100%;
 }
 
 .navbar ul {
     list-style: none;
-    display: flex;
-    gap: 15px;
     margin: 0;
-    padding: 10px 0;
-    flex-wrap: wrap; /* 👈 ESTO HACE QUE SE VEAN TODAS LAS OPCIONES */
-    justify-content: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 👈 EN MÓVIL: Una opción debajo de otra */
+    align-items: center;    /* 👈 CENTRADO TOTAL */
+    gap: 10px;
+}
+
+.navbar li {
+    width: 100%;
+    text-align: center;
 }
 
 .navbar a {
     text-decoration: none;
     color: var(--gris-oxford);
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 11px; /* Un poco más pequeño para que quepan más */
-    letter-spacing: 0.5px;
+    font-size: 14px;
+    display: block;
+    padding: 8px 0;
 }
 
-/* TARJETAS Y GRILLAS RESPONSIVAS */
+/* Resaltar la página actual (opcional, si añades la clase .active) */
+.navbar a:hover {
+    color: var(--azul-institucional);
+    background-color: #f1f5f9;
+}
+
+/* 3. CONTENEDOR Y TARJETAS */
 .centrado {
-    max-width: 1000px;
-    margin: 0 auto;
     padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .columnas {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 20px;
+    display: flex;
+    flex-direction: column; /* 👈 TODO VERTICAL */
+    gap: 25px;
 }
 
-@media (min-width: 768px) {
-    .columnas {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    .navbar {
-        justify-content: flex-end; /* En PC vuelve a la derecha */
-    }
-    .navbar a {
-        font-size: 13px;
-    }
-}
-
-/* CORRECCIÓN DE TARJETAS Y BOTONES SALIDOS */
 .columna {
     background: white;
-    padding: 25px;
-    border-top: 5px solid var(--azul-institucional);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-left: 6px solid var(--azul-institucional);
     display: flex;
-    flex-direction: column; /* Alinea contenido verticalmente */
-    overflow: hidden; /* Evita que nada salga de la tarjeta */
+    flex-direction: column; /* 👈 FUERZA EL ORDEN VERTICAL */
+    align-items: flex-start;
 }
 
-/* Ajuste para que los botones de "Ver Guía" o "Descargar" no se salgan */
+/* 4. BOTONES CORREGIDOS (DEBAJO DEL TEXTO) */
+/* Esto arregla los botones de tus fotos que se salían de lado */
 .btn-link, .btn-ejercicio, .btn-proyecto, .columna a {
-    position: relative !important; /* Quita posiciones absolutas que causan el desborde */
-    right: auto !important;
-    top: auto !important;
-    display: block;
-    width: 100%; 
-    box-sizing: border-box;
-    padding: 12px;
-    margin-top: 15px; /* Espacio con el texto de arriba */
-    text-decoration: none;
-    background: var(--azul-institucional);
+    position: static !important; /* 👈 ANULA EL COSTADO */
+    display: block !important;
+    width: 100% !important;     /* 👈 OCUPA TODO EL ANCHO ABAJO */
+    margin-top: 15px !important; /* 👈 SEPARA DEL TEXTO */
+    background-color: var(--azul-institucional) !important;
     color: white !important;
-    border-radius: 5px;
-    font-weight: 500;
     text-align: center;
-    font-size: 14px;
+    padding: 12px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    box-sizing: border-box;
 }
 
-/* Títulos y textos dentro de la tarjeta */
-.columna h4 {
-    color: var(--azul-institucional);
-    margin: 0 0 10px 0;
-}
+/* 5. AJUSTES PARA PANTALLAS GRANDES (PC) */
+@media (min-width: 768px) {
+    .navbar ul {
+        flex-direction: row; /* En PC vuelve a ser horizontal */
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .navbar li {
+        width: auto;
+    }
 
-.columna p {
-    font-size: 14px;
-    color: var(--gris-oxford);
-    margin: 0;
+    .columnas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .btn-link, .btn-ejercicio, .btn-proyecto, .columna a {
+        width: auto !important;
+        padding: 10px 25px;
+        align-self: flex-end; /* En PC los botones pueden ir a la esquina */
+    }
 }
 
 /* FOOTER */
@@ -125,6 +133,7 @@ footer {
     background: var(--azul-institucional);
     color: white;
     text-align: center;
-    padding: 20px;
-    font-size: 12px;
+    padding: 25px;
+    font-size: 13px;
+    margin-top: 30px;
 }

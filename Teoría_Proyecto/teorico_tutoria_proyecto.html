@@ -15,7 +15,7 @@
 
         /* 1. CONFIGURACIÓN PARA EMPUJAR EL FOOTER */
         html, body {
-            height: 100%; /* Ocupa toda la altura */
+            height: 100%; 
             margin: 0;
         }
 
@@ -24,22 +24,23 @@
             background-color: var(--blanco-fondo);
             color: #2D3748;
             display: flex;
-            flex-direction: column; /* Organiza los elementos en columna */
+            flex-direction: column;
         }
 
         /* 2. EL CONTENIDO CRECE PARA OCUPAR EL ESPACIO */
         .main-content {
-            flex: 1; /* Esto empuja al footer al fondo */
+            flex: 1;
         }
 
-        /* NAVBAR */
+        /* NAVBAR CENTRADA (BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -47,13 +48,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
@@ -68,14 +69,14 @@
         .centrado {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 36px;
+            font-size: clamp(30px, 8vw, 36px);
             margin-bottom: 40px;
         }
 
@@ -88,31 +89,53 @@
 
         .columna {
             background-color: #ffffff;
-            border-top: 4px solid var(--azul-institucional);
-            border-radius: 4px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--azul-institucional);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
         }
 
-        .columna:hover { transform: translateY(-5px); }
+        .columna:hover { 
+            transform: translateY(-5px); 
+        }
 
         .columna h4 {
             margin: 0 0 15px 0;
             color: var(--azul-institucional);
-            font-size: 18px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 12px;
+            font-weight: 600;
         }
 
-        /* FOOTER CORREGIDO */
+        .status-msg {
+            font-size: 14px;
+            color: var(--gris-oxford);
+            font-style: italic;
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px dashed #e2e8f0;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
             background: var(--azul-institucional);
             color: white;
             width: 100%;
-            /* Ya no necesita margin-top excesivo */
+        }
+
+        @media (max-width: 600px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 11px; }
         }
     </style>
 </head>
@@ -123,29 +146,34 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Tutoria_Proyecto.html">Volver a Tutorías</a></li>
+                    <li><a href="Tutoria_Proyecto.html">Volver</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="centrado">
             <h2>Material Teórico - Tutorías</h2>
+            
             <div class="columnas">
                 <div class="columna">
                     <h4>Gestión de Proyecto</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                    <p class="status-msg">Próximamente materiales...</p>
                 </div>
+
                 <div class="columna">
                     <h4>Ingeniería de Software</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                    <p class="status-msg">Próximamente materiales...</p>
                 </div>
+
                 <div class="columna">
                     <h4>Documentación</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                    <p class="status-msg">Próximamente materiales...</p>
                 </div>
             </div>
         </div>
-    </div> <footer>
+    </div> 
+
+    <footer>
         <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
     </footer>
 

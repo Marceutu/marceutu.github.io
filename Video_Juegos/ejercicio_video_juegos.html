@@ -28,17 +28,18 @@
         }
 
         .main-content {
-            flex: 1; /* Esto empuja el footer al final */
+            flex: 1;
         }
 
-        /* NAVBAR PROFESIONAL */
+        /* NAVBAR CENTRADA (BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -46,13 +47,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
@@ -67,14 +68,14 @@
         .centrado {
             max-width: 800px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
+            font-size: clamp(32px, 8vw, 42px);
             margin-bottom: 10px;
         }
 
@@ -83,45 +84,53 @@
             color: var(--gris-oxford);
             margin-bottom: 40px;
             font-size: 18px;
+            font-weight: 400;
         }
 
         /* TARJETA DE EJERCICIOS */
         .columna {
             background-color: #ffffff;
-            border-top: 5px solid var(--azul-institucional);
-            border-radius: 4px;
-            padding: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 6px solid var(--azul-institucional);
+            border-radius: 8px;
+            padding: 45px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
 
         .columna h4 {
-            margin: 0 0 25px 0;
+            margin: 0 0 30px 0;
             color: var(--azul-institucional);
             font-weight: 600;
-            font-size: 20px;
+            font-size: 22px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* BOTONES DE ENLACE */
         .btn-ejercicio {
             text-decoration: none;
             color: var(--azul-institucional);
-            background: #f1f5f9;
-            padding: 15px 20px;
-            border-radius: 4px;
+            background: #f8fafc;
+            padding: 16px 25px;
+            border-radius: 6px;
             display: block;
             margin-bottom: 15px;
             font-size: 15px;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: 1px solid transparent;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-ejercicio:last-child {
+            margin-bottom: 0;
         }
 
         .btn-ejercicio:hover {
             background-color: var(--azul-institucional);
             color: #ffffff;
-            transform: scale(1.02);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+            border-color: var(--azul-institucional);
         }
 
         /* FOOTER */
@@ -133,9 +142,10 @@
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .navbar { padding: 15px 20px; justify-content: center; }
-            h2 { font-size: 30px; }
+        @media (max-width: 600px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 11px; }
+            .columna { padding: 25px; }
         }
     </style>
 </head>
@@ -146,28 +156,28 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Video_Juegos.html">Volver a Videojuegos</a></li>
+                    <li><a href="Video_Juegos.html">Volver</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="centrado">
-            <h2>Ejercicios</h2>
-            <p class="subtitulo">Prácticas de lógica y programación aplicada</p>
+            <h2>Ejercicios </h2>
+            <p class="subtitulo">Prácticas de lógica y programación para GameMaker</p>
             
             <div class="columna">
                 <h4>Material de Práctica</h4>
                 
                 <a href="https://drive.google.com/file/d/1t35p7wygAwq1ie7e2lXxgDvWACRtA0ls/view?usp=sharing" target="_blank" class="btn-ejercicio">
-                    💻 Conceptos de programación
+                    💻 Conceptos Fundamentales de Programación
                 </a>
                 
                 <a href="https://drive.google.com/file/d/1pTSbp_mE1tpDDwl2vzI0atubj6QmODvn/view?usp=sharing" target="_blank" class="btn-ejercicio">
-                    🔄 Profundización de conceptos
+                    🔄 Profundización en Estructuras de Control
                 </a>
                 
                 <a href="https://drive.google.com/file/d/1lw8XMxKpMjC_9J1OTa85dZzcQxSuYbmc/view?usp=sharing" target="_blank" class="btn-ejercicio">
-                    📝 Ejercicio de aplicación
+                    📝 Taller de Aplicación Práctica
                 </a>
             </div>
         </div>

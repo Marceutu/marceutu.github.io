@@ -24,21 +24,22 @@
             background-color: var(--blanco-fondo);
             color: #2D3748;
             display: flex;
-            flex-direction: column; /* Alineación vertical para empujar el footer */
+            flex-direction: column;
         }
 
         .main-content {
-            flex: 1; /* Ocupa todo el espacio disponible */
+            flex: 1;
         }
 
-        /* NAVBAR PROFESIONAL */
+        /* NAVBAR CENTRADA (ESTILO BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -46,13 +47,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
@@ -67,37 +68,39 @@
         .centrado {
             max-width: 900px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
+            font-size: clamp(30px, 8vw, 38px);
             margin-bottom: 40px;
         }
 
         /* GRILLA DE TARJETAS */
         .columnas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            display: flex;
             justify-content: center;
+            gap: 30px;
         }
 
         .columna {
             background-color: #ffffff;
             border-top: 5px solid var(--azul-institucional);
-            border-radius: 4px;
-            padding: 30px;
+            border-radius: 8px;
+            padding: 40px 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             text-align: center;
             transition: transform 0.3s ease;
+            max-width: 450px;
+            width: 100%;
         }
 
         .columna:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
         }
 
         .columna h4 {
@@ -107,28 +110,39 @@
             font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 15px;
+        }
+
+        .columna p {
+            font-size: 15px;
+            color: var(--gris-oxford);
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         /* BOTONES DE ACCESO */
         .btn-link {
             text-decoration: none;
             color: var(--azul-institucional);
-            background: #f1f5f9;
-            padding: 12px 20px;
-            border-radius: 4px;
+            background: #f8fafc;
+            padding: 14px 20px;
+            border-radius: 6px;
             display: block;
             margin-bottom: 15px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s;
+            border: 1px solid #e2e8f0;
         }
 
         .btn-link:hover {
             background-color: var(--azul-institucional);
             color: #ffffff;
+            border-color: var(--azul-institucional);
         }
 
-        /* FOOTER SIN ESPACIOS BLANCOS */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
@@ -137,11 +151,9 @@
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                justify-content: center;
-            }
+        @media (max-width: 600px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 11px; }
         }
     </style>
 </head>
@@ -152,22 +164,22 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Tutoria_Proyecto.html">Volver a Tutoría</a></li>
+                    <li><a href="Tutoria_Proyecto.html">Volver</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="centrado">
-            <h2>Ejercicios</h2>
+            <h2>Ejercicios y Material</h2>
             
             <div class="columnas">
                 <div class="columna">
                     <h4>Recursos Disponibles</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px;">
-                        Seleccione el material que desea consultar.
+                    <p>
+                        Seleccione el material técnico o los ejercicios de apoyo para su proyecto.
                     </p>
-                    <a href="#" class="btn-link">Ver Documento 1</a>
-                    <a href="#" class="btn-link">Ver Documento 2</a>
+                    <a href="#" class="btn-link">Guía de Resolución de Problemas</a>
+                    <a href="#" class="btn-link">Ejercicios de Lógica Aplicada</a>
                 </div>
             </div>
         </div>

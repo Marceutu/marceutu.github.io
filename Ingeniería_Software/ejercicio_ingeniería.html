@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material – Ingeniería</title>
+    <title>Material – Ingeniería de Software</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -13,7 +13,7 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        /* CONFIGURACIÓN PARA EL FOOTER AL FINAL */
+        /* CONFIGURACIÓN BASE PARA FOOTER */
         html, body {
             height: 100%;
             margin: 0;
@@ -24,21 +24,22 @@
             background-color: var(--blanco-fondo);
             color: #2D3748;
             display: flex;
-            flex-direction: column; /* Alineación vertical para empujar el footer */
+            flex-direction: column;
         }
 
         .main-content {
-            flex: 1; /* Ocupa todo el espacio disponible */
+            flex: 1;
         }
 
-        /* NAVBAR PROFESIONAL */
+        /* NAVBAR CENTRADA (BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center; /* Centrado absoluto */
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -46,13 +47,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
@@ -74,14 +75,14 @@
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
+            font-size: clamp(30px, 8vw, 38px);
             margin-bottom: 40px;
         }
 
-        /* GRILLA DE TARJETAS */
+        /* TARJETAS FLEXIBLES */
         .columnas {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
             justify-content: center;
         }
@@ -89,10 +90,11 @@
         .columna {
             background-color: #ffffff;
             border-top: 5px solid var(--azul-institucional);
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.3s ease;
         }
 
@@ -106,21 +108,24 @@
             font-weight: 600;
             font-size: 18px;
             text-transform: uppercase;
+            text-align: center;
             letter-spacing: 1px;
         }
 
-        /* BOTONES DE ACCESO */
+        /* BOTONES DE DOCUMENTOS */
         .btn-link {
             text-decoration: none;
             color: var(--azul-institucional);
             background: #f1f5f9;
             padding: 12px 20px;
-            border-radius: 4px;
+            border-radius: 6px;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
+            text-align: center;
             transition: all 0.3s;
+            border: 1px solid transparent;
         }
 
         .btn-link:hover {
@@ -128,20 +133,19 @@
             color: #ffffff;
         }
 
-        /* FOOTER SIN ESPACIOS BLANCOS */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
             background: var(--azul-institucional);
             color: white;
             width: 100%;
+            font-size: 14px;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                justify-content: center;
-            }
+        @media (max-width: 480px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 12px; }
         }
     </style>
 </head>
@@ -152,7 +156,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Ingeniería_Software.html">Volver a ingeniería</a></li>
+                    <li><a href="Ingeniería_Software.html">Volver</a></li>
                 </ul>
             </nav>
         </header>
@@ -163,8 +167,8 @@
             <div class="columnas">
                 <div class="columna">
                     <h4>Recursos Disponibles</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px;">
-                        Seleccione el material que desea consultar.
+                    <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px; text-align: center;">
+                        Seleccione el material que desea consultar para sus prácticas de Ingeniería.
                     </p>
                     <a href="#" class="btn-link">Ver Documento 1</a>
                     <a href="#" class="btn-link">Ver Documento 2</a>

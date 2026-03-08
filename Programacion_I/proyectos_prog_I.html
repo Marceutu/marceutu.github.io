@@ -13,22 +13,33 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
+        /* ESTRUCTURA BASE */
+        html, body {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            background-color: var(--blanco-fondo);
-            color: #2D3748;
         }
 
-        /* NAVBAR */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        /* NAVBAR CENTRADA (BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -36,16 +47,21 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: var(--azul-institucional);
         }
 
         /* CONTENEDOR DE PROYECTO */
@@ -59,11 +75,18 @@
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
-            margin-bottom: 40px;
+            font-size: clamp(30px, 8vw, 38px);
+            margin-bottom: 10px;
         }
 
-        /* ESTRUCTURA DE PASOS (ETAPAS) */
+        .subtitle {
+            text-align: center;
+            color: var(--gris-oxford);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        /* ESTRUCTURA DE ETAPAS */
         .etapas-container {
             display: flex;
             flex-direction: column;
@@ -79,17 +102,18 @@
             align-items: center;
             justify-content: space-between;
             border-left: 6px solid var(--azul-institucional);
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
         }
 
         .etapa-card:hover {
-            transform: scale(1.02);
+            transform: translateX(10px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
 
         .etapa-info h4 {
             margin: 0;
             color: var(--azul-institucional);
-            font-size: 20px;
+            font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -100,71 +124,99 @@
             font-size: 15px;
         }
 
-        /* BOTÓN DE DESCARGA */
+        /* BOTÓN DE ACCIÓN */
         .btn-descarga {
             text-decoration: none;
             background-color: var(--azul-institucional);
             color: white;
             padding: 12px 25px;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
             transition: background 0.3s;
+            white-space: nowrap;
+            margin-left: 20px;
         }
 
         .btn-descarga:hover {
             background-color: #2c5282;
         }
 
+        /* ESTILO ESPECIAL DOCUMENTACIÓN */
+        .doc-card {
+            border-left-color: var(--gris-oxford);
+            background-color: #f8fafc;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
             background: var(--azul-institucional);
             color: white;
+            width: 100%;
+            font-size: 14px;
             margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .etapa-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .btn-descarga {
+                margin-left: 0;
+                width: 100%;
+            }
+            .navbar ul { gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="programacion.html">Volver a Programación</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="programacion.html">Volver</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="centrado">
-        <h2>Guía del Proyecto Final</h2>
-        
-        <div class="etapas-container">
+        <div class="centrado">
+            <h2>Proyecto Final</h2>
+            <p class="subtitle">Guía paso a paso para la entrega final de Programación I.</p>
             
-            <div class="etapa-card">
-                <div class="etapa-info">
-                    <h4>Etapa I</h4>
-                    <p>Definición del problema y lógica inicial.</p>
+            <div class="etapas-container">
+                
+                <div class="etapa-card">
+                    <div class="etapa-info">
+                        <h4>Etapa I: Análisis</h4>
+                        <p>Definición del problema, diagramas de flujo y lógica inicial.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1dXkkuF9LN23RX67bwdrtNEP_71jLguP1/view?usp=sharing" target="_blank" class="btn-descarga">Ver Pautas</a>
                 </div>
-                <a href="https://drive.google.com/file/d/1dXkkuF9LN23RX67bwdrtNEP_71jLguP1/view?usp=sharing" class="btn-descarga">Ver Pautas</a>
-            </div>
 
-            <div class="etapa-card">
-                <div class="etapa-info">
-                    <h4>Etapa II</h4>
-                    <p>Desarrollo de interfaz y funcionalidades core.</p>
+                <div class="etapa-card">
+                    <div class="etapa-info">
+                        <h4>Etapa II: Desarrollo</h4>
+                        <p>Implementación de código, interfaz y funcionalidades principales.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1fFvT1zBKQtkcxujU3KF7zdUI7yYWdVX7/view?usp=sharing" target="_blank" class="btn-descarga">Ver Pautas</a>
                 </div>
-                <a href="https://drive.google.com/file/d/1fFvT1zBKQtkcxujU3KF7zdUI7yYWdVX7/view?usp=sharing" class="btn-descarga">Ver Pautas</a>
-            </div>
 
-            <div class="etapa-card" style="border-left-color: #4A5568;">
-                <div class="etapa-info">
-                    <h4>Documentación</h4>
-                    <p>Plantilla y requisitos para la memoria técnica.</p>
+                <div class="etapa-card doc-card">
+                    <div class="etapa-info">
+                        <h4>Memoria Técnica</h4>
+                        <p>Documentación final, requisitos de entrega y plantilla de informe.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1HktD-gmM-sQX48u5VBNeJwp4X9XNnKoU/view?usp=sharing" target="_blank" class="btn-descarga">Descargar Requisitos</a>
                 </div>
-                <a href="https://drive.google.com/file/d/1HktD-gmM-sQX48u5VBNeJwp4X9XNnKoU/view?usp=sharing" class="btn-descarga">Descargar PDF</a>
-            </div>
 
+            </div>
         </div>
     </div>
 

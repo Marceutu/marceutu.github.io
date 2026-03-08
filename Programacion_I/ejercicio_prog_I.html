@@ -13,22 +13,33 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
+        /* ESTRUCTURA BASE */
+        html, body {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            background-color: var(--blanco-fondo);
-            color: #2D3748;
         }
 
-        /* NAVBAR */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        /* NAVBAR CENTRADA (BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -36,13 +47,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
@@ -64,7 +75,7 @@
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
+            font-size: clamp(30px, 8vw, 38px);
             margin-bottom: 40px;
         }
 
@@ -78,7 +89,7 @@
         .columna {
             background-color: #ffffff;
             border-top: 5px solid var(--azul-institucional);
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
@@ -93,75 +104,92 @@
         .columna h4 {
             margin: 0 0 20px 0;
             color: var(--azul-institucional);
-            font-size: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 12px;
+            font-weight: 600;
         }
 
-        /* ESTILO DE ENLACES COMO BOTONES SUTILES */
+        /* ESTILO DE ENLACES COMO BOTONES */
         .columna a {
             text-decoration: none;
             color: var(--azul-institucional);
-            background: #f1f5f9;
+            background: #f8fafc;
             padding: 12px 15px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-radius: 6px;
             font-weight: 500;
             font-size: 14px;
             display: flex;
             align-items: center;
             transition: all 0.2s;
+            border: 1px solid #e2e8f0;
         }
 
         .columna a:hover {
             background: var(--azul-institucional);
             color: white;
+            border-color: var(--azul-institucional);
+            padding-left: 20px;
         }
 
         .columna a::before {
             content: "→";
-            margin-right: 10px;
+            margin-right: 12px;
+            font-weight: bold;
         }
 
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
             background: var(--azul-institucional);
             color: white;
+            width: 100%;
+            font-size: 14px;
             margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 11px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="programacion.html">Volver a Programación</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="programacion.html">Volver</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="centrado">
-        <h2>Ejercicios y Actividades</h2>
-        
-        <div class="columnas">
-            <div class="columna">
-                <h4>Prácticos de Estructuras</h4>
-                <a href="https://docs.google.com/presentation/d/1R1TRstsMlnbEPvt2_m4LPualtpSF4gVM/edit?usp=sharing">Ejercicios Condicional IF</a>
-                <a href="https://docs.google.com/presentation/d/120iv3sEP3bGBmdmDzu1o0U7sQv4VwzKt/edit?usp=sharing">Ejercicios con Arreglos</a>
-            </div>
+        <div class="centrado">
+            <h2>Ejercicios y Actividades</h2>
+            
+            <div class="columnas">
+                <div class="columna">
+                    <h4>Prácticos de Estructuras</h4>
+                    <a href="https://docs.google.com/presentation/d/1R1TRstsMlnbEPvt2_m4LPualtpSF4gVM/edit?usp=sharing" target="_blank">Ejercicios Condicional IF</a>
+                    <a href="https://docs.google.com/presentation/d/120iv3sEP3bGBmdmDzu1o0U7sQv4VwzKt/edit?usp=sharing" target="_blank">Ejercicios con Arreglos</a>
+                </div>
 
-            <div class="columna">
-                <h4>Desafíos de Lógica</h4>
-                <a href="https://www3.gobiernodecanarias.org/medusa/eltanquematematico/proyectoNEWTON/ovejalechugaleon/seisranas.html">Juego de las seis ranas</a>
-                <a href="https://view.genially.com/671ed7a0922ae3a1251030f6/interactive-content-escape-game-industrial">Escape Game Industrial</a>
-            </div>
+                <div class="columna">
+                    <h4>Desafíos de Lógica</h4>
+                    <a href="https://www3.gobiernodecanarias.org/medusa/eltanquematematico/proyectoNEWTON/ovejalechugaleon/seisranas.html" target="_blank">Juego de las seis ranas</a>
+                    <a href="https://view.genially.com/671ed7a0922ae3a1251030f6/interactive-content-escape-game-industrial" target="_blank">Escape Game Industrial</a>
+                </div>
 
-            <div class="columna">
-                <h4>Gamificación</h4>
-                <a href="https://www.google.com/logos/2017/logo17/logo17.html?hl=es-419">Introducción a la Programación (Google)</a>
+                <div class="columna">
+                    <h4>Gamificación</h4>
+                    <a href="https://www.google.com/logos/2017/logo17/logo17.html?hl=es-419" target="_blank">Introducción: Google Coding</a>
+                </div>
             </div>
         </div>
     </div>

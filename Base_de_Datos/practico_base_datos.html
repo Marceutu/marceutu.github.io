@@ -13,7 +13,6 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        /* CONFIGURACIÓN PARA EL FOOTER AL FINAL */
         html, body {
             height: 100%;
             margin: 0;
@@ -24,21 +23,23 @@
             background-color: var(--blanco-fondo);
             color: #2D3748;
             display: flex;
-            flex-direction: column; /* Alineación vertical */
+            flex-direction: column;
+            line-height: 1.6;
         }
 
         .main-content {
-            flex: 1; /* Empuja el footer hacia abajo */
+            flex: 1;
         }
 
-        /* NAVBAR PROFESIONAL */
+        /* NAVBAR CENTRADA (BANNER) */
         .navbar {
             background-color: #ffffff;
-            padding: 15px 50px;
+            padding: 15px 0;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center; /* Centrado para consistencia */
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .navbar ul {
@@ -46,26 +47,21 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 25px;
+            gap: 40px;
         }
 
         .navbar a {
             text-decoration: none;
             color: var(--gris-oxford);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: 1px;
-            transition: color 0.3s;
         }
 
-        .navbar a:hover {
-            color: var(--azul-institucional);
-        }
-
-        /* CONTENEDOR PRINCIPAL */
+        /* CONTENEDOR */
         .centrado {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 50px 20px;
         }
@@ -74,25 +70,25 @@
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
+            font-size: clamp(30px, 8vw, 38px);
             margin-bottom: 40px;
         }
 
-        /* GRILLA DE TARJETAS */
+        /* TARJETAS FLEXIBLES */
         .columnas {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            justify-content: center;
         }
 
         .columna {
             background-color: #ffffff;
             border-top: 5px solid var(--azul-institucional);
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.3s ease;
         }
 
@@ -106,20 +102,23 @@
             font-weight: 600;
             font-size: 18px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            text-align: center;
         }
 
+        /* BOTONES QUE NO SE DESBORDAN */
         .btn-link {
             text-decoration: none;
             color: var(--azul-institucional);
             background: #f1f5f9;
-            padding: 12px 20px;
-            border-radius: 4px;
+            padding: 12px 15px;
+            border-radius: 6px;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
+            text-align: center;
             transition: all 0.3s;
+            border: 1px solid transparent;
         }
 
         .btn-link:hover {
@@ -127,20 +126,19 @@
             color: #ffffff;
         }
 
-        /* FOOTER SIN ESPACIOS BLANCOS */
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
             background: var(--azul-institucional);
             color: white;
             width: 100%;
+            font-size: 14px;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                justify-content: center;
-            }
+        @media (max-width: 480px) {
+            .navbar ul { gap: 20px; }
+            .navbar a { font-size: 12px; }
         }
     </style>
 </head>
@@ -157,12 +155,14 @@
         </header>
 
         <div class="centrado">
-            <h2>Prácticos</h2>
+            <h2>Prácticos – Base de Datos</h2>
             
             <div class="columnas">
                 <div class="columna">
                     <h4>Trabajos Prácticos</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford);">No hay prácticos cargados actualmente.</p>
+                    <p style="font-size: 14px; color: var(--gris-oxford); text-align: center;">
+                        No hay prácticos cargados actualmente.
+                    </p>
                 </div>
 
                 <div class="columna">

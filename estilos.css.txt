@@ -1,139 +1,109 @@
-/* VARIABLES */
-:root {
-    --azul-institucional: #1A365D;
-    --gris-oxford: #4A5568;
-    --blanco-fondo: #F7FAFC;
-}
-
-/* 1. RESET Y ESTRUCTURA BASE */
-html, body {
-    height: 100%;
+/* 1. RESET RADICAL PARA EVITAR ERRORES */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita que la página se mueva hacia los lados */
+}
+
+:root {
+    --azul: #1A365D;
+    --gris: #4A5568;
+    --fondo: #F7FAFC;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--blanco-fondo);
+    background-color: var(--fondo);
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-.main-content {
-    flex: 1;
-}
-
-/* 2. NAVBAR RESPONSIVA (MENÚ) */
+/* 2. NAVBAR: SOLUCIÓN AL MENÚ CORTADO */
 .navbar {
-    background-color: #ffffff;
-    border-bottom: 3px solid var(--azul-institucional);
-    padding: 10px 0;
+    background: #ffffff;
+    border-bottom: 3px solid var(--azul);
     width: 100%;
+    padding: 10px 0;
 }
 
 .navbar ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-direction: column; /* 👈 EN MÓVIL: Una opción debajo de otra */
-    align-items: center;    /* 👈 CENTRADO TOTAL */
-    gap: 10px;
-}
-
-.navbar li {
-    width: 100%;
-    text-align: center;
+    flex-direction: column; /* 👈 En móvil: uno debajo del otro */
+    align-items: center;
+    gap: 5px;
 }
 
 .navbar a {
     text-decoration: none;
-    color: var(--gris-oxford);
+    color: var(--gris);
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
+    font-size: 13px;
+    padding: 10px;
     display: block;
-    padding: 8px 0;
+    text-transform: uppercase;
 }
 
-/* Resaltar la página actual (opcional, si añades la clase .active) */
-.navbar a:hover {
-    color: var(--azul-institucional);
-    background-color: #f1f5f9;
-}
-
-/* 3. CONTENEDOR Y TARJETAS */
+/* 3. TARJETAS: SOLUCIÓN AL BOTÓN CORRIDO */
 .centrado {
-    padding: 20px;
-    max-width: 900px;
+    padding: 15px;
+    max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .columnas {
     display: flex;
-    flex-direction: column; /* 👈 TODO VERTICAL */
-    gap: 25px;
+    flex-direction: column; /* 👈 Todo vertical por defecto */
+    gap: 20px;
 }
 
 .columna {
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-left: 6px solid var(--azul-institucional);
-    display: flex;
-    flex-direction: column; /* 👈 FUERZA EL ORDEN VERTICAL */
-    align-items: flex-start;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--azul);
+    /* 👈 Esto es clave para que el botón no flote al costado */
+    display: block !important; 
+    position: relative !important;
 }
 
-/* 4. BOTONES CORREGIDOS (DEBAJO DEL TEXTO) */
-/* Esto arregla los botones de tus fotos que se salían de lado */
+/* 4. BOTONES: FORZAR DEBAJO DEL TEXTO */
+/* Usamos !important para anular cualquier código viejo que los mueva */
 .btn-link, .btn-ejercicio, .btn-proyecto, .columna a {
-    position: static !important; /* 👈 ANULA EL COSTADO */
+    position: static !important; /* 👈 Anula el 'absolute' que los saca de lugar */
     display: block !important;
-    width: 100% !important;     /* 👈 OCUPA TODO EL ANCHO ABAJO */
-    margin-top: 15px !important; /* 👈 SEPARA DEL TEXTO */
-    background-color: var(--azul-institucional) !important;
+    width: 100% !important;     /* 👈 Ocupa todo el ancho */
+    margin-top: 20px !important; /* 👈 Se separa del texto hacia abajo */
+    background: var(--azul) !important;
     color: white !important;
-    text-align: center;
-    padding: 12px 0;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    box-sizing: border-box;
+    text-align: center !important;
+    padding: 12px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
 }
 
-/* 5. AJUSTES PARA PANTALLAS GRANDES (PC) */
+/* 5. AJUSTES PARA COMPUTADORA (PANTALLA GRANDE) */
 @media (min-width: 768px) {
     .navbar ul {
         flex-direction: row; /* En PC vuelve a ser horizontal */
-        justify-content: center;
-        gap: 30px;
-    }
-    
-    .navbar li {
-        width: auto;
+        justify-content: flex-end;
+        padding-right: 50px;
     }
 
     .columnas {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-    
-    .btn-link, .btn-ejercicio, .btn-proyecto, .columna a {
-        width: auto !important;
-        padding: 10px 25px;
-        align-self: flex-end; /* En PC los botones pueden ir a la esquina */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
 /* FOOTER */
 footer {
-    background: var(--azul-institucional);
+    background: var(--azul);
     color: white;
     text-align: center;
     padding: 25px;
-    font-size: 13px;
-    margin-top: 30px;
+    margin-top: auto;
 }

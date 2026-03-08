@@ -8,100 +8,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* Paleta de Colores:
-           Azul Institucional: #1A365D
-           Gris Oxford: #4A5568
-           Blanco/Fondo: #F7FAFC
-        */
+        /* CONFIGURACIÓN BASE */
+        :root {
+            --azul: #1A365D;
+            --gris: #4A5568;
+            --fondo: #F7FAFC;
+        }
 
         html, body {
             height: 100%;
             margin: 0;
-            background-color: #F7FAFC; /* Fondo muy suave */
-            color: #2D3748; /* Texto principal */
+            background-color: var(--fondo);
+            color: #2D3748;
         }
 
         body {
             display: flex;
             flex-direction: column;
-            font-family: 'Montserrat', sans-serif; /* Fuente limpia para el cuerpo */
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* NAVBAR RESPONSIVA */
         .navbar {
-            display: flex;
-            justify-content: flex-end;
             background: #ffffff;
-            padding: 20px 50px;
+            padding: 10px 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-bottom: 3px solid #1A365D; /* Detalle en azul institucional */
+            border-bottom: 3px solid var(--azul);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 40px;
+            flex-wrap: wrap; /* Permite que el menú baje en móviles */
+            justify-content: center;
+            gap: 15px;
             margin: 0;
             padding: 0;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #4A5568; /* Gris Oxford */
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--gris);
+            font-weight: 600;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 12px;
             letter-spacing: 1px;
+            padding: 10px;
+            display: inline-block;
         }
 
-        .nav-links a:hover {
-            color: #1A365D; /* Azul al pasar el mouse */
-        }
-
-        /* HERO - SECCIÓN PRINCIPAL */
-        .hero {
-            flex: 1; /* Empuja el footer hacia abajo */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #ffffff 0%, #F7FAFC 100%);
-        }
-
-        .hero-text {
-            max-width: 900px;
-        }
-
-        /* TITULO FORMAL */
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif; /* Elegante con remates */
-            font-size: 48px;
-            color: #1A365D;
-            margin-bottom: 20px;
-        }
-
-        /* Línea decorativa debajo del título */
-        .hero-text h1::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #1A365D;
-            margin: 20px auto;
-        }
-
-        .hero-text p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 20px;
-            color: #4A5568;
-            font-weight: 400;
-        }
-
-        /* DROPDOWN FORMAL */
+        /* DROPDOWN (MATERIAS) MEJORADO PARA MÓVIL */
         .dropdown {
             position: relative;
         }
@@ -110,57 +67,105 @@
             display: none;
             position: absolute;
             background: white;
-            min-width: 220px;
+            min-width: 250px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            border-top: 2px solid #1A365D;
-            z-index: 1;
+            border-top: 2px solid var(--azul);
+            z-index: 100;
+            left: 50%;
+            transform: translateX(-50%); /* Centra el desplegable */
         }
 
         .dropdown-content a {
             display: block;
             padding: 12px 20px;
-            text-align: left;
+            text-align: center;
             text-transform: none;
             border-bottom: 1px solid #edf2f7;
+            font-size: 14px;
         }
 
-        .dropdown-content a:hover {
-            background-color: #f8fafc;
-        }
-
+        /* En PC abre al pasar el mouse, en móvil se activa al tocar */
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* FOOTER */
-        .footer {
+        /* SECCIÓN HERO ADAPTABLE */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 25px;
-            background: #1A365D; /* Fondo azul oscuro */
-            color: #ffffff;
-            font-size: 14px;
-            letter-spacing: 1px;
+            padding: 40px 20px;
         }
 
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 8vw, 48px); /* Tamaño fluido según pantalla */
+            color: var(--azul);
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--azul);
+            margin: 15px auto;
+        }
+
+        .hero-text p {
+            font-size: clamp(16px, 4vw, 20px);
+            color: var(--gris);
+        }
+
+        /* FOOTER FIJO ABAJO */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--azul);
+            color: #ffffff;
+            font-size: 13px;
+        }
+
+        /* AJUSTES ESPECÍFICOS PARA MÓVIL (PANTALLAS CHICAS) */
+        @media (max-width: 600px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .dropdown-content {
+                position: static; /* En móvil el menú se expande hacia abajo */
+                transform: none;
+                width: 100%;
+                box-shadow: none;
+                background: #f8fafc;
+            }
+            
+            .dropdown:focus-within .dropdown-content {
+                display: block;
+            }
+        }
     </style>
 </head>
-
 <body>
 
-    <header class="header">
+    <header>
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Materias</a>
+                <li class="dropdown" tabindex="0"> <a href="#" class="dropbtn">Materias ▾</a>
                     <div class="dropdown-content">
-                        <a href="Programacion_I/programacion.html"><center>Programación I</center></a>
-                        <a href="Programacion_Avanzada/prog_II.html"><center>Programación Avanzada</center></a>
-                        <a href="Video_Juegos/Video_Juegos.html"><center>Videojuegos</center></a>
-						<a href="Base_de_Datos/Base_de_Datos.html"><center>Base de Datos</center></a>
-                        <a href="Teoría_Proyecto/Tutoria_Proyecto.html"><center>Tutorías de Proyecto</center></a>
-						<a href="Ingeniería_Software/Ingeniería_Software.html"><center>Ingeniería de Software</center></a>
+                        <a href="Programacion_I/programacion.html">Programación I</a>
+                        <a href="Programacion_Avanzada/prog_II.html">Programación Avanzada</a>
+                        <a href="Video_Juegos/Video_Juegos.html">Videojuegos</a>
+                        <a href="Base_de_Datos/Base_de_Datos.html">Base de Datos</a>
+                        <a href="Teoría_Proyecto/Tutoria_Proyecto.html">Tutorías de Proyecto</a>
+                        <a href="Ingeniería_Software/Ingeniería_Software.html">Ingeniería de Software</a>
                     </div>
                 </li>
 
@@ -169,7 +174,7 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <main class="hero">
         <div class="hero-text">
             <h1>Portal de Recursos Pedagógicos</h1>
             <p>
@@ -177,10 +182,10 @@
                 Desarrollo de competencias tecnológicas y formación profesional especializada.
             </p>
         </div>
-    </section>
+    </main>
 
     <footer class="footer">
-        <p>© 2024 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
+        <p>© 2026 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
     </footer>
 
 </body>

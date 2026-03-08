@@ -23,23 +23,32 @@ body {
     flex: 1;
 }
 
-/* NAVBAR ADAPTABLE */
+/* NAVBAR CORREGIDA (PARA MÓVIL) */
 .navbar {
     background-color: #ffffff;
-    padding: 15px 5%;
+    padding: 10px 20px; /* Reducido para móviles */
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Centrado en móvil */
     border-bottom: 3px solid var(--azul-institucional);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin: 0;
-    padding: 0;
-    flex-wrap: wrap; /* Permite que el menú baje si no hay espacio */
+    padding: 10px 0;
+    flex-wrap: wrap; /* 👈 ESTO HACE QUE SE VEAN TODAS LAS OPCIONES */
     justify-content: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--gris-oxford);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 11px; /* Un poco más pequeño para que quepan más */
+    letter-spacing: 0.5px;
 }
 
 /* TARJETAS Y GRILLAS RESPONSIVAS */
@@ -51,39 +60,64 @@ body {
 
 .columnas {
     display: grid;
-    /* Por defecto: 1 columna (móvil) */
     grid-template-columns: 1fr; 
     gap: 20px;
 }
 
-/* Cuando la pantalla es mayor a 768px (Tablet/PC), usa 2 o 3 columnas */
 @media (min-width: 768px) {
     .columnas {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+    .navbar {
+        justify-content: flex-end; /* En PC vuelve a la derecha */
+    }
+    .navbar a {
+        font-size: 13px;
+    }
 }
 
+/* CORRECCIÓN DE TARJETAS Y BOTONES SALIDOS */
 .columna {
     background: white;
     padding: 25px;
     border-top: 5px solid var(--azul-institucional);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Alinea contenido verticalmente */
+    overflow: hidden; /* Evita que nada salga de la tarjeta */
 }
 
-/* BOTONES ADAPTABLES */
-.btn-link, .btn-ejercicio, .btn-proyecto {
+/* Ajuste para que los botones de "Ver Guía" o "Descargar" no se salgan */
+.btn-link, .btn-ejercicio, .btn-proyecto, .columna a {
+    position: relative !important; /* Quita posiciones absolutas que causan el desborde */
+    right: auto !important;
+    top: auto !important;
     display: block;
-    width: 100%; /* Ocupa todo el ancho en móvil para tocar fácil con el dedo */
+    width: 100%; 
     box-sizing: border-box;
     padding: 12px;
-    margin-bottom: 10px;
+    margin-top: 15px; /* Espacio con el texto de arriba */
     text-decoration: none;
-    background: #f1f5f9;
-    color: var(--azul-institucional);
+    background: var(--azul-institucional);
+    color: white !important;
     border-radius: 5px;
     font-weight: 500;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Títulos y textos dentro de la tarjeta */
+.columna h4 {
+    color: var(--azul-institucional);
+    margin: 0 0 10px 0;
+}
+
+.columna p {
+    font-size: 14px;
+    color: var(--gris-oxford);
+    margin: 0;
 }
 
 /* FOOTER */
@@ -92,5 +126,5 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    font-size: 14px;
+    font-size: 12px;
 }

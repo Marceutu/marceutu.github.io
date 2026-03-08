@@ -3,100 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoría de Proyecto</title>
+    <title>Teórico – Tutoría de Proyecto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Fondo blanco */
-}
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
 
-.navbar {
-    background-color: #F0F9E6; /* Fondo blanco del banner */
-    overflow: hidden;
-}
+        /* 1. CONFIGURACIÓN PARA EMPUJAR EL FOOTER */
+        html, body {
+            height: 100%; /* Ocupa toda la altura */
+            margin: 0;
+        }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+            display: flex;
+            flex-direction: column; /* Organiza los elementos en columna */
+        }
 
-.navbar li {
-    margin: 0 15px;
-}
+        /* 2. EL CONTENIDO CRECE PARA OCUPAR EL ESPACIO */
+        .main-content {
+            flex: 1; /* Esto empuja al footer al fondo */
+        }
 
-.navbar a {
-    text-decoration: none;
-    color: #000000; /* Palabras en negro */
-    padding: 14px 20px;
-    display: block;
-    transition: background-color 0.3s ease; /* Transición suave */
-}
+        /* NAVBAR */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-.navbar a:hover {
-    background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
-}
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
 
-.navbar a:active {
-    background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-}
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-.centrado {
-    padding: 20px;
-}
+        .navbar a:hover {
+            color: var(--azul-institucional);
+        }
 
-.columnas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
+        /* CONTENEDOR */
+        .centrado {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.columna {
-    flex: 1 1 calc(33.333% - 20px);
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-.columna h4 {
-    margin-top: 0;
-    color: #333;
-}
+        /* GRILLA */
+        .columnas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-.columna a {
-    text-decoration: none;
-    color: #0e055e;
-    display: block;
-    margin-top: 10px;
-}
+        .columna {
+            background-color: #ffffff;
+            border-top: 4px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
 
-.columna a:hover {
-    text-decoration: underline;
-}
+        .columna:hover { transform: translateY(-5px); }
 
+        .columna h4 {
+            margin: 0 0 15px 0;
+            color: var(--azul-institucional);
+            font-size: 18px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* FOOTER CORREGIDO */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            width: 100%;
+            /* Ya no necesita margin-top excesivo */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                 <li><a href="Tutoria_Proyecto.html">Tutoría de Proyecto</a></li>
-               
-				
-            </ul>
-        </nav>
-    </header>
-<div class="centrado">
-    <div class="columnas">
-        <div class="columna">
-            
+
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="Tutoria_Proyecto.html">Volver a Tutorías</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="centrado">
+            <h2>Material Teórico - Tutorías</h2>
+            <div class="columnas">
+                <div class="columna">
+                    <h4>Gestión de Proyecto</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                </div>
+                <div class="columna">
+                    <h4>Ingeniería de Software</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                </div>
+                <div class="columna">
+                    <h4>Documentación</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                </div>
+            </div>
+        </div>
+    </div> <footer>
+        <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
+    </footer>
+
 </body>
 </html>

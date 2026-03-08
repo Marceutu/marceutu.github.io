@@ -3,144 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
+    <title>Teórico – Programación I</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Fondo blanco */
-}
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
 
-.navbar {
-    background-color: #F0F9E6; /* Fondo blanco del banner */
-    overflow: hidden;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+        }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+        /* BARRA DE NAVEGACIÓN FORMAL */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-.navbar li {
-    margin: 0 15px;
-}
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
 
-.navbar a {
-    text-decoration: none;
-    color: #000000; /* Palabras en negro */
-    padding: 14px 20px;
-    display: block;
-    transition: background-color 0.3s ease; /* Transición suave */
-}
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-.navbar a:hover {
-    background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
-}
+        .navbar a:hover {
+            color: var(--azul-institucional);
+        }
 
-.navbar a:active {
-    background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-}
+        /* CONTENEDOR DE TARJETAS */
+        .centrado {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.centrado {
-    padding: 20px;
-}
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-.columnas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
+        .columnas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-.columna {
-    flex: 1 1 calc(33.333% - 20px);
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        /* TARJETAS FORMALES */
+        .columna {
+            background-color: #ffffff;
+            border-top: 4px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
 
-.columna h4 {
-    margin-top: 0;
-    color: #333;
-}
+        .columna:hover {
+            transform: translateY(-5px);
+        }
 
-.columna a {
-    text-decoration: none;
-    color: #0e055e;
-    display: block;
-    margin-top: 10px;
-}
+        .columna h4 {
+            margin: 0 0 15px 0;
+            color: var(--azul-institucional);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+        }
 
-.columna a:hover {
-    text-decoration: underline;
-}
+        .columna a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-size: 15px;
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
 
+        .columna a:hover {
+            color: var(--azul-institucional);
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            margin-top: 50px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                 <li><a href="programacion.html">Programación</a></li>
-               
-				
+                <li><a href="programacion.html">Volver a Programación</a></li>
             </ul>
         </nav>
     </header>
-<div class="centrado">
-    <div class="columnas">
-        <div class="columna">
-            <b><h4>Primeros conceptos</h4></b>
-            <a href="https://docs.google.com/presentation/d/1AKLsH7l7iuPKZNyymkc0eUfiYUX_Wtk6/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Definiciones a tener en cuenta</a>
-        </div>
-        <div class="columna">
-            <b><h4>Conceptos Básicos</h4></b>
-            <a href="https://docs.google.com/presentation/d/1idInGkOCUXc2ct6MtBeHhFS0sQ2MnVq1/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Primeros pasos</a>
-        </div>
-        <div class="columna">
-            <b><h4>Ventanas de Netbeans</h4></b>
-            <a href="https://docs.google.com/presentation/d/19tTcCM1mWaRm7Dll2IlYN02GGha97rAc/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Algunas explicaciones</a>
-        </div>
-        <div class="columna">
-            <b><h4>Creación de proyecto en Eclipse</h4></b>
-            <a href="https://docs.google.com/presentation/d/1vwjlsg7C3iluanSWI4JSjYfx6YZSBgpN/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Paso a paso</a>
-        </div>
-        <div class="columna">
-            <b><h4>Sentencias</h4></b>
-            <a href="https://docs.google.com/presentation/d/1ocBb2RTTGsKOoirXyxeTe-5jynkx2KvK/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Sentencia if</a>
-        </div>
-      
-    <div class="columna">
-        <b><h4>Estructuras de control</h4></b>
-        <a href="https://docs.google.com/presentation/d/1uf3XUxf1_ZN3CfbSU5VaLSLtUdN5GljB/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Estructura for</a>
-    </div>
-	 <div class="columna">
-        <b><h4>Estructura While</h4></b>
-        <a href="https://docs.google.com/presentation/d/143BN5pR6D41pOdKin4s7qBP5pUXSkXLZ/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Sentencia While</a>
-    </div>
-	 <div class="columna">
-        <b><h4>Estructura de datos Arreglos</h4></b>
-        <a href="https://docs.google.com/presentation/d/1QEYjKFMcchH5P3p1j5tj4vFqobC9fZf3/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Arreglos</a>
-    </div>
-	 </div>
-	 <div class="columna">
-        <b><h4>Switch</h4></b>
-          <a href="https://docs.google.com/presentation/d/1HF3Jp5dQmPmCnBphqke-4KjuD2QIKpXd/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Menús</a>
-   
-	 <div class="columna">
-        <b><h4>Conceptos de Java Orientado a Objetos</h4></b>
-        <a href="https://docs.google.com/presentation/d/11hh0XW6HtJqBNqMOxoBXByBTplJVbYQL/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">OOP</a>
-		</p><a href="https://drive.google.com/file/d/14yZY5wr7il3JXNOeuc8W6goh3iFuGr6F/view?usp=sharing" style="color:#0e055e;">Ejercicio explicado</a></p>
-    </div>
-</div>
 
+    <div class="centrado">
+        <h2>Material Teórico</h2>
+        
+        <div class="columnas">
+            <div class="columna">
+                <h4>Primeros conceptos</h4>
+                <a href="https://docs.google.com/presentation/d/1AKLsH7l7iuPKZNyymkc0eUfiYUX_Wtk6/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Definiciones clave</a>
+            </div>
+
+            <div class="columna">
+                <h4>Conceptos Básicos</h4>
+                <a href="https://docs.google.com/presentation/d/1idInGkOCUXc2ct6MtBeHhFS0sQ2MnVq1/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Primeros pasos</a>
+            </div>
+
+            <div class="columna">
+                <h4>Ventanas de Netbeans</h4>
+                <a href="https://docs.google.com/presentation/d/19tTcCM1mWaRm7Dll2IlYN02GGha97rAc/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Explicación de entorno</a>
+            </div>
+
+            <div class="columna">
+                <h4>Entorno Eclipse</h4>
+                <a href="https://docs.google.com/presentation/d/1vwjlsg7C3iluanSWI4JSjYfx6YZSBgpN/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Creación de proyecto</a>
+            </div>
+
+            <div class="columna">
+                <h4>Sentencias Condicionales</h4>
+                <a href="https://docs.google.com/presentation/d/1ocBb2RTTGsKOoirXyxeTe-5jynkx2KvK/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Sentencia IF</a>
+                <a href="https://docs.google.com/presentation/d/1HF3Jp5dQmPmCnBphqke-4KjuD2QIKpXd/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Sentencia Switch / Menús</a>
+            </div>
+
+            <div class="columna">
+                <h4>Estructuras de Control</h4>
+                <a href="https://docs.google.com/presentation/d/1uf3XUxf1_ZN3CfbSU5VaLSLtUdN5GljB/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Estructura For</a>
+                <a href="https://docs.google.com/presentation/d/143BN5pR6D41pOdKin4s7qBP5pUXSkXLZ/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Estructura While</a>
+            </div>
+
+            <div class="columna">
+                <h4>Estructura de Datos</h4>
+                <a href="https://docs.google.com/presentation/d/1QEYjKFMcchH5P3p1j5tj4vFqobC9fZf3/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Arreglos</a>
+            </div>
+
+            <div class="columna">
+                <h4>Programación (OOP)</h4>
+                <a href="https://docs.google.com/presentation/d/11hh0XW6HtJqBNqMOxoBXByBTplJVbYQL/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true">📄 Conceptos OOP</a>
+                <a href="https://drive.google.com/file/d/14yZY5wr7il3JXNOeuc8W6goh3iFuGr6F/view?usp=sharing">📁 Ejercicio explicado</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
 
 </body>
 </html>

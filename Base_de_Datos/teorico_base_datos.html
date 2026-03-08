@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material – Tutoría de Proyecto</title>
+    <title>Teórico – Base de Datos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -13,9 +13,9 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        /* CONFIGURACIÓN PARA EL FOOTER AL FINAL */
+        /* 1. CONFIGURACIÓN PARA EMPUJAR EL FOOTER */
         html, body {
-            height: 100%;
+            height: 100%; /* Ocupa toda la altura */
             margin: 0;
         }
 
@@ -24,14 +24,15 @@
             background-color: var(--blanco-fondo);
             color: #2D3748;
             display: flex;
-            flex-direction: column; /* Alineación vertical para empujar el footer */
+            flex-direction: column; /* Organiza los elementos en columna */
         }
 
+        /* 2. EL CONTENIDO CRECE PARA OCUPAR EL ESPACIO */
         .main-content {
-            flex: 1; /* Ocupa todo el espacio disponible */
+            flex: 1; /* Esto empuja al footer al fondo */
         }
 
-        /* NAVBAR PROFESIONAL */
+        /* NAVBAR */
         .navbar {
             background-color: #ffffff;
             padding: 15px 50px;
@@ -63,85 +64,55 @@
             color: var(--azul-institucional);
         }
 
-        /* CONTENEDOR PRINCIPAL */
+        /* CONTENEDOR */
         .centrado {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             color: var(--azul-institucional);
             text-align: center;
-            font-size: 38px;
+            font-size: 36px;
             margin-bottom: 40px;
         }
 
-        /* GRILLA DE TARJETAS */
+        /* GRILLA */
         .columnas {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            justify-content: center;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .columna {
             background-color: #ffffff;
-            border-top: 5px solid var(--azul-institucional);
+            border-top: 4px solid var(--azul-institucional);
             border-radius: 4px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
         }
 
-        .columna:hover {
-            transform: translateY(-5px);
-        }
+        .columna:hover { transform: translateY(-5px); }
 
         .columna h4 {
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             color: var(--azul-institucional);
-            font-weight: 600;
             font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
-        /* BOTONES DE ACCESO */
-        .btn-link {
-            text-decoration: none;
-            color: var(--azul-institucional);
-            background: #f1f5f9;
-            padding: 12px 20px;
-            border-radius: 4px;
-            display: block;
-            margin-bottom: 15px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .btn-link:hover {
-            background-color: var(--azul-institucional);
-            color: #ffffff;
-        }
-
-        /* FOOTER SIN ESPACIOS BLANCOS */
+        /* FOOTER CORREGIDO */
         footer {
             text-align: center;
             padding: 30px;
             background: var(--azul-institucional);
             color: white;
             width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                justify-content: center;
-            }
+            /* Ya no necesita margin-top excesivo */
         }
     </style>
 </head>
@@ -152,28 +123,29 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Tutoria_Proyecto.html">Volver a Tutoría</a></li>
+                    <li><a href="Base_de_Datos.html">Volver</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="centrado">
-            <h2>Ejercicios</h2>
-            
+            <h2>Material Teórico - Base de Datos</h2>
             <div class="columnas">
                 <div class="columna">
-                    <h4>Recursos Disponibles</h4>
-                    <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px;">
-                        Seleccione el material que desea consultar.
-                    </p>
-                    <a href="#" class="btn-link">Ver Documento 1</a>
-                    <a href="#" class="btn-link">Ver Documento 2</a>
+                    <h4></h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                </div>
+                <div class="columna">
+                    <h4></h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
+                </div>
+                <div class="columna">
+                    <h4></h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Próximamente materiales...</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <footer>
+    </div> <footer>
         <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
     </footer>
 

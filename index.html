@@ -4,159 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espacio Educativo – Marcela Mederos</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Paleta de Colores:
+           Azul Institucional: #1A365D
+           Gris Oxford: #4A5568
+           Blanco/Fondo: #F7FAFC
+        */
 
-<style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: #F7FAFC; /* Fondo muy suave */
+            color: #2D3748; /* Texto principal */
+        }
 
-html, body{
-    height:100%;
-    margin:0;
-}
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif; /* Fuente limpia para el cuerpo */
+            line-height: 1.6;
+        }
 
-body{
-    display:flex;
-    flex-direction:column;
-    font-family: Arial, Helvetica, sans-serif;
-}
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background: #ffffff;
+            padding: 20px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #1A365D; /* Detalle en azul institucional */
+        }
 
-/* NAVBAR */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
 
-.navbar{
-    display:flex;
-    justify-content:flex-end;
-    background:#f5f5f5;
-    padding:15px;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568; /* Gris Oxford */
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
 
-.nav-links{
-    list-style:none;
-    display:flex;
-    gap:30px;
-    margin:0;
-    padding:0;
-}
+        .nav-links a:hover {
+            color: #1A365D; /* Azul al pasar el mouse */
+        }
 
-.nav-links a{
-    text-decoration:none;
-    color:black;
-    font-weight:500;
-}
+        /* HERO - SECCIÓN PRINCIPAL */
+        .hero {
+            flex: 1; /* Empuja el footer hacia abajo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #F7FAFC 100%);
+        }
 
-/* HERO */
+        .hero-text {
+            max-width: 900px;
+        }
 
-.hero{
-    text-align:center;
-    padding:40px;
-}
+        /* TITULO FORMAL */
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif; /* Elegante con remates */
+            font-size: 48px;
+            color: #1A365D;
+            margin-bottom: 20px;
+        }
 
-/* TITULO */
+        /* Línea decorativa debajo del título */
+        .hero-text h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #1A365D;
+            margin: 20px auto;
+        }
 
-.hero-text h1{
-    font-size:40px;
-}
+        .hero-text p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 20px;
+            color: #4A5568;
+            font-weight: 400;
+        }
 
-.hero-text p{
-    max-width:800px;
-    margin:auto;
-    font-size:18px;
-}
+        /* DROPDOWN FORMAL */
+        .dropdown {
+            position: relative;
+        }
 
-/* IMAGEN */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border-top: 2px solid #1A365D;
+            z-index: 1;
+        }
 
-.hero-img{
-    text-align:center;
-    margin-top:30px;
-}
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            text-align: left;
+            text-transform: none;
+            border-bottom: 1px solid #edf2f7;
+        }
 
-.hero-img img{
-    max-width:500px;
-}
+        .dropdown-content a:hover {
+            background-color: #f8fafc;
+        }
 
-/* FOOTER */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-.footer{
-    text-align:center;
-    padding:10px;
-    background:#ffffff;   /* mismo fondo que la página */
-}
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #1A365D; /* Fondo azul oscuro */
+            color: #ffffff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
 
-/* DROPDOWN */
-
-.dropdown{
-    position:relative;
-}
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    background:white;
-    min-width:180px;
-    box-shadow:0px 2px 10px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a{
-    display:block;
-    padding:10px;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
-}
-
-</style>
-
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="header">
-<nav class="navbar">
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
 
-<ul class="nav-links">
-<li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Materias</a>
+                    <div class="dropdown-content">
+                        <a href="Programacion_I/programacion.html"><center>Programación I</center></a>
+                        <a href="Programacion_Avanzada/prog_II.html"><center>Programación Avanzada</center></a>
+                        <a href="Video_Juegos/Video_Juegos.html"><center>Videojuegos</center></a>
+						<a href="Base_de_Datos/Base_de_Datos.html"><center>Base de Datos</center></a>
+                        <a href="Teoría_Proyecto/Tutoria_Proyecto.html"><center>Tutorías de Proyecto</center></a>
+						<a href="Ingeniería_Software/Ingeniería_Software.html"><center>Ingeniería de Software</center></a>
+                    </div>
+                </li>
 
-<li class="dropdown">
-<a class="dropbtn">Materias</a>
+                <li><a href="contacto.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="dropdown-content">
-<a href="Programacion_I/programacion.html"><center>Programación I</center></a>
-<a href="Programacion_Avanzada/prog_II.html"><center>Programación Avanzada</center></a>
-<a href="Video_Juegos/Video_Juegos.html"><center>Videojuegos</center></a>
-<a href="Teoría_Proyecto/Tutoria_Proyecto.html"><center>Tutorías de Proyecto</center></a>
-</div>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Portal de Recursos Pedagógicos</h1>
+            <p>
+                Bachillerato de Informática – UTU <br>
+                Desarrollo de competencias tecnológicas y formación profesional especializada.
+            </p>
+        </div>
+    </section>
 
-</li>
-
-<li><a href="contacto.html">Contactos</a></li>
-</ul>
-
-</nav>
-</header>
-
-<!-- HERO PRINCIPAL -->
-<section class="hero">
-
-<div class="hero-text">
-<h1>Bienvenidos a mi espacio educativo</h1>
-
-<p>
-Soy Marcela Mederos, docente en UTU. Este sitio reúne recursos,
-actividades y materiales para estudiantes de Bachillerato de Informática,
-fomentando el aprendizaje dinámico, la creatividad y la resolución de problemas.
-</p>
-</div>
-
-<div class="hero-img">
-<img src="c6.gif" alt="Imagen educativa">
-</div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-<p>© 2024 – Todos los derechos reservados</p>
-</footer>
+    <footer class="footer">
+        <p>© 2024 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
+    </footer>
 
 </body>
 </html>

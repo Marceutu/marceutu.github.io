@@ -3,165 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación Avanzada</title>
+    <title>Teórico – Programación Avanzada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Fondo blanco */
-}
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
 
-.navbar {
-    background-color: #F0F9E6; /* Fondo blanco del banner */
-    overflow: hidden;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+        }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+        /* NAVBAR FORMAL */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-.navbar li {
-    margin: 0 15px;
-}
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
 
-.navbar a {
-    text-decoration: none;
-    color: #000000; /* Palabras en negro */
-    padding: 14px 20px;
-    display: block;
-    transition: background-color 0.3s ease; /* Transición suave */
-}
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-.navbar a:hover {
-    background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
-}
+        .navbar a:hover {
+            color: var(--azul-institucional);
+        }
 
-.navbar a:active {
-    background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-}
+        /* CONTENEDOR PRINCIPAL */
+        .centrado {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.centrado {
-    padding: 20px;
-}
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-.columnas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
+        /* GRILLA DE TARJETAS */
+        .columnas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-.columna {
-    flex: 1 1 calc(33.333% - 20px);
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        /* ESTILO DE TARJETAS */
+        .columna {
+            background-color: #ffffff;
+            border-top: 4px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
 
-.columna h4 {
-    margin-top: 0;
-    color: #333;
-}
+        .columna:hover {
+            transform: translateY(-5px);
+        }
 
-.columna a {
-    text-decoration: none;
-    color: #0e055e;
-    display: block;
-    margin-top: 10px;
-}
+        .columna h4 {
+            margin: 0 0 15px 0;
+            color: var(--azul-institucional);
+            font-weight: 600;
+            font-size: 18px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
 
-.columna a:hover {
-    text-decoration: underline;
-}
+        .columna a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 12px;
+            padding: 8px;
+            background-color: #f8fafc;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
 
+        .columna a:hover {
+            background-color: var(--azul-institucional);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                 <li><a href="prog_II.html">Programación Avanzada</a></li>
-               
-				
+                <li><a href="prog_II.html">Volver a Prog Avanzada</a></li>
             </ul>
         </nav>
     </header>
 
-<div class="centrado">
-    <div class="columnas">
-        <div class="columna">
-            <p><h4>Repaso</h4>
-            <a href="https://docs.google.com/presentation/d/1bUktZgoY4I3hcMUD5acupMV1MqPFgosU/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Definiciones a tener en cuenta</a></p>
-			<a href="https://drive.google.com/file/d/1fs5NXjteCDFrI9sgzm2HaVcsW6tS_CAI/view?usp=sharing" style="color:#0e055e;">Glosario</a></p>
-		 </div>	
-		  <div class="columna">
-			 <p><h4>Primeras definiciones</h4>
-            <a href="https://docs.google.com/presentation/d/18sL8XTVYeFQCR6_LQRB2N2Gt6yWQ1bjN/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Java Orientada a Objetos</a></p>
-			 <a href="https://drive.google.com/file/d/1JUaGL-s6eK-QpwJS-yPSLb3Tvxe40q3c/view?usp=sharing" style="color:#0e055e;">Pizarra</a></p>
-			 <p><h4>Diagramas</h4>
-            <a href="https://docs.google.com/presentation/d/1_S47DgRQ9O-l4bNASLl0m44DsmBuJ-qz/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">UML</a></p>
-			 <a href="https://drive.google.com/file/d/1b82-Z-k1bgBXF4TzuKGynAVaozR3iCc8/view?usp=sharing" style="color:#0e055e;">Caso de uso</a></p>
-        </div>
-	  <div class="columna">
-            <p><h4>Conceptos Herencia</h4>
-            <a href="https://docs.google.com/presentation/d/1IX7MYxWcJrdAO3nsJT7ujHJoeuGfFmDH/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Definiciones de herencia</a></p>
-			 <a href="https://docs.google.com/presentation/d/1PerUucH5SsW80HPvYJwm15bV5E9av6SA/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Repaso de Listas</a></p>
-			
-		 </div>		
-    <div class="columna">
-            <p><h4>Teórico</h4>
-            <a href="https://drive.google.com/file/d/1SvP5bG4PEENU3gQ-ZFCx2dVxXa5MZXr6/view?usp=sharing" style="color:#0e055e;">Constructores</a></p>
-			 <a href="https://drive.google.com/file/d/13Kjtt_SQk34xx8-Mr-9VzFtwuWoqX_Yw/view?usp=sharing" style="color:#0e055e;">Casos de uso</a></p>
-			 
-			
-		 </div>	
-		  <div class="columna">
-            <p><h4>Manejo Excepciones</h4>
-            <a href="https://docs.google.com/presentation/d/1oAFqqeaO8k_Aj4_MrrRvjjCUF1JWMtqE/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Excepciones</a></p>
-			 
-			
-		 </div>	
-		  <div class="columna">
-            <p><h4>Capa Persistencia</h4>
-            <a href="https://drive.google.com/file/d/1mF7upyjI0p6VN17MI6ppsZl1VIIOJT06/view?usp=sharing" style="color:#0e055e;">Ejemplo</a></p>
-			<a href="https://drive.google.com/file/d/1YGy-ScQ1BeBpH99zLDvRi8US2QGvcrQ7/view?usp=sharing" style="color:#0e055e;">Testing unitario</a></p>
-			 
-			
-		 </div>	
-		  <div class="columna">
-            <p><h4>Componentes Swing</h4>
-            <a href="https://drive.google.com/file/d/1n4LDmI0aUWHyiyep_Ozo65ywX8DqOTZr/view?usp=sharing" style="color:#0e055e;">Calendario</a></p>
-			
-			 
-			
-		 </div>	
-		
-		  <div class="columna">
-            <p><h4>Cuestionario final</h4>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ1Lc8ykghXu42zUYSFny-OW1V90tTiMwxO8S-81a-wjSN2Q/viewform?usp=sharing&ouid=107558230245481358224" style="color:#0e055e;">Cuestionario</a></p>
-			
-			 
-			
-		 </div>	
-		 <div class="columna">
-            <p><h4>Material para las TA (tutorías académicas)</h4>
-			<a href="https://drive.google.com/file/d/1J8Aj6jaWc-Gv7kISJgpihT13J0RC8dSj/view?usp=sharing" style="color:#0e055e;">Reglamento de tutorías académicas</a></p>
-            <a href="https://drive.google.com/file/d/1XeLxaEf7fEYRhBSDMPIoeacC4li1Oq_R/view?usp=sharing" style="color:#0e055e;">Material</a></p>
-			 <a href="https://drive.google.com/file/d/1Rc2uKS5F4aORZY4Id_AR6kWx7jRKFjRt/view?usp=sharing" style="color:#0e055e;">Prototipo</a></p>
-			
-			 
-			
-		 </div>	
-</div>
+    <div class="centrado">
+        <h2> Teórico</h2>
+        
+        <div class="columnas">
+            <div class="columna">
+                <h4>Repaso Inicial</h4>
+                <a href="https://docs.google.com/presentation/d/1bUktZgoY4I3hcMUD5acupMV1MqPFgosU/edit?usp=sharing">📄 Definiciones clave</a>
+                <a href="https://drive.google.com/file/d/1fs5NXjteCDFrI9sgzm2HaVcsW6tS_CAI/view?usp=sharing">📕 Glosario Técnico</a>
+            </div>
 
+            <div class="columna">
+                <h4>Fundamentos Java</h4>
+                <a href="https://docs.google.com/presentation/d/18sL8XTVYeFQCR6_LQRB2N2Gt6yWQ1bjN/edit?usp=sharing">💻 Orientación a Objetos</a>
+                <a href="https://drive.google.com/file/d/1JUaGL-s6eK-QpwJS-yPSLb3Tvxe40q3c/view?usp=sharing">📝 Pizarra de Clase</a>
+            </div>
+
+            <div class="columna">
+                <h4>Modelado UML</h4>
+                <a href="https://docs.google.com/presentation/d/1_S47DgRQ9O-l4bNASLl0m44DsmBuJ-qz/edit?usp=sharing">📊 Diagramas UML</a>
+                <a href="https://drive.google.com/file/d/1b82-Z-k1bgBXF4TzuKGynAVaozR3iCc8/view?usp=sharing">🔍 Casos de Uso</a>
+            </div>
+
+            <div class="columna">
+                <h4>Herencia y Colecciones</h4>
+                <a href="https://docs.google.com/presentation/d/1IX7MYxWcJrdAO3nsJT7ujHJoeuGfFmDH/edit?usp=sharing">🧬 Conceptos de Herencia</a>
+                <a href="https://docs.google.com/presentation/d/1PerUucH5SsW80HPvYJwm15bV5E9av6SA/edit?usp=sharing">📋 Repaso de Listas</a>
+            </div>
+
+            <div class="columna">
+                <h4>Arquitectura</h4>
+                <a href="https://drive.google.com/file/d/1SvP5bG4PEENU3gQ-ZFCx2dVxXa5MZXr6/view?usp=sharing">🏗️ Constructores</a>
+                <a href="https://drive.google.com/file/d/13Kjtt_SQk34xx8-Mr-9VzFtwuWoqX_Yw/view?usp=sharing">📂 Casos de Uso Avanzados</a>
+            </div>
+
+            <div class="columna">
+                <h4>Manejo de Errores</h4>
+                <a href="https://docs.google.com/presentation/d/1oAFqqeaO8k_Aj4_MrrRvjjCUF1JWMtqE/edit?usp=sharing">⚠️ Excepciones en Java</a>
+            </div>
+
+            <div class="columna">
+                <h4>Persistencia y Testing</h4>
+                <a href="https://drive.google.com/file/d/1mF7upyjI0p6VN17MI6ppsZl1VIIOJT06/view?usp=sharing">💾 Capa de Persistencia</a>
+                <a href="https://drive.google.com/file/d/1YGy-ScQ1BeBpH99zLDvRi8US2QGvcrQ7/view?usp=sharing">🧪 Testing Unitario</a>
+            </div>
+
+            <div class="columna">
+                <h4>Interfaces (Swing)</h4>
+                <a href="https://drive.google.com/file/d/1n4LDmI0aUWHyiyep_Ozo65ywX8DqOTZr/view?usp=sharing">📅 Componente Calendario</a>
+            </div>
+
+            <div class="columna">
+                <h4>Cierre de Módulo</h4>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ1Lc8ykghXu42zUYSFny-OW1V90tTiMwxO8S-81a-wjSN2Q/viewform?usp=sharing">📝 Cuestionario Final</a>
+            </div>
+
+            <div class="columna">
+                <h4>Tutorías (TA)</h4>
+                <a href="https://drive.google.com/file/d/1J8Aj6jaWc-Gv7kISJgpihT13J0RC8dSj/view?usp=sharing">📋 Reglamento TA</a>
+                <a href="https://drive.google.com/file/d/1XeLxaEf7fEYRhBSDMPIoeacC4li1Oq_R/view?usp=sharing">📚 Material de Apoyo</a>
+                <a href="https://drive.google.com/file/d/1Rc2uKS5F4aORZY4Id_AR6kWx7jRKFjRt/view?usp=sharing">🎨 Prototipo</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
 
 </body>
 </html>

@@ -1,35 +1,40 @@
-/* Estilos generales */
+/* Importación de tipografías desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+/* Variables de color para facilitar cambios futuros */
+:root {
+    --azul-institucional: #1A365D;
+    --gris-oxford: #4A5568;
+    --blanco-fondo: #F7FAFC;
+    --texto-oscuro: #2D3748;
+}
+
 html, body {
-    height: 100%; /* Asegura que el cuerpo y el html ocupen toda la altura de la ventana */
+    height: 100%;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Previene el desbordamiento horizontal */
-    width: 100%; /* Hace que el body ocupe todo el ancho de la pantalla */
-}
-
-/* Contenedor principal */
-.container {
-    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
-    max-width: 100%; /* Evita que el contenedor se expanda más allá del ancho de la pantalla */
-    margin: 0 auto; /* Centra el contenido */
-    padding: 1 1em; /* Relleno de los lados */
-    box-sizing: border-box; /* Incluye el relleno en el cálculo del ancho */
-    min-height: 50%; /* Asegura que el contenedor ocupe toda la altura disponible */
-    display: flex;
-    flex-direction: column; /* Alinea los elementos verticalmente */
-}
-
-/* Barra de navegación */
-.navbar {
-    background-color: #f8f8f8;
-    padding: 1em;
-    display: flex;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
-    border-bottom: 1px solid #ddd;
+    background-color: var(--blanco-fondo);
+    color: var(--texto-oscuro);
+    font-family: 'Montserrat', sans-serif; /* Fuente profesional y limpia */
+    overflow-x: hidden;
     width: 100%;
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Contenedor principal para empujar el footer abajo */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Barra de navegación formal */
+.navbar {
+    background-color: #ffffff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 3px solid var(--azul-institucional);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .navbar ul {
@@ -37,116 +42,110 @@ html, body {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 2em;
+    gap: 30px;
 }
 
 .navbar a {
     text-decoration: none;
-    color: #333;
-    font-size: 1.1em;
+    color: var(--gris-oxford);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
-/* Menú desplegable */
-.dropdown {
-    position: relative; /* Necesario para que el contenido desplegable se posicione correctamente */
+.navbar a:hover {
+    color: var(--azul-institucional);
 }
 
-.dropbtn {
-    background-color: #f8f8f8;
-    color: #333;
-    padding: 10px 15px;
-    font-size: 1.1em;
-    border: none;
-    cursor: pointer;
-}
-
-/* Contenido del menú desplegable */
+/* Menú desplegable formal (reemplaza los colores pasteles) */
 .dropdown-content {
-    display: none; /* Oculta el menú por defecto */
+    display: none;
     position: absolute;
-    background-color: #FFD1DC; /* Fondo pastel claro */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-top: 2px solid var(--azul-institucional);
 }
 
 .dropdown-content a {
-    color: #333;
+    color: var(--texto-oscuro);
     padding: 12px 16px;
-    text-decoration: none;
+    text-transform: none; /* Letras normales para submenús */
+    border-bottom: 1px solid #edf2f7;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8fafc;
+    color: var(--azul-institucional);
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Hover en opciones del menú desplegable */
-.dropdown-content a:hover {
-    background-color: #c4f0c5; /* Verde pastel suave */
-    color: #000;
-    transition: background-color 0.3s ease;
-}
-
-/* Mostrar el menú cuando se pasa el ratón por encima */
-.dropdown:hover .dropdown-content {
-    display: block; /* Muestra el menú al pasar el ratón */
-}
-
-/* Sección principal con texto arriba y la imagen debajo */
+/* Sección Hero / Contacto */
 .hero {
+    flex: 1;
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: center; /* Centra ambos elementos horizontalmente */
-    background-color: #fafafa;
-    padding: 2em 1em; /* Espaciado alrededor del contenido */
-    width: 100%; /* Ajuste para que ocupe todo el ancho de la pantalla */
-    box-sizing: border-box; /* Incluye el padding dentro del ancho total */
-    flex-grow: 1; /* Asegura que la sección hero ocupe el espacio disponible */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.hero .text-content {
-    text-align: center; /* Centra el texto */
-    margin-bottom: 2em; /* Espacio entre el texto y la imagen */
+.hero h1, .hero h3 {
+    font-family: 'Playfair Display', serif; /* Elegante con remates */
+    color: var(--azul-institucional);
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
-.hero .image-content {
-    display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    text-align: center; /* Alinea el contenido dentro del contenedor */
+.hero p {
+    max-width: 750px;
+    font-size: 18px;
+    color: var(--gris-oxford);
+    line-height: 1.8;
 }
 
-.hero .image-content img {
-    max-width: 30px; 
-    max-width: 90%; /* Hace que la imagen sea responsiva */
-    height: auto; /* Mantiene las proporciones de la imagen */
-    display: block; /* Elimina el espacio extra si está en línea */
-     margin: 0 auto;
+/* Caja específica para el email de contacto */
+.email-box {
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: #ffffff;
+    border-left: 5px solid var(--azul-institucional);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    font-weight: 600;
 }
 
+.email-box a {
+    color: var(--azul-institucional);
+    text-decoration: none;
+}
 
-/* Ajustes responsivos para pantallas pequeñas */
+/* Footer Formal */
+footer {
+    background-color: var(--azul-institucional);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Ajustes responsivos */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        align-items: center; /* Centra todos los elementos */
-        padding: 1em 0;
+        padding: 15px;
+        justify-content: center;
     }
-
     .navbar ul {
-        flex-direction: column;
-        align-items: center; /* Asegura que las palabras estén alineadas */
-        gap: 0.5em; /* Espacio uniforme entre los elementos */
+        gap: 15px;
     }
-
-    .hero {
-        flex-direction: column; /* En pantallas pequeñas se coloca en columna */
-        padding: 1em 0;
-    }
-
-    .hero .image-content {
-        margin-top: 5em; /* Da un poco de espacio encima de la imagen */
-    }
-
-    .hero .text-content {
-        text-align: center; /* Centra el texto en pantallas pequeñas */
+    .hero h1 {
+        font-size: 30px;
     }
 }

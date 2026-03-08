@@ -3,115 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
+    <title>Prácticos – Programación Avanzada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
         }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+        }
+
+        /* NAVBAR FORMAL */
         .navbar {
-            background-color: #F0F9E6;
-            overflow: hidden;
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .navbar ul {
-            list-style-type: none;
+            list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-        }
-
-        .navbar li {
-            margin: 0 15px;
+            gap: 25px;
         }
 
         .navbar a {
             text-decoration: none;
-            color: #000000;
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: #fcf5c7;
+            color: var(--azul-institucional);
         }
 
-        .navbar a:active {
-            background-color: #b2ebf2;
-        }
-
+        /* CONTENEDOR PRINCIPAL */
         .centrado {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
 
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--gris-oxford);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        /* GRILLA DE TARJETAS */
         .columnas {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
+        /* ESTILO DE TARJETAS */
         .columna {
-            flex: 1;
             background-color: #ffffff;
-            border: 2px solid #ddd;
-            border-radius: 3px;
-            padding: 20px;
-            box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Centrar títulos y links */
+            border-top: 5px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .columna:hover {
+            transform: translateY(-5px);
         }
 
         .columna h4 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #333;
+            margin: 0 0 20px 0;
+            color: var(--azul-institucional);
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
         }
 
-        .columna a {
+        /* BOTONES DE ACCIÓN */
+        .btn-link {
             text-decoration: none;
-            color: #0e055e;
-            display: block; /* Asegura que quede debajo */
-            margin-bottom: 20px;
+            color: #ffffff;
+            background-color: var(--azul-institucional);
+            padding: 12px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s;
+            margin-top: 10px;
         }
 
-        .columna a:hover {
-            text-decoration: underline;
+        .btn-link:hover {
+            background-color: var(--gris-oxford);
+        }
+
+        /* Estilo especial para el juego */
+        .juego-card {
+            border-top-color: #2B6CB0;
+            background-color: #ebf8ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="prog_II.html">Programación Avanzada</a></li>
+                <li><a href="prog_II.html">Volver a Prog Avanzada</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="centrado">
+        <h2>Guías y Prácticos</h2>
+        <p class="subtitle">Propuestas de trabajo para Programación Avanzada.</p>
+        
         <div class="columnas">
-            <!-- Columna izquierda (Prácticos) -->
             <div class="columna">
-                <h4>Primer Práctico</h4>
-                <a href="https://drive.google.com/file/d/1vKUt97ESU45ovIRj5P5EZTP-oql5MZOC/view?usp=sharing" target="_blank">Práctico I</a>    
-
-                <h4>Práctico Herencia</h4>
-                <a href="https://drive.google.com/file/d/1Xf-EJ6S0dMr_YHydxF67sceMI0UymKBp/view?usp=sharing" target="_blank">Práctico Herencia</a>
+                <div>
+                    <h4>Introducción</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Repaso de conceptos iniciales y configuración.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1vKUt97ESU45ovIRj5P5EZTP-oql5MZOC/view?usp=sharing" target="_blank" class="btn-link">Ver Práctico I</a>
             </div>
 
-            <!-- Columna derecha (Juego de preguntas) -->
             <div class="columna">
-                <h4>Juego de preguntas</h4>
-                <a href="Juego_prog_II.html" target="_blank">Programación</a>
+                <div>
+                    <h4>Herencia</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">Aplicación de jerarquías y polimorfismo en Java.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1Xf-EJ6S0dMr_YHydxF67sceMI0UymKBp/view?usp=sharing" target="_blank" class="btn-link">Ver Práctico Herencia</a>
+            </div>
+
+            <div class="columna juego-card">
+                <div>
+                    <h4>Dinámica Grupal</h4>
+                    <p style="font-size: 14px; color: var(--azul-institucional);"><strong>Juego de Preguntas</strong><br>Autoevaluación de conocimientos.</p>
+                </div>
+                <a href="Juego_prog_II.html" target="_blank" class="btn-link" style="background-color: #2B6CB0;">Comenzar Juego</a>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
+
 </body>
 </html>
 

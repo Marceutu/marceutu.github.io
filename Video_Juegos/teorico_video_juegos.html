@@ -3,137 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoría de Proyecto</title>
+    <title>Teórico – Videojuegos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Fondo blanco */
-}
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
 
-.navbar {
-    background-color: #F0F9E6; /* Fondo blanco del banner */
-    overflow: hidden;
-}
+        /* CONFIGURACIÓN PARA EL FOOTER AL FINAL */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+            display: flex;
+            flex-direction: column;
+        }
 
-.navbar li {
-    margin: 0 15px;
-}
+        .main-content {
+            flex: 1; /* Empuja el footer hacia abajo */
+        }
 
-.navbar a {
-    text-decoration: none;
-    color: #000000; /* Palabras en negro */
-    padding: 14px 20px;
-    display: block;
-    transition: background-color 0.3s ease; /* Transición suave */
-}
+        /* NAVBAR PROFESIONAL */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-.navbar a:hover {
-    background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
-}
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
 
-.navbar a:active {
-    background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-}
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-.centrado {
-    padding: 20px;
-}
+        .navbar a:hover { color: var(--azul-institucional); }
 
-.columnas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
+        /* CONTENEDOR */
+        .centrado {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.columna {
-    flex: 1 1 calc(33.333% - 20px);
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-.columna h4 {
-    margin-top: 0;
-    color: #333;
-}
+        /* GRILLA DE TARJETAS */
+        .columnas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-.columna a {
-    text-decoration: none;
-    color: #0e055e;
-    display: block;
-    margin-top: 10px;
-}
+        .columna {
+            background-color: #ffffff;
+            border-top: 4px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
 
-.columna a:hover {
-    text-decoration: underline;
-}
+        .columna:hover { transform: translateY(-5px); }
 
+        .columna h4 {
+            margin: 0 0 15px 0;
+            color: var(--azul-institucional);
+            font-size: 17px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* ESTILO DE LOS ENLACES (BOTONES) */
+        .columna a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            background: #f8fafc;
+            display: block;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .columna a:hover {
+            background-color: var(--azul-institucional);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--azul-institucional);
+            color: white;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 20px; justify-content: center; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                 <li><a href="Video_Juegos.html">Videojuegos</a></li>
-               
-				
-            </ul>
-        </nav>
-    </header>
-<div class="centrado">
-    <div class="columnas">
-        <div class="columna">
-            <b><h4>Instalación de GameMaker</h4></b>
-            <a href="https://docs.google.com/presentation/d/14fpwzv_sVqA_6arhoDZ4rSzgMsHz7ECX/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Guía de instalación</a>
-			
-			</div >
-			  <div class="columna">
-            <b><h4>Primeros conceptos</h4></b>
-			<a href="https://docs.google.com/presentation/d/1N3f16H7EnjU06-O3D6wO5lwQKzpIja_k/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">GameMaker</a>
-			</div >
-    
-	   
-			  <div class="columna">
-            <b><h4>Ejemplo de normas APA</h4></b>
-			<a href="https://drive.google.com/file/d/1urua4wepGwtbm-eXpE96wKIXLR1G2XUT/view?usp=sharing" style="color:#0e055e;">Normas APA</a>
-			<a href="https://pixabay.com/es/sound-effects/search/explosion/" style="color:#0e055e;">Pagina para descargar sonido</a>
-			</div >
 
-		<div class="columna">
-           <b><h4>Primeros pasos</h4></b>
-			<a href="https://docs.google.com/presentation/d/14-VmEuPzcAWXjUQPvBsEflLJ5_wKNJbO/edit?usp=sharing&ouid=107558230245481358224&rtpof=true&sd=true" style="color:#0e055e;">Juego con plantillas</a>
-			<a href="https://drive.google.com/file/d/1MOjAOLnYjnGXANqzNxicJ9TUzyJjV750/view?usp=sharing" style="color:#0e055e;">Direccionar una imagen</a>
-		</div >
-		<div class="columna">
-           <b><h4>Drag and Drop (DnD) </h4></b>
-			<a href="https://drive.google.com/file/d/1DW_S-Y1I1329e-XUC-j7Blr1WyXcQU5W/view?usp=sharing" style="color:#0e055e;">Visual de GameMaker.</a>
-			<a href="https://drive.google.com/file/d/15WLx4zZTS4a3Xc8iY8LLkPGynihlyObQ/view?usp=sharing" style="color:#0e055e;">Clasificación de videojuegos.</a>
-		</div >
-		<div class="columna">
-           <b><h4>Juego plataforma </h4></b>
-			<a href="https://drive.google.com/file/d/1cPlPPvAMmjZpVvNRXLna1KTOHiiuMYqW/view?usp=sharing" style="color:#0e055e;">Juego plataforma</a>
-			
-		</div >
-		<div class="columna">
-           <b><h4>Ejemplos de juegos </h4></b>
-			<a href="https://drive.google.com/file/d/1muckOFfVtKLLMeM0pbYb55936DP6913o/view?usp=sharing" style="color:#0e055e;">Juego</a>
-			<a href="https://drive.google.com/file/d/1j2CGhBwYTtydFmZwtN0EXB3RWpmsMkbg/view?usp=sharing" style="color:#0e055e;">Movilidad opuestas</a>
-			
-		</div >
-      </div >
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="Video_Juegos.html">Volver a Videojuegos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="centrado">
+            <h2>Material Teórico</h2>
+            
+            <div class="columnas">
+                <div class="columna">
+                    <h4>Instalación</h4>
+                    <a href="https://docs.google.com/presentation/d/14fpwzv_sVqA_6arhoDZ4rSzgMsHz7ECX/edit?usp=sharing">📦 Guía de instalación GameMaker</a>
+                </div>
+
+                <div class="columna">
+                    <h4>Conceptos Básicos</h4>
+                    <a href="https://docs.google.com/presentation/d/1N3f16H7EnjU06-O3D6wO5lwQKzpIja_k/edit?usp=sharing">💡 Introducción a GameMaker</a>
+                </div>
+
+                <div class="columna">
+                    <h4>Normas y Recursos</h4>
+                    <a href="https://drive.google.com/file/d/1urua4wepGwtbm-eXpE96wKIXLR1G2XUT/view?usp=sharing">📄 Normas APA</a>
+                    <a href="https://pixabay.com/es/sound-effects/search/explosion/">🔊 Descarga de Sonidos</a>
+                </div>
+
+                <div class="columna">
+                    <h4>Primeros Pasos</h4>
+                    <a href="https://docs.google.com/presentation/d/14-VmEuPzcAWXjUQPvBsEflLJ5_wKNJbO/edit?usp=sharing">🎮 Juego con plantillas</a>
+                    <a href="https://drive.google.com/file/d/1MOjAOLnYjnGXANqzNxicJ9TUzyJjV750/view?usp=sharing">🖼️ Direccionar una imagen</a>
+                </div>
+
+                <div class="columna">
+                    <h4>Lógica Visual</h4>
+                    <a href="https://drive.google.com/file/d/1DW_S-Y1I1329e-XUC-j7Blr1WyXcQU5W/view?usp=sharing">🖱️ Drag and Drop (DnD)</a>
+                    <a href="https://drive.google.com/file/d/15WLx4zZTS4a3Xc8iY8LLkPGynihlyObQ/view?usp=sharing">🎲 Clasificación de videojuegos</a>
+                </div>
+
+                <div class="columna">
+                    <h4>Géneros</h4>
+                    <a href="https://drive.google.com/file/d/1cPlPPvAMmjZpVvNRXLna1KTOHiiuMYqW/view?usp=sharing">🪜 Juego de Plataforma</a>
+                </div>
+
+                <div class="columna">
+                    <h4>Ejemplos</h4>
+                    <a href="https://drive.google.com/file/d/1muckOFfVtKLLMeM0pbYb55936DP6913o/view?usp=sharing">🕹️ Proyecto Demo</a>
+                    <a href="https://drive.google.com/file/d/1j2CGhBwYTtydFmZwtN0EXB3RWpmsMkbg/view?usp=sharing">↔️ Movilidades Opuestas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
+
 </body>
 </html>

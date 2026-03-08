@@ -3,138 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
+    <title>Ejercicios y Lógica – Programación I</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
         }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+        }
+
+        /* NAVBAR */
         .navbar {
-            background-color: #F0F9E6; /* Fondo blanco del banner */
-            overflow: hidden;
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .navbar ul {
-            list-style-type: none;
+            list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-        }
-
-        .navbar li {
-            margin: 0 15px;
+            gap: 25px;
         }
 
         .navbar a {
             text-decoration: none;
-            color: #000000; /* Palabras en negro */
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease; /* Transición suave */
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
+            color: var(--azul-institucional);
         }
 
-        .navbar a:active {
-            background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-        }
-
+        /* CONTENEDOR */
         .centrado {
-            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
 
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        /* GRILLA DE EJERCICIOS */
         .columnas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .columna {
-            flex: 1 1 calc(66.666% - 30px); /* Ajusta el ancho para que el texto ocupe más espacio */
             background-color: #ffffff;
-            border: 5px solid #ddd;
-            border-radius: 3px;
-            padding: 45px;
-            box-shadow: 1 2px 7px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .columna:hover {
+            transform: translateY(-5px);
         }
 
         .columna h4 {
-            margin-top: 0;
-            color: #333;
+            margin: 0 0 20px 0;
+            color: var(--azul-institucional);
+            font-size: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
+        /* ESTILO DE ENLACES COMO BOTONES SUTILES */
         .columna a {
             text-decoration: none;
-            color: #0e055e;
-            display: block;
-            margin-top: 10px;
+            color: var(--azul-institucional);
+            background: #f1f5f9;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
         }
 
         .columna a:hover {
-            text-decoration: underline;
+            background: var(--azul-institucional);
+            color: white;
         }
 
-        /* Alineación del texto y la imagen */
-        .content {
-            display: flex; /* Utiliza flexbox para alinear el texto y la imagen horizontalmente */
-            justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
-            align-items: center; /* Alinea verticalmente al centro */
+        .columna a::before {
+            content: "→";
+            margin-right: 10px;
         }
 
-        .content .text {
-            flex: 1; /* El texto ocupará el 75% del espacio */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            margin-top: 60px;
         }
-
-        .content .image-content {
-            margin-left: 20px; /* Margen de separación entre el texto y la imagen */
-            flex: 0 1 30%; /* La imagen ocupará el 30% del espacio disponible */
-        }
-
-        .content img {
-            max-width: 100%; /* Ajusta el tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-        }
-
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="programacion.html">Programación</a></li>
+                <li><a href="programacion.html">Volver a Programación</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="centrado">
+        <h2>Ejercicios y Actividades</h2>
+        
         <div class="columnas">
-            <!-- Primera columna para los primeros tres prácticos -->
             <div class="columna">
-                <div class="content">
-                    <div class="text">
-                        <center><b><h4>Ejercicios if</h4></b>
-                        <p><a href="https://docs.google.com/presentation/d/1R1TRstsMlnbEPvt2_m4LPualtpSF4gVM/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Práctico if</a></p>
-                        <b><h4>Ejercicios Arreglo</h4></b>
-                        <p><a href="https://docs.google.com/presentation/d/120iv3sEP3bGBmdmDzu1o0U7sQv4VwzKt/edit?usp=sharing&ouid=100178655760234750113&rtpof=true&sd=true" style="color:#0e055e;">Práctico Arreglo</a></p>
-                        <b><h4>Juego- Lógica</h4></b>
-                        <p><a href="https://www3.gobiernodecanarias.org/medusa/eltanquematematico/proyectoNEWTON/ovejalechugaleon/seisranas.html" style="color:#0e055e;">Juego de las seis ranas</a></p>
-                        <b><h4>Simulación de Control Industrial </h4></b>
-                        <p><a href="https://view.genially.com/671ed7a0922ae3a1251030f6/interactive-content-escape-game-industrial" style="color:#0e055e;">Escape Game Industrial</a></p>
-                        <b><h4>Juego-Programación</h4></b>
-                        <p><a href="https://www.google.com/logos/2017/logo17/logo17.html?hl=es-419" style="color:#0e055e;">Juego inicio de programación</a></p></center>
-						
-                   
-                </div>
+                <h4>Prácticos de Estructuras</h4>
+                <a href="https://docs.google.com/presentation/d/1R1TRstsMlnbEPvt2_m4LPualtpSF4gVM/edit?usp=sharing">Ejercicios Condicional IF</a>
+                <a href="https://docs.google.com/presentation/d/120iv3sEP3bGBmdmDzu1o0U7sQv4VwzKt/edit?usp=sharing">Ejercicios con Arreglos</a>
+            </div>
+
+            <div class="columna">
+                <h4>Desafíos de Lógica</h4>
+                <a href="https://www3.gobiernodecanarias.org/medusa/eltanquematematico/proyectoNEWTON/ovejalechugaleon/seisranas.html">Juego de las seis ranas</a>
+                <a href="https://view.genially.com/671ed7a0922ae3a1251030f6/interactive-content-escape-game-industrial">Escape Game Industrial</a>
+            </div>
+
+            <div class="columna">
+                <h4>Gamificación</h4>
+                <a href="https://www.google.com/logos/2017/logo17/logo17.html?hl=es-419">Introducción a la Programación (Google)</a>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
+
 </body>
 </html>

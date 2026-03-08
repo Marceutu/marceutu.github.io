@@ -3,38 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contacto – Marcela Mederos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Paleta de Colores Institucional */
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: #F7FAFC;
+            color: #2D3748;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR (Consistente con Inicio) */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background: #ffffff;
+            padding: 20px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #1A365D;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: #1A365D;
+        }
+
+        /* SECCIÓN DE CONTACTO */
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 600px;
+            text-align: center;
+            border-top: 5px solid #1A365D;
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #1A365D;
+            margin-top: 0;
+        }
+
+        .contact-card p {
+            color: #4A5568;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo para el email */
+        .email-box {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 500;
+            color: #1A365D;
+            border-left: 4px solid #1A365D;
+            font-size: 18px;
+        }
+
+        .email-box a {
+            color: #1A365D;
+            text-decoration: none;
+        }
+
+        .email-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #1A365D;
+            color: #ffffff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
         <nav class="navbar">
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="contacto.html">Contactos</a></li>
             </ul>
         </nav>
     </header>
- <div class="container">
-    <!-- Sección de contacto -->
-    <section id="contacto" class="hero">
-        <div class="hero-content">
-            <div class="text-content">
-                <h3>Contacto</h3>
-                <p>Si tienes alguna consulta o deseas obtener más información sobre los cursos, puedes ponerte en contacto conmigo a través del siguiente correo electrónico:</p>
-               
-                <p>📧 <u>Correo electrónico:</u> ems.dgetp@gmail.com</p>
-            </div>
-        </div>
-        <div class="image-content">
-           <img src="3BwP.gif" alt="Imagen educativa" style="margin-top: 70px;">
-        </div>
-    </section>
 
-    <footer>
-        <center><p>© 2024 Todos los derechos reservados</p></center>
+    <div class="container">
+        <section class="contact-card">
+            <h3>Canal de Comunicación</h3>
+            <p>
+                Para consultas académicas o información adicional sobre los cursos, 
+                por favor remita un mensaje a la siguiente dirección de correo:
+            </p>
+            
+            <div class="email-box">
+                ✉️ <a href="mailto:docente.bt.2026@gmail.com">docente.bt.2026@gmail.com</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
     </footer>
-	 </div>
+
 </body>
 </html>
 

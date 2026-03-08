@@ -3,139 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
+    <title>Prácticos – Programación I</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
         }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+        }
+
+        /* NAVBAR FORMAL */
         .navbar {
-            background-color: #F0F9E6; /* Fondo blanco del banner */
-            overflow: hidden;
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .navbar ul {
-            list-style-type: none;
+            list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-        }
-
-        .navbar li {
-            margin: 0 15px;
+            gap: 25px;
         }
 
         .navbar a {
             text-decoration: none;
-            color: #000000; /* Palabras en negro */
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease; /* Transición suave */
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
+            color: var(--azul-institucional);
         }
 
-        .navbar a:active {
-            background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-        }
-
+        /* CONTENEDOR PRINCIPAL */
         .centrado {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
 
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--gris-oxford);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        /* GRILLA DE PRÁCTICOS */
         .columnas {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            justify-content: space-between;
         }
 
+        /* TARJETAS DE PRÁCTICOS */
         .columna {
-            flex: 1 1 calc(66.666% - 30px); /* Ajusta el ancho para que el texto ocupe más espacio */
             background-color: #ffffff;
-            border: 5px solid #ddd;
-            border-radius: 3px;
-            padding: 45px;
-            box-shadow: 1 2px 7px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--azul-institucional); /* Detalle lateral profesional */
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .columna:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .columna h4 {
-            margin-top: 0;
-            color: #333;
+            margin: 0 0 15px 0;
+            color: var(--azul-institucional);
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .columna a {
             text-decoration: none;
-            color: #0e055e;
-            display: block;
-            margin-top: 10px;
+            color: #ffffff;
+            background-color: var(--azul-institucional);
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s;
         }
 
         .columna a:hover {
-            text-decoration: underline;
+            background-color: var(--gris-oxford);
         }
 
-        /* Alineación del texto y la imagen */
-        .content {
-            display: flex; /* Utiliza flexbox para alinear el texto y la imagen horizontalmente */
-            justify-content: flex-start; /* Alinea al principio */
-            align-items: flex-start; /* Alinea verticalmente al principio */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            margin-top: 60px;
+            font-size: 14px;
         }
-
-        .content .text {
-            flex: 1; /* El texto ocupará el 50% del espacio */
-        }
-
-        .content .image-content {
-            margin-left: 2px; /* Margen de separación entre el texto y la imagen */
-        }
-
-        .content img {
-            max-width: 100%; /* Ajusta el tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
-        }
-
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="programacion.html">Programación</a></li>
+                <li><a href="programacion.html">Volver a Programación</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="centrado">
+        <h2>Guías de Prácticos</h2>
+        <p class="subtitle">Ejercicios de aplicación y resolución de problemas para el curso.</p>
+        
         <div class="columnas">
             <div class="columna">
-                <!-- Contenido de los prácticos -->
-                <div class="content">
-                    <div class="text">
-                        <center><b><h4>Primer Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/1qiSERmhbL0piEEMWcTFP9S1qbVslopVh/view?usp=sharing" style="color:#0e055e;">Práctico I</a>
-                        <b><h4>Segundo Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/1Qfk8z7VSuMl6Qxt2cWL5T6Hj1Yn6Ak2O/view?usp=sharing" style="color:#0e055e;">Práctico II</a>
-                        <b><h4>Tercer Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/1GlywUv_n8vx0lB5lZJuufTMDNpdutWQL/view?usp=sharing" style="color:#0e055e;">Práctico III</a>
-                        <b><h4>Cuarto Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/19FJ7Z-kA41I8UDyneE-qt8Eq3t4T2Nyu/view?usp=sharing" style="color:#0e055e;">Práctico IV</a>
-                        <b><h4>Quinto Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/1R0oy7E_DRQP_4_TDA1qWJygh00eFJNDX/view?usp=sharing" style="color:#0e055e;">Práctico V</a>
-                        <b><h4>Sexto Práctico</h4></b>
-                        <a href="https://drive.google.com/file/d/1EeqQST2wuiR9VEyg2il9zmc3xtToLsfX/view?usp=sharing" style="color:#0e055e;">Práctico VI</a></center>
-                   
-                </div>
+                <h4>Primer Práctico</h4>
+                <a href="https://drive.google.com/file/d/1qiSERmhbL0piEEMWcTFP9S1qbVslopVh/view?usp=sharing">Descargar Guía I</a>
+            </div>
+
+            <div class="columna">
+                <h4>Segundo Práctico</h4>
+                <a href="https://drive.google.com/file/d/1Qfk8z7VSuMl6Qxt2cWL5T6Hj1Yn6Ak2O/view?usp=sharing">Descargar Guía II</a>
+            </div>
+
+            <div class="columna">
+                <h4>Tercer Práctico</h4>
+                <a href="https://drive.google.com/file/d/1GlywUv_n8vx0lB5lZJuufTMDNpdutWQL/view?usp=sharing">Descargar Guía III</a>
+            </div>
+
+            <div class="columna">
+                <h4>Cuarto Práctico</h4>
+                <a href="https://drive.google.com/file/d/19FJ7Z-kA41I8UDyneE-qt8Eq3t4T2Nyu/view?usp=sharing">Descargar Guía IV</a>
+            </div>
+
+            <div class="columna">
+                <h4>Quinto Práctico</h4>
+                <a href="https://drive.google.com/file/d/1R0oy7E_DRQP_4_TDA1qWJygh00eFJNDX/view?usp=sharing">Descargar Guía V</a>
+            </div>
+
+            <div class="columna">
+                <h4>Sexto Práctico</h4>
+                <a href="https://drive.google.com/file/d/1EeqQST2wuiR9VEyg2il9zmc3xtToLsfX/view?usp=sharing">Descargar Guía VI</a>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
 
 </body>
 </html>

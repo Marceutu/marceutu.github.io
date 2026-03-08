@@ -1,123 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programación</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prácticos – Tutoría de Proyecto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
 
-    .navbar {
-      background-color: #F0F9E6;
-      overflow: hidden;
-    }
+        /* CONFIGURACIÓN PARA EL FOOTER AL FINAL */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-    .navbar ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+            display: flex;
+            flex-direction: column; /* Alineación vertical */
+        }
 
-    .navbar li {
-      margin: 0 15px;
-    }
+        .main-content {
+            flex: 1; /* Empuja el footer hacia abajo */
+        }
 
-    .navbar a {
-      text-decoration: none;
-      color: #000000;
-      padding: 14px 20px;
-      display: block;
-      transition: background-color 0.3s ease;
-    }
+        /* NAVBAR PROFESIONAL */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
 
-    .navbar a:hover {
-      background-color: #fcf5c7;
-    }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
 
-    .navbar a:active {
-      background-color: #b2ebf2;
-    }
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-    .centrado {
-      padding: 20px;
-    }
+        .navbar a:hover {
+            color: var(--azul-institucional);
+        }
 
-    .columnas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-      align-items: stretch;
-    }
+        /* CONTENEDOR PRINCIPAL */
+        .centrado {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
 
-    .columna {
-      flex: 1 1 calc(50% - 20px);
-      background-color: #ffffff;
-      border: 3px solid #ddd;
-      border-radius: 4px;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center; /* 👈 centra títulos y links */
-    }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
 
-    .columna h4 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      color: #333;
-      font-size: 14px; /* más chico que los links */
-      line-height: 1.2;
-    }
+        /* GRILLA DE TARJETAS */
+        .columnas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
 
-    .columna a {
-      text-decoration: none;
-      color: #0e055e;
-      display: block;
-      margin-bottom: 12px;
-      font-size: 15px; /* un poquito más grande que los títulos */
-    }
+        .columna {
+            background-color: #ffffff;
+            border-top: 5px solid var(--azul-institucional);
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-    .columna a:hover {
-      text-decoration: underline;
-    }
+        .columna:hover {
+            transform: translateY(-5px);
+        }
 
-    @media (max-width: 768px) {
-      .columna {
-        flex: 1 1 100%;
-      }
-    }
-  </style>
+        .columna h4 {
+            margin: 0 0 20px 0;
+            color: var(--azul-institucional);
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: var(--azul-institucional);
+            background: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: var(--azul-institucional);
+            color: #ffffff;
+        }
+
+        /* FOOTER SIN ESPACIOS BLANCOS */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="Tutoria_Proyecto.html">Tutoría de Proyecto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="centrado">
-    <div class="columnas">
-      <!-- Columna izquierda: Ejercicios -->
-      <div class="columna">
-        <h4>Juego</h4>
-         <p><a href="https://es.educaplay.com/recursos-educativos/28132508-ingenieria_de_software_terminos_clave.html">Crucigrama de conceptos</a></p>
-		 <p><a href="https://drive.google.com/file/d/1w88Cwevmx7FCqk9AZf-zHBmVv80e3GYr/view?usp=sharing">Desarrollo de roles</a></p>
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="Tutoria_Proyecto.html">Volver a Tutoría</a></li>
+                </ul>
+            </nav>
+        </header>
 
-      </div>
+        <div class="centrado">
+            <h2>Prácticos de Tutoría</h2>
+            
+            <div class="columnas">
+                <div class="columna">
+                    <h4>Trabajos Prácticos</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford);">No hay prácticos cargados actualmente.</p>
+                </div>
 
-     
-      </div>
+                <div class="columna">
+                    <h4>Recursos Adicionales</h4>
+                    <a href="#" class="btn-link">Guía de Formato</a>
+                    <a href="#" class="btn-link">Plantilla de Entrega</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
+    </footer>
+
 </body>
 </html>
-

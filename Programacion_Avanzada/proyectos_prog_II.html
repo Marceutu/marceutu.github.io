@@ -3,134 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación</title>
+    <title>Proyecto Final – Programación Avanzada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Fondo blanco */
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+            --github-color: #24292e;
         }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+        }
+
+        /* NAVBAR PROFESIONAL */
         .navbar {
-            background-color: #F0F9E6; /* Fondo blanco del banner */
-            overflow: hidden;
+            background-color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--azul-institucional);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .navbar ul {
-            list-style-type: none;
+            list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-        }
-
-        .navbar li {
-            margin: 0 15px;
+            gap: 25px;
         }
 
         .navbar a {
             text-decoration: none;
-            color: #000000; /* Palabras en negro */
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease; /* Transición suave */
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: #fcf5c7; /* Fondo clarito al pasar el cursor */
+            color: var(--azul-institucional);
         }
 
-        .navbar a:active {
-            background-color: #b2ebf2; /* Fondo más oscuro al seleccionar */
-        }
-
+        /* CONTENEDOR PRINCIPAL */
         .centrado {
-            padding: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .columnas {
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-institucional);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        /* ESTRUCTURA DE ETAPAS */
+        .etapas-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .etapa-card {
+            background: white;
+            padding: 25px 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
             justify-content: space-between;
+            border-left: 6px solid var(--azul-institucional);
+            transition: transform 0.2s;
         }
 
-        .columna {
-            flex: 1 1 calc(66.666% - 50px); /* Ajusta el ancho para que el texto ocupe más espacio */
-            background-color: #ffffff;
-            border: 5px solid #ddd;
-            border-radius: 3px;
-            padding: 45px;
-            box-shadow: 1 2px 5px rgba(0, 0, 0, 0.1);
+        .etapa-card:hover {
+            transform: translateX(10px);
         }
 
-        .columna h4 {
-            margin-top: 0;
-            color: #333;
+        .etapa-info h4 {
+            margin: 0;
+            color: var(--azul-institucional);
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .columna a {
+        .etapa-info p {
+            margin: 5px 0 0 0;
+            color: var(--gris-oxford);
+            font-size: 14px;
+        }
+
+        /* BOTONES DE DESCARGA / ACCESO */
+        .btn-accion {
             text-decoration: none;
-            color: #0e055e;
-            display: block;
-            margin-top: 10px;
+            background-color: var(--azul-institucional);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 13px;
+            transition: background 0.3s;
+            text-align: center;
+            min-width: 140px;
         }
 
-        .columna a:hover {
-            text-decoration: underline;
+        .btn-accion:hover {
+            background-color: #2c5282;
         }
 
-        /* Alineación del texto y la imagen */
-        .content {
-            display: flex; /* Utiliza flexbox para alinear el texto y la imagen horizontalmente */
-            justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
-            align-items: center; /* Alinea verticalmente al centro */
+        /* Estilo especial para GitHub */
+        .github-card {
+            border-left-color: var(--github-color);
+            background-color: #f6f8fa;
         }
 
-        .content .text {
-            flex: 1; /* El texto ocupará el 75% del espacio */
+        .btn-github {
+            background-color: var(--github-color);
         }
 
-        .content .image-content {
-            margin-left: 0.1px; /* Margen de separación entre el texto y la imagen */
-            flex: 0 1 30%; /* La imagen ocupará el 30% del espacio disponible */
+        .btn-github:hover {
+            background-color: #000000;
         }
 
-        .content img {
-            max-width: 120%; /* Ajusta el tamaño de la imagen */
-            height: auto; /* Mantiene la proporción de la imagen */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: white;
+            margin-top: 60px;
         }
-
     </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="prog_II.html">Programación Avanzada</a></li>
+                <li><a href="prog_II.html">Volver a Prog Avanzada</a></li>
             </ul>
         </nav>
     </header>
+
     <div class="centrado">
-        <div class="columnas">
-            <!-- Primera columna para los primeros tres prácticos -->
-            <div class="columna">
-                <div class="content">
-                    <div class="text">
-                  
-                        <p><center><a href="https://drive.google.com/file/d/1z8koBNVAEAVbvw8Dn9-Cr6qjl0_5xSiH/view?usp=sharing" style="color:#0e055e;">Documentación</a></center></p>
-						 <p><center><a href="https://drive.google.com/file/d/1fo5L3bWK0B__6_8OxymOuyN2_3LYlOPG/view?usp=sharing" style="color:#0e055e;">Proyecto-2025</a></center></p>
-						  <p><center><a href="https://drive.google.com/file/d/1qZNmuClGIsyH4rR34jzEnTcr6De7Z0FA/view?usp=sharing" style="color:#0e055e;">Segunda entrega</a></center></p>
-						  <p><center><a href="https://drive.google.com/file/d/1jNECCYr3mZ98QCVuHcUK6lgMhB5PQGlu/view?usp=sharing" style="color:#0e055e;">GitHub</a></center></p>
-                    </div>
-                    <div class="image-content">
-                        <img src="ultima.png" alt="Imagen educativa">
-                    </div>
+        <h2>Gestión del Proyecto Anual</h2>
+        
+        <div class="etapas-container">
+            
+            <div class="etapa-card">
+                <div class="etapa-info">
+                    <h4>Documentación Técnica</h4>
+                    <p>Pautas para la redacción de la memoria y diagramación.</p>
                 </div>
+                <a href="https://drive.google.com/file/d/1z8koBNVAEAVbvw8Dn9-Cr6qjl0_5xSiH/view?usp=sharing" target="_blank" class="btn-accion">Ver Guía</a>
             </div>
-        </div>       
+
+            <div class="etapa-card">
+                <div class="etapa-info">
+                    <h4>Propuesta 2025</h4>
+                    <p>Enunciado oficial y requerimientos del sistema.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1fo5L3bWK0B__6_8OxymOuyN2_3LYlOPG/view?usp=sharing" target="_blank" class="btn-accion">Descargar PDF</a>
+            </div>
+
+            <div class="etapa-card">
+                <div class="etapa-info">
+                    <h4>Segunda Entrega</h4>
+                    <p>Detalles sobre la capa de persistencia y testing.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1qZNmuClGIsyH4rR34jzEnTcr6De7Z0FA/view?usp=sharing" target="_blank" class="btn-accion">Ver Requisitos</a>
+            </div>
+
+            <div class="etapa-card github-card">
+                <div class="etapa-info">
+                    <h4>Control de Versiones</h4>
+                    <p>Acceso al repositorio y guía de uso de GitHub.</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1jNECCYr3mZ98QCVuHcUK6lgMhB5PQGlu/view?usp=sharing" target="_blank" class="btn-accion btn-github">Guía GitHub</a>
+            </div>
+
+        </div>
     </div>
+
+    <footer>
+        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    </footer>
+
 </body>
 </html>

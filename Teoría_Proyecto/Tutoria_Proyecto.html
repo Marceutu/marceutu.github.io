@@ -3,32 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorías de Proyecto</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tutorías de Proyecto – Marcela Mederos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: var(--blanco-fondo);
+            color: #2D3748;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR CONSISTENTE */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background: #ffffff;
+            padding: 20px 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--azul-institucional);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--azul-institucional);
+        }
+
+        /* SECCIÓN HERO (ESTILO LIMPIO) */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 60vh;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--azul-institucional);
+            margin-bottom: 20px;
+        }
+
+        /* Línea decorativa académica */
+        .hero h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--azul-institucional);
+            margin: 20px auto;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 20px;
+            color: var(--gris-oxford);
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--azul-institucional);
+            color: #ffffff;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                justify-content: center;
+            }
+            .navbar ul {
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-              
                 <li><a href="teorico_tutoria_proyecto.html">Teórico</a></li>
-				 <li><a href="practico_proyecto.html">Prácticos</a></li>
-				  <li><a href="ejercicio_tutoria_proyecto.html">Ejercicios</a></li>
-				   <li><a href="">Proyecto</a></li>
+                <li><a href="practico_proyecto.html">Prácticos</a></li>
+                <li><a href="ejercicio_tutoria_proyecto.html">Ejercicios</a></li>
+                <li><a href="#">Proyecto</a></li>
             </ul>
         </nav>
     </header>
 
-  
-            <div class="image-content">
-          <center>
-            <img src="imagen_I.avif" alt="Imagen educativa" style="max-width: 100%; height: auto; margin: 15 auto;">
-          </center>
-            </div>
-       
-    </section>
+    <main class="hero">
+        <h1>Tutorías de Proyecto</h1>
+        <p>
+            Espacio de acompañamiento técnico para el desarrollo, documentación y 
+            gestión de proyectos finales en Informática.
+        </p>
+    </main>
 
-  
+    <footer class="footer">
+        <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
+    </footer>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo de Videojuegos – Marcela Mederos</title>
+    <title>Ingeniería de Software – Marcela Mederos</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
@@ -14,23 +14,13 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        /* CONFIGURACIÓN PARA EL FOOTER AL FINAL */
         html, body {
             height: 100%;
             margin: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
             background-color: var(--blanco-fondo);
             color: #2D3748;
-            display: flex;
-            flex-direction: column; /* Alineación vertical */
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-        }
-
-        .main-content {
-            flex: 1; /* Empuja el footer hacia abajo */
         }
 
         /* NAVBAR CONSISTENTE */
@@ -65,7 +55,7 @@
             color: var(--azul-institucional);
         }
 
-        /* SECCIÓN HERO (SIN IMAGEN) */
+        /* SECCIÓN HERO (ESTILO LIMPIO) */
         .hero {
             display: flex;
             flex-direction: column;
@@ -73,6 +63,7 @@
             justify-content: center;
             text-align: center;
             padding: 100px 20px;
+            min-height: 60vh;
         }
 
         .hero h1 {
@@ -98,12 +89,15 @@
             color: var(--gris-oxford);
         }
 
-        /* FOOTER SIN ESPACIOS BLANCOS */
-        footer {
+        /* FOOTER */
+        .footer {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             background: var(--azul-institucional);
             color: #ffffff;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
         }
 
@@ -123,30 +117,28 @@
 </head>
 <body>
 
-    <div class="main-content">
-        <header>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="teorico_video_juegos.html">Teórico</a></li>
-                    <li><a href="#">Prácticos</a></li>
-                    <li><a href="ejercicio_video_juegos.html">Ejercicios</a></li>
-                    <li><a href="proyectos_video_juegos.html">Proyecto</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="teorico_ingeniería.html">Teórico</a></li>
+                <li><a href="practico_ingeniería.html">Prácticos</a></li>
+                <li><a href="ejercicio_ingeniería.html">Ejercicios</a></li>
+                <li><a href="#">Proyecto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main class="hero">
-            <h1>Desarrollo de Videojuegos</h1>
-            <p>
-                Exploración de mecánicas de juego, narrativa interactiva y 
-                arquitectura de sistemas aplicados al entretenimiento digital.
-            </p>
-        </main>
-    </div>
+    <main class="hero">
+        <h1>Ingeniería de Software</h1>
+        <p>
+            Espacio de acompañamiento técnico para el desarrollo, documentación y 
+            gestión de proyectos finales en Informática.
+        </p>
+    </main>
 
-    <footer>
-        <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+    <footer class="footer">
+        <p>© 2024 – MARCELA MEDEROS | TUTORÍAS ACADÉMICAS</p>
     </footer>
 
 </body>

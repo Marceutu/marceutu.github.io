@@ -13,7 +13,6 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        /* CONFIGURACIÓN BASE PARA FOOTER */
         html, body {
             height: 100%;
             margin: 0;
@@ -31,12 +30,12 @@
             flex: 1;
         }
 
-        /* NAVBAR CENTRADA (BANNER) */
+        /* NAVBAR */
         .navbar {
             background-color: #ffffff;
             padding: 15px 0;
             display: flex;
-            justify-content: center; /* Centrado absoluto */
+            justify-content: center;
             border-bottom: 3px solid var(--azul-institucional);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             width: 100%;
@@ -66,7 +65,7 @@
 
         /* CONTENEDOR PRINCIPAL */
         .centrado {
-            max-width: 900px;
+            max-width: 1100px; /* Aumentado para que quepan bien las dos */
             margin: 0 auto;
             padding: 50px 20px;
         }
@@ -79,12 +78,13 @@
             margin-bottom: 40px;
         }
 
-        /* TARJETAS FLEXIBLES */
+        /* GRILLA - AMBAS COLUMNAS DEBEN ESTAR AQUÍ */
         .columnas {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            /* Cambiamos minmax para asegurar que quepan una al lado de la otra */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            justify-content: center;
+            align-items: start;
         }
 
         .columna {
@@ -112,7 +112,6 @@
             letter-spacing: 1px;
         }
 
-        /* BOTONES DE DOCUMENTOS */
         .btn-link {
             text-decoration: none;
             color: var(--azul-institucional);
@@ -125,7 +124,7 @@
             font-weight: 600;
             text-align: center;
             transition: all 0.3s;
-            border: 1px solid transparent;
+            border: 1px solid #e2e8f0;
         }
 
         .btn-link:hover {
@@ -133,7 +132,6 @@
             color: #ffffff;
         }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 30px;
@@ -143,9 +141,10 @@
             font-size: 14px;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .navbar ul { gap: 20px; }
             .navbar a { font-size: 12px; }
+            .columnas { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -171,17 +170,24 @@
                         Seleccione el material que desea consultar para sus prácticas de Ingeniería.
                     </p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLScxFWuwXB6q7bxexHXBEtwL8ozqFu5xem0Q4F5kSYh178q90A/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMB</a>
-					 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDveEbmh8D4JpWLvr2GZR-07DDDQR1rFOZr82d5kR9IfJBPA/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMA</a>
-					 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbdGDdC9mOarJs5qLU_caoIha9P8IGKmYJWjAcNiGHZ2N32Q/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMC</a>
-					 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgZJF6HGn-HXkpS_bEFCtIBScNSeL2ignLDZKZZT7wL4igNg/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMH</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDveEbmh8D4JpWLvr2GZR-07DDDQR1rFOZr82d5kR9IfJBPA/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMA</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbdGDdC9mOarJs5qLU_caoIha9P8IGKmYJWjAcNiGHZ2N32Q/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMC</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgZJF6HGn-HXkpS_bEFCtIBScNSeL2ignLDZKZZT7wL4igNg/viewform?usp=sharing&ouid=101225331658077695536" class="btn-link">Cuestionario 3ºMH</a>
                     <a href="https://miro.com/welcomeonboard/UVFISnhBSzFUMWh2ZzdiV0R5V0p1U0NzN1JxTGpVSkZyR2FYTmQ0R0Z1b1p5c0lTMVg4eG1Jb3BJQmZFNml5SkYzZzhhdmoxRGdTV1JOc2RkdG5aNmFDOWxaZnkzUXpuTTZ2MDNnSVRPdmZLN0lwSHhuUnFDTWNSQmxMa0lTZVNQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=986271469789" class="btn-link">Equipo_1 Miro</a>
-					<a href="https://miro.com/welcomeonboard/UVFISnhBSzFUMWh2ZzdiV0R5V0p1U0NzN1JxTGpVSkZyR2FYTmQ0R0Z1b1p5c0lTMVg4eG1Jb3BJQmZFNml5SkYzZzhhdmoxRGdTV1JOc2RkdG5aNmFDOWxaZnkzUXpuTTZ2MDNnSVRPdmR2WmppbVM4c0o5eDRWL05CT0k3L2R0R2lncW1vRmFBVnlLcVJzTmdFdlNRPT0hdjE=?share_link_id=17431816690" class="btn-link">Equipo_2 Miro</a>
-					<a href="https://miro.com/welcomeonboard/U090Y1VQQ1ZtZXNpbG5oYjNOMWVaeGJPZGtvOHBZN2RzTStzOGkyS09DMXRWajVGZVpUU3pWby9mbG5UZzg0WlIwL051MWs5L21iS29xZUVkb0h1WktDOWxaZnkzUXpuTTZ2MDNnSVRPdmVhNU1idG9tNE4vVkw5YndHYTRrOEd3VHhHVHd5UWtSM1BidUtUYmxycDRnPT0hdjE=?share_link_id=870176658894" class="btn-link">Equipo_3 Miro</a>
+                    <a href="https://miro.com/welcomeonboard/UVFISnhBSzFUMWh2ZzdiV0R5V0p1U0NzN1JxTGpVSkZyR2FYTmQ0R0Z1b1p5c0lTMVg4eG1Jb3BJQmZFNml5SkYzZzhhdmoxRGdTV1JOc2RkdG5aNmFDOWxaZnkzUXpuTTZ2MDNnSVRPdmR2WmppbVM4c0o5eDRWL05CT0k3L2R0R2lncW1vRmFBVnlLcVJzTmdFdlNRPT0hdjE=?share_link_id=17431816690" class="btn-link">Equipo_2 Miro</a>
+                    <a href="https://miro.com/welcomeonboard/U090Y1VQQ1ZtZXNpbG5oYjNOMWVaeGJPZGtvOHBZN2RzTStzOGkyS09DMXRWajVGZVpUU3pWby9mbG5UZzg0WlIwL051MWs5L21iS29xZUVkb0h1WktDOWxaZnkzUXpuTTZ2MDNnSVRPdmVhNU1idG9tNE4vVkw5YndHYTRrOEd3VHhHVHd5UWtSM1BidUtUYmxycDRnPT0hdjE=?share_link_id=870176658894" class="btn-link">Equipo_3 Miro</a>
                     <a href="https://drive.google.com/file/d/1SF8l75j-llEBrBFGlV6iMkYd6xMILTsA/view?usp=sharing" class="btn-link">Ejercicio de desarrollo de modelos</a>
-					
                 </div>
-            </div>
-        </div>
+
+                <div class="columna">
+                    <h4>Otros Recursos</h4>
+                    <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px; text-align: center;">
+                        Información complementaria y guías de apoyo.
+                    </p>
+                    <a href="#" class="btn-link">Guía de Usuario</a>
+                    <a href="#" class="btn-link">Rúbrica de Evaluación</a>
+                </div>
+            </div> </div>
     </div>
 
     <footer>

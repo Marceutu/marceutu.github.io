@@ -1,193 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teórico – Tutoría de Proyecto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --azul-institucional: #1A365D;
-            --gris-oxford: #4A5568;
-            --blanco-fondo: #F7FAFC;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teórico – Tutoría de Proyecto</title>
 
-        /* 1. CONFIGURACIÓN PARA EMPUJAR EL FOOTER */
-        html, body {
-            height: 100%; 
-            margin: 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--blanco-fondo);
-            color: #2D3748;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+:root{
+    --azul-institucional:#1A365D;
+    --gris-oxford:#4A5568;
+    --blanco-fondo:#F7FAFC;
+}
 
-        /* 2. EL CONTENIDO CRECE PARA OCUPAR EL ESPACIO */
-        .main-content {
-            flex: 1;
-        }
+html,body{
+    height:100%;
+    margin:0;
+}
 
-        /* NAVBAR CENTRADA (BANNER) */
-        .navbar {
-            background-color: #ffffff;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            border-bottom: 3px solid var(--azul-institucional);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            width: 100%;
-        }
+body{
+    font-family:'Montserrat',sans-serif;
+    background:var(--blanco-fondo);
+    color:#2D3748;
+    display:flex;
+    flex-direction:column;
+}
 
-        .navbar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 40px;
-        }
+.main-content{
+    flex:1;
+}
 
-        .navbar a {
-            text-decoration: none;
-            color: var(--gris-oxford);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
+/* NAVBAR */
+.navbar{
+    background:#fff;
+    padding:15px 0;
+    display:flex;
+    justify-content:center;
+    border-bottom:3px solid var(--azul-institucional);
+    box-shadow:0 2px 4px rgba(0,0,0,.05);
+}
 
-        .navbar a:hover {
-            color: var(--azul-institucional);
-        }
+.navbar ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    gap:40px;
+}
 
-        /* CONTENEDOR */
-        .centrado {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
+.navbar a{
+    text-decoration:none;
+    color:var(--gris-oxford);
+    font-weight:600;
+    text-transform:uppercase;
+    font-size:13px;
+    letter-spacing:1px;
+    transition:.3s;
+}
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--azul-institucional);
-            text-align: center;
-            font-size: clamp(30px, 8vw, 36px);
-            margin-bottom: 40px;
-        }
+.navbar a:hover{
+    color:var(--azul-institucional);
+}
 
-        /* GRILLA */
-        .columnas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
+/* CONTENEDOR */
+.centrado{
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+}
 
-        .columna {
-            background-color: #ffffff;
-            border-top: 5px solid var(--azul-institucional);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
-            display: flex;
-            flex-direction: column;
-        }
+h2{
+    font-family:'Playfair Display',serif;
+    color:var(--azul-institucional);
+    text-align:center;
+    font-size:36px;
+    margin-bottom:40px;
+}
 
-        .columna:hover { 
-            transform: translateY(-5px); 
-        }
+/* COLUMNAS */
+.columnas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
 
-        .columna h4 {
-            margin: 0 0 15px 0;
-            color: var(--azul-institucional);
-            font-size: 17px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #edf2f7;
-            padding-bottom: 12px;
-            font-weight: 600;
-        }
+.columna{
+    background:#fff;
+    border-top:5px solid var(--azul-institucional);
+    border-radius:8px;
+    padding:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
 
-        .status-msg {
-            font-size: 14px;
-            color: var(--gris-oxford);
-            font-style: italic;
-            background: #f8fafc;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            border: 1px dashed #e2e8f0;
-        }
+.columna h4{
+    margin-top:0;
+    color:var(--azul-institucional);
+    border-bottom:1px solid #edf2f7;
+    padding-bottom:12px;
+}
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--azul-institucional);
-            color: white;
-            width: 100%;
-        }
+/* BOTONES */
+.btn-link{
+    display:block;
+    text-decoration:none;
+    background:#edf2f7;
+    color:var(--azul-institucional);
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:600;
+    transition:0.3s;
+}
 
-        @media (max-width: 600px) {
-            .navbar ul { gap: 20px; }
-            .navbar a { font-size: 11px; }
-        }
-    </style>
+.btn-link:hover{
+    background:var(--azul-institucional);
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* MENSAJE */
+.status-msg{
+    font-size:14px;
+    color:var(--gris-oxford);
+    font-style:italic;
+    background:#f8fafc;
+    padding:10px;
+    border-radius:4px;
+    text-align:center;
+    border:1px dashed #e2e8f0;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:var(--azul-institucional);
+    color:#fff;
+}
+
+@media(max-width:600px){
+    .navbar ul{gap:20px;}
+    .navbar a{font-size:11px;}
+}
+</style>
 </head>
+
 <body>
 
-    <div class="main-content">
-        <header>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="Tutoria_Proyecto.html">Volver</a></li>
-                </ul>
-            </nav>
-        </header>
+<div class="main-content">
 
-        <div class="centrado">
-            <h2>Teórico</h2>
-            
-            <div class="columnas">
-                <div class="columna">
-                    <h4>Gestión de Proyecto</h4>
-				    
-					 <a href="https://docs.google.com/presentation/d/1T1bbom4Cu4v3UnndSRSYtoyYGld_49Yg/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" class="btn-link">Normativa ISO-9001</a>
-                    <p> <a href="https://drive.google.com/file/d/1te3zwrBNBFbCPo3zoBt3_a9vyM5LfBZe/view?usp=sharing" class="btn-link">Nombre de empresa</a></p>
-					 <p> <a href="https://drive.google.com/file/d/1HfPFd1m9nn0LNkz91LKeeBOPgOFL5OVo/view?usp=sharing" class="btn-link">Actas</a></p>
-					  <p> <a href="https://drive.google.com/file/d/1ITOHwlVYG-LoPbBiEu2h1tM1MktgGFZ6/view?usp=sharing" class="btn-link">Ejemplo de reglamento</a></p>
-	
-	
-                </div>
-                
-                <div class="columna">
-                    <h4>Material teórico</h4>
-   
-					<p> <a href="https://docs.google.com/presentation/d/1WaomZVeqLce1YCpKScASlkgnn_B25bjt/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" class="btn-link">Equipo</a></p>
-					  <p> <a href="https://docs.google.com/presentation/d/1NBAU59YZ8hPk2WObIyR2h4-mp9B2cr5y/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" class="btn-link">Definir roles</a></p>
-					 <p> <a href="https://drive.google.com/file/d/1uEpadwfYXz4jJX8CgVUpCcKYIGv3rVzh/view?usp=sharing" class="btn-link">Ejemplo de roles</a></p>
-					  <p> <a href="https://drive.google.com/file/d/1cMAQz8EPyRytYm0e8E9IRUut37XJLIno/view?usp=sharing" class="btn-link">Crear una organización en GitHub</a></p>
-					    <p> <a href="https://drive.google.com/file/d/1swYhWzOSFgQgz9RphrE9vfbFCVBwYY5-/view?usp=sharing" class="btn-link">Jira</a></p>
-					  
-                </div>
+<header>
+<nav class="navbar">
+<ul>
+<li><a href="../index.html">Inicio</a></li>
+<li><a href="Tutoria_Proyecto.html">Volver</a></li>
+</ul>
+</nav>
+</header>
 
-                <div class="columna">
-                    <h4>Documentación</h4>
-                    <p class="status-msg">Próximamente materiales...</p>
-                </div>
-            </div>
-        </div>
-    </div> 
+<div class="centrado">
 
-    <footer>
- <p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
-    </footer>
+<h2>Teórico</h2>
+
+<div class="columnas">
+
+<div class="columna">
+<h4>GESTIÓN PROYECTO</h4>
+
+<a href="https://docs.google.com/presentation/d/1T1bbom4Cu4v3UnndSRSYtoyYGld_49Yg/edit?usp=sharing" class="btn-link">Normativa ISO-9001</a>
+
+<a href="https://drive.google.com/file/d/1te3zwrBNBFbCPo3zoBt3_a9vyM5LfBZe/view?usp=sharing" class="btn-link">Nombre de empresa</a>
+
+<a href="https://drive.google.com/file/d/1HfPFd1m9nn0LNkz91LKeeBOPgOFL5OVo/view?usp=sharing" class="btn-link">Actas</a>
+
+<a href="https://drive.google.com/file/d/1ITOHwlVYG-LoPbBiEu2h1tM1MktgGFZ6/view?usp=sharing" class="btn-link">Ejemplo de reglamento</a>
+
+</div>
+
+<div class="columna">
+
+<h4>MATERIAL TEÓRICO</h4>
+
+<a href="https://docs.google.com/presentation/d/1WaomZVeqLce1YCpKScASlkgnn_B25bjt/edit?usp=sharing" class="btn-link">Equipo</a>
+
+<a href="https://docs.google.com/presentation/d/1NBAU59YZ8hPk2WObIyR2h4-mp9B2cr5y/edit?usp=sharing" class="btn-link">Definir roles</a>
+
+<a href="https://drive.google.com/file/d/1uEpadwfYXz4jJX8CgVUpCcKYIGv3rVzh/view?usp=sharing" class="btn-link">Ejemplo de roles</a>
+
+<a href="https://drive.google.com/file/d/1cMAQz8EPyRytYm0e8E9IRUut37XJLIno/view?usp=sharing" class="btn-link">Organización en GitHub</a>
+
+<a href="https://drive.google.com/file/d/1swYhWzOSFgQgz9RphrE9vfbFCVBwYY5-/view?usp=sharing" class="btn-link">Jira</a>
+
+<a href="https://drive.google.com/file/d/1OnxrkNBhdNUn4C05YPho_NdRSn-Sd0Qz/view?usp=sharing" class="btn-link">Trello</a>
+
+</div>
+
+<div class="columna">
+<h4>Documentación</h4>
+<p class="status-msg">Próximamente materiales...</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<footer>
+<p>© 2024 – MARCELA MEDEROS | INFORMÁTICA UTU</p>
+</footer>
 
 </body>
 </html>

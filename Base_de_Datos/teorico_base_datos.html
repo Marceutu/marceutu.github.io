@@ -13,7 +13,7 @@
             --blanco-fondo: #F7FAFC;
         }
 
-        /* CONFIGURACIÓN BASE */
+        /* ESTRUCTURA BASE */
         html, body {
             height: 100%;
             margin: 0;
@@ -31,7 +31,7 @@
             flex: 1;
         }
 
-        /* NAVBAR CENTRADA (BANNER) */
+        /* NAVBAR */
         .navbar {
             background-color: #ffffff;
             padding: 15px 0;
@@ -66,7 +66,7 @@
 
         /* CONTENEDOR */
         .centrado {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 50px 20px;
         }
@@ -79,22 +79,20 @@
             margin-bottom: 40px;
         }
 
-        /* TARJETAS FLEXIBLES */
+        /* GRILLA */
         .columnas {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 30px;
-            justify-content: center;
         }
 
+        /* TARJETAS (IGUAL QUE EJERCICIOS) */
         .columna {
             background-color: #ffffff;
             border-top: 5px solid var(--azul-institucional);
             border-radius: 8px;
             padding: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
             transition: transform 0.3s ease;
         }
 
@@ -103,33 +101,35 @@
         }
 
         .columna h4 {
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             color: var(--azul-institucional);
             font-weight: 600;
-            font-size: 18px;
+            font-size: 14px;
             text-transform: uppercase;
-            text-align: center;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
-        /* BOTONES DE DOCUMENTOS */
-        .btn-link {
+        /* --- AQUÍ ESTÁ EL TRUCO: BOTONES TIPO CUADRO --- */
+        .columna a {
             text-decoration: none;
             color: var(--azul-institucional);
-            background: #f1f5f9;
-            padding: 12px 20px;
+            background: #f8fafc;
+            padding: 12px 15px;
+            margin-bottom: 10px;
             border-radius: 6px;
-            display: block;
-            margin-bottom: 12px;
+            font-weight: 500;
             font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s;
-            border: 1px solid transparent;
+            display: block; /* Esto hace que ocupe todo el ancho como en la imagen */
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
         }
 
-        .btn-link:hover {
-            background-color: var(--azul-institucional);
-            color: #ffffff;
+        .columna a:hover {
+            background: var(--azul-institucional);
+            color: white;
+            border-color: var(--azul-institucional);
         }
 
         /* FOOTER */
@@ -142,9 +142,8 @@
             font-size: 14px;
         }
 
-        @media (max-width: 480px) {
-            .navbar ul { gap: 20px; }
-            .navbar a { font-size: 12px; }
+        @media (max-width: 768px) {
+            .columnas { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -170,7 +169,7 @@
             <div class="columna">
                 <h4>Primeros Conceptos</h4>
                 <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px; text-align: center;">
-                    Material teórico sobre los fundamentos y arquitectura de los sistemas de bases de datos.
+                   
                 </p>
                 <a href="https://docs.google.com/presentation/d/1YUi9I5RopIFMcGK-2htsB3p8P4ccdMvN/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" class="btn-link">Conceptos fundamentales</a>
                 <a href="https://docs.google.com/presentation/d/1tpsAujzwqlWMPZxatXgrhqEvqdT2yUUZ/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" class="btn-link">Introducción a conceptos básicos</a>
@@ -180,11 +179,18 @@
             <div class="columna">
                 <h4>Materiales</h4>
                 <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px; text-align: center;">
-                    Material teórico sobre los fundamentos y arquitectura de los sistemas de bases de datos.
+                 
                 </p>
                 <a href="https://drive.google.com/file/d/1jBk-6Kw0qY4Czo2u00GnWrky5abyEjUQ/view?usp=sharing" class="btn-link">Rúbrica para las correcciones de los quizz</a>
 				 <a href="https://docs.google.com/presentation/d/1YgMP-GBLLgd3solbsEeT56uo6W3GbKyU/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" class="btn-link">Pasaje de MER a MR</a>
 				  <a href="https://drive.google.com/file/d/1qqkTz1I893ebZ4xemmfBoiqefOpJWAUR/view?usp=sharing" class="btn-link">Normalización</a>
+            </div>
+			 <div class="columna">
+                <h4></h4>
+                <p style="font-size: 14px; color: var(--gris-oxford); margin-bottom: 20px; text-align: center;">
+                 
+                </p>
+               
             </div>
 
         </div>

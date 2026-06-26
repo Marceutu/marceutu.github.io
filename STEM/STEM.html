@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM – Marcela Mederos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-institucional: #1A365D;
+            --gris-oxford: #4A5568;
+            --blanco-fondo: #F7FAFC;
+        }
+
+        /* CONFIGURACIÓN BASE */
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: var(--blanco-fondo);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #2D3748;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        /* NAVBAR RESPONSIVA (MÓVIL PRIMERO) */
+        .navbar {
+            background: #ffffff;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--azul-institucional);
+            width: 100%;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column; /* Apilado vertical para móvil */
+            align-items: center;    /* Centrado horizontal */
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--gris-oxford);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 5px 0;
+            display: block;
+        }
+
+        /* SECCIÓN HERO ADAPTABLE */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 8vw, 48px);
+            color: var(--azul-institucional);
+            margin-bottom: 20px;
+        }
+
+        .hero h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--azul-institucional);
+            margin: 20px auto;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: clamp(16px, 4vw, 18px);
+            color: var(--gris-oxford);
+            margin: 0 auto;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--azul-institucional);
+            color: #ffffff;
+            width: 100%;
+        }
+
+        /* AJUSTES PARA COMPUTADORA (PANTALLA GRANDE) */
+        @media (min-width: 768px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+            .navbar ul {
+                flex-direction: row; /* Vuelve a horizontal en PC */
+                justify-content: center;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="teorico_STEM.html">Teórico</a></li>
+                    
+                    <li><a href="ejercicio_STEM.html">Ejercicios</a></li>
+                    <li><a href="">Proyecto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <h1>STEM</h1>
+            <p>
+                Repositorio central de materiales técnicos, guías prácticas 
+                y recursos para el seguimiento de proyectos del curso.
+            </p>
+        </main>
+    </div>
+
+    <footer>
+         <p>© 2024 – MARCELA MEDEROS | EDUCACIÓN TÉCNICA</p>
+    </footer>
+
+</body>
+</html>

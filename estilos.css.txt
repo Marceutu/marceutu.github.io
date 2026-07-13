@@ -1,109 +1,130 @@
-/* 1. RESET RADICAL PARA EVITAR ERRORES */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-:root {
-    --azul: #1A365D;
-    --gris: #4A5568;
-    --fondo: #F7FAFC;
+:root{
+    --azul:#1A365D;
+    --gris:#4A5568;
+    --fondo:#F7FAFC;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--fondo);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+html{
+    height:100%;
 }
 
-/* 2. NAVBAR: SOLUCIÓN AL MENÚ CORTADO */
-.navbar {
-    background: #ffffff;
-    border-bottom: 3px solid var(--azul);
-    width: 100%;
-    padding: 10px 0;
+body{
+    font-family:'Montserrat',sans-serif;
+    background:var(--fondo);
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column; /* 👈 En móvil: uno debajo del otro */
-    align-items: center;
-    gap: 5px;
+/* CONTENEDOR PRINCIPAL */
+.main-content{
+    flex:1;
+    width:100%;
+    height:auto;
+    min-height:auto;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: var(--gris);
-    font-weight: 600;
-    font-size: 13px;
-    padding: 10px;
-    display: block;
-    text-transform: uppercase;
+/* NAVBAR */
+
+.navbar{
+    background:#fff;
+    border-bottom:3px solid var(--azul);
+    width:100%;
+    padding:10px 0;
 }
 
-/* 3. TARJETAS: SOLUCIÓN AL BOTÓN CORRIDO */
-.centrado {
-    padding: 15px;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
+.navbar ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
 }
 
-.columnas {
-    display: flex;
-    flex-direction: column; /* 👈 Todo vertical por defecto */
-    gap: 20px;
+.navbar a{
+    text-decoration:none;
+    color:var(--gris);
+    font-weight:600;
+    font-size:13px;
+    padding:10px;
+    display:block;
+    text-transform:uppercase;
 }
 
-.columna {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--azul);
-    /* 👈 Esto es clave para que el botón no flote al costado */
-    display: block !important; 
-    position: relative !important;
+/* CONTENIDO */
+
+.centrado{
+    max-width:1200px;
+    margin:20px auto;
+    padding:20px;
 }
 
-/* 4. BOTONES: FORZAR DEBAJO DEL TEXTO */
-/* Usamos !important para anular cualquier código viejo que los mueva */
-.btn-link, .btn-ejercicio, .btn-proyecto, .columna a {
-    position: static !important; /* 👈 Anula el 'absolute' que los saca de lugar */
-    display: block !important;
-    width: 100% !important;     /* 👈 Ocupa todo el ancho */
-    margin-top: 20px !important; /* 👈 Se separa del texto hacia abajo */
-    background: var(--azul) !important;
-    color: white !important;
-    text-align: center !important;
-    padding: 12px !important;
-    border-radius: 5px !important;
-    text-decoration: none !important;
+.centrado h2{
+    margin-bottom:25px;
 }
 
-/* 5. AJUSTES PARA COMPUTADORA (PANTALLA GRANDE) */
-@media (min-width: 768px) {
-    .navbar ul {
-        flex-direction: row; /* En PC vuelve a ser horizontal */
-        justify-content: flex-end;
-        padding-right: 50px;
-    }
+.columnas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    align-items:start;
+}
 
-    .columnas {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+.columna{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    border-left:5px solid var(--azul);
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.columna h4{
+    color:var(--azul);
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.columna a{
+    display:block;
+    text-decoration:none;
+    color:var(--azul);
+    background:#F8FAFC;
+    border:1px solid #D9E2EC;
+    border-radius:8px;
+    padding:14px;
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.columna a:hover{
+    background:var(--azul);
+    color:#fff;
 }
 
 /* FOOTER */
-footer {
-    background: var(--azul);
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: auto;
+
+footer{
+    background:var(--azul);
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/* COMPUTADORA */
+
+@media (min-width:768px){
+
+    .navbar ul{
+        flex-direction:row;
+        justify-content:flex-end;
+        padding-right:50px;
+    }
+
 }

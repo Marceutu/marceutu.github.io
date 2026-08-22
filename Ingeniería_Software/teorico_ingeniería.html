@@ -80,21 +80,23 @@
         }
 
         /* GRILLA */
-        .columnas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 30px;
-        }
+       .columnas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
 
         /* TARJETAS (IGUAL QUE EJERCICIOS) */
-        .columna {
-            background-color: #ffffff;
-            border-top: 5px solid var(--azul-institucional);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
+       .columna {
+    background-color: #ffffff;
+    border-top: 5px solid var(--azul-institucional);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: fit-content;
+}
 
         .columna:hover {
             transform: translateY(-5px);
@@ -172,40 +174,49 @@
 					  <a href="https://drive.google.com/file/d/1CXylaR9YWgdD7dKEt8uI88arnfSuTLeo/view?usp=sharing" target="_blank">Pasos Github</a>
 		
                 </div>
-                <div class="columna">
-                    <h4>Ingeniería</h4>
-                    <a href="https://drive.google.com/file/d/19n5NE3WSS6zjgPAVBeuSwa72d9Gmes8N/view?usp=sharing" target="_blank">Técnicas de recolección de información</a>
-                    <a href="https://drive.google.com/file/d/1wAsZtwb9futIfZ_dTnYA_7HDkpmnnDyc/view?usp=sharing" target="_blank">Calendarización</a>
-					 <a href="https://docs.google.com/presentation/d/12PFOAGDKILABJOxXoO8M4zrtIjbaEBTG/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Requerimientos</a>
-					 <a href="https://docs.google.com/presentation/d/16ufu4xdgsr-1HspzGNqhHulQnF283hiS/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Factibilidad del sistema</a>
-					 		 <a href="https://drive.google.com/file/d/1M9LMUo1ybW47ixBD0KBKAAf38Jr2RCQg/view?usp=sharing" target="_blank">Estudio de factibilidad </a>
-							  <a href="https://drive.google.com/file/d/1yLEkxtIwEEMZ_jjZllqB_nDtgUEYpNPD/view?usp=sharing" target="_blank">Métricas de factibilidad </a>
-							  <a href="https://drive.google.com/file/d/1XTJAiVQH-FXpBRw100mnpfTqSFH1S8b_/view?usp=sharing" target="_blank">Según Sommerville de factibilidad </a>
-							   <a href="https://drive.google.com/file/d/11beAOravR-HE5_QVx-2dDbiw6CfOhXeg/view?usp=sharing" target="_blank">Gestión de riesgos </a>
-							   <a href="https://drive.google.com/file/d/1T6VZyBSmYyEpKsh_GPKLXDXH1XaQ7sa5/view?usp=sharing" target="_blank">Diagramas PERT </a>
-                </div>
-
-               
-                <div class="columna">
-                    <h4>Ingeniería de Software</h4>
-                    <a href="https://docs.google.com/presentation/d/1dTSW0MyXNBN3DGFZ6plQbvY_LP9CtATd/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Taxonomía del Software</a>
-                    <a href="https://drive.google.com/file/d/1wQryKQL96ivJOpXkG9i_hVjXSBS9TcLt/view?usp=sharing" target="_blank">Fundamentos</a>
-					 <a href="https://docs.google.com/presentation/d/1sbgGYkt3LE0GU2G4zogwOdB--lKII0CL/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Modelo de desarrollo</a>
-					 	
-					  <a href="https://drive.google.com/file/d/18_bKhlqlZZpHbrOYjg2O7SFGGRTJC723/view?usp=sharing" target="_blank">Modelos</a>
-					   <a href="https://docs.google.com/document/d/1BFOBCwDsNUoapgpyHO_Y0QJomUwlsxZV/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Modelo ESRE</a>
-					    <a href="https://docs.google.com/presentation/d/1dSxeZ1_C8iAGKCVV9Y3FMxYevEL1dcpH/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Usuarios del sistema</a>
-						
-                </div>
 				<div class="columna">
-                    <h4>Recursos humanos</h4>
+                    <h4>ETAPA DE ANÁLISIS - Recursos humanos</h4>
                     <a href="https://docs.google.com/presentation/d/10Zq-7tn6RSpODklWpPjnhNI3v9euELQV/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Gestión de los recursos humanos</a>
                     <a href="https://drive.google.com/file/d/1m2oxjf0fHSJak33SPES3izbeiuti9nb0/view?usp=sharing" target="_blank">Paradigmas</a>
 					
 						
                 </div>
+                <div class="columna">
+                    <h4>ETAPA DE ANÁLISIS - Organización</h4>
+                    <a href="https://drive.google.com/file/d/19n5NE3WSS6zjgPAVBeuSwa72d9Gmes8N/view?usp=sharing" target="_blank">Técnicas de recolección de información</a>
+                    <a href="https://drive.google.com/file/d/1wAsZtwb9futIfZ_dTnYA_7HDkpmnnDyc/view?usp=sharing" target="_blank">Calendarización</a>
+					 </div>
+					 		  <div class="columna">
+                    <h4>ETAPA DE ANÁLISIS - Gestión de riesgos  </h4>
+							   <a href="https://drive.google.com/file/d/11beAOravR-HE5_QVx-2dDbiw6CfOhXeg/view?usp=sharing" target="_blank">Gestión de riesgos </a>
+							   <a href="https://drive.google.com/file/d/1T6VZyBSmYyEpKsh_GPKLXDXH1XaQ7sa5/view?usp=sharing" target="_blank">Diagramas PERT </a>
+                </div>
+
+					 <div class="columna">
+                    <h4>ETAPA DE ANÁLISIS - Estudio de factibilidad  </h4>
+				
+					 <a href="https://docs.google.com/presentation/d/16ufu4xdgsr-1HspzGNqhHulQnF283hiS/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Factibilidad del sistema</a>
+					 		 <a href="https://drive.google.com/file/d/1M9LMUo1ybW47ixBD0KBKAAf38Jr2RCQg/view?usp=sharing" target="_blank">Estudio de factibilidad </a>
+							  <a href="https://drive.google.com/file/d/1yLEkxtIwEEMZ_jjZllqB_nDtgUEYpNPD/view?usp=sharing" target="_blank">Métricas de factibilidad </a>
+							  <a href="https://drive.google.com/file/d/1XTJAiVQH-FXpBRw100mnpfTqSFH1S8b_/view?usp=sharing" target="_blank">Según Sommerville de factibilidad </a>
+						 </div>
+				
+               
+                <div class="columna">
+                    <h4>ETAPA DE ANÁLISIS - Ingeniería de Software</h4>
+                    <a href="https://docs.google.com/presentation/d/1dTSW0MyXNBN3DGFZ6plQbvY_LP9CtATd/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Taxonomía del Software</a>
+                    <a href="https://drive.google.com/file/d/1wQryKQL96ivJOpXkG9i_hVjXSBS9TcLt/view?usp=sharing" target="_blank">Fundamentos</a>
+					 <a href="https://docs.google.com/presentation/d/1sbgGYkt3LE0GU2G4zogwOdB--lKII0CL/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Modelo de desarrollo</a>
+					 	
+					  <a href="https://drive.google.com/file/d/18_bKhlqlZZpHbrOYjg2O7SFGGRTJC723/view?usp=sharing" target="_blank">Modelos</a>
+					  	 <a href="https://docs.google.com/presentation/d/12PFOAGDKILABJOxXoO8M4zrtIjbaEBTG/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Requerimientos</a>
+					   <a href="https://docs.google.com/document/d/1BFOBCwDsNUoapgpyHO_Y0QJomUwlsxZV/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Modelo ESRE</a>
+					    <a href="https://docs.google.com/presentation/d/1dSxeZ1_C8iAGKCVV9Y3FMxYevEL1dcpH/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Usuarios del sistema</a>
+						
+                </div>
+				
 				<div class="columna">
-                    <h4>Análisis de dominio y comportamiento</h4>
+                    <h4>ETAPA DE DISEÑO - Análisis de dominio y comportamiento</h4>
                     <a href="https://docs.google.com/presentation/d/1lbvy8sE7aEn_uf60Uoi7W0PJnyNti5sn/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank">Dominio</a>
                     <a href="https://docs.google.com/presentation/d/1m9KPphj_f0sk8Q0sO8V30sE6aO3bI9s3/edit?usp=sharing&ouid=101225331658077695536&rtpof=true&sd=true" target="_blank"> Arquitectura</a>
 					 <a href="https://drive.google.com/file/d/18L1IbC_tGHAjEJADdtzB22F7Sm8tjt_C/view?usp=sharing" target="_blank"> Diseño arquitectónico</a>
@@ -215,6 +226,11 @@
 					
 						
                 </div>
+				<div class="columna">
+                    <h4>ETAPA DE DESARROLLO</h4>
+            </div>
+			<div class="columna">
+                    <h4>ETAPA DE TESTING</h4>
             </div>
         </div>
     </div> 
